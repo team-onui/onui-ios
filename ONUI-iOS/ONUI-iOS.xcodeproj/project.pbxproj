@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */; };
-		90BCBFFA2AA02E160067A284 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCBFF92AA02E160067A284 /* ContentView.swift */; };
 		90BCBFFC2AA02E170067A284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90BCBFFB2AA02E170067A284 /* Assets.xcassets */; };
-		90BCBFFF2AA02E170067A284 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90BCBFFE2AA02E170067A284 /* Preview Assets.xcassets */; };
+		90BCC0102AA039E50067A284 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC00F2AA039E50067A284 /* SigninView.swift */; };
+		90BCC0132AA039FB0067A284 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0122AA039FB0067A284 /* SigninViewModel.swift */; };
+		90BCC0152AA03E660067A284 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0142AA03E660067A284 /* File.swift */; };
+		90BCC0172AA03E6D0067A284 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0162AA03E6D0067A284 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		90BCBFF42AA02E160067A284 /* ONUI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ONUI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONUI_iOSApp.swift; sourceTree = "<group>"; };
-		90BCBFF92AA02E160067A284 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90BCBFFB2AA02E170067A284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		90BCBFFE2AA02E170067A284 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		90BCC00F2AA039E50067A284 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		90BCC0122AA039FB0067A284 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		90BCC0142AA03E660067A284 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		90BCC0162AA03E6D0067A284 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +55,70 @@
 		90BCBFF62AA02E160067A284 /* ONUI-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */,
-				90BCBFF92AA02E160067A284 /* ContentView.swift */,
-				90BCBFFB2AA02E170067A284 /* Assets.xcassets */,
-				90BCBFFD2AA02E170067A284 /* Preview Content */,
+				90BCC00E2AA038BF0067A284 /* Presentation */,
+				90BCC00D2AA038B80067A284 /* Data */,
+				90BCC0082AA0302E0067A284 /* Domain */,
 			);
 			path = "ONUI-iOS";
 			sourceTree = "<group>";
 		};
-		90BCBFFD2AA02E170067A284 /* Preview Content */ = {
+		90BCC0052AA0301E0067A284 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				90BCBFFE2AA02E170067A284 /* Preview Assets.xcassets */,
+				90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */,
 			);
-			path = "Preview Content";
+			path = Application;
+			sourceTree = "<group>";
+		};
+		90BCC0062AA030240067A284 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90BCBFFB2AA02E170067A284 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		90BCC0072AA030270067A284 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				90BCC0112AA039EE0067A284 /* Signin */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		90BCC0082AA0302E0067A284 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				90BCC0162AA03E6D0067A284 /* File.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		90BCC00D2AA038B80067A284 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				90BCC0142AA03E660067A284 /* File.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		90BCC00E2AA038BF0067A284 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				90BCC0072AA030270067A284 /* Sources */,
+				90BCC0062AA030240067A284 /* Resources */,
+				90BCC0052AA0301E0067A284 /* Application */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		90BCC0112AA039EE0067A284 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				90BCC00F2AA039E50067A284 /* SigninView.swift */,
+				90BCC0122AA039FB0067A284 /* SigninViewModel.swift */,
+			);
+			path = Signin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +179,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90BCBFFF2AA02E170067A284 /* Preview Assets.xcassets in Resources */,
 				90BCBFFC2AA02E170067A284 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90BCBFFA2AA02E160067A284 /* ContentView.swift in Sources */,
+				90BCC0172AA03E6D0067A284 /* File.swift in Sources */,
+				90BCC0132AA039FB0067A284 /* SigninViewModel.swift in Sources */,
+				90BCC0152AA03E660067A284 /* File.swift in Sources */,
+				90BCC0102AA039E50067A284 /* SigninView.swift in Sources */,
 				90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +322,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ONUI-iOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,7 +349,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ONUI-iOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
