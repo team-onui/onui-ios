@@ -2,24 +2,23 @@ import SwiftUI
 
 public struct OnuiFont: ViewModifier {
     public var style: OnuiFontStyle
-    public var weight: OnuiFontWeight
 
     public func body(content: Content) -> some View {
         content
-            .font(.custom("Roboto-\(weight.rawValue)", size: style.size.size))
+            .font(.custom("Roboto-\(style.weight.rawValue)", size: style.size.size))
             .lineSpacing(style.size.lineSpacing)
     }
 }
 
 public extension View {
-    func xFont(_ style: OnuiFontStyle, weight: OnuiFontWeight = .medium) -> some View {
+    func onuiFont(_ style: OnuiFontStyle) -> some View {
         self
-            .modifier(OnuiFont(style: style, weight: weight))
+            .modifier(OnuiFont(style: style))
     }
 
-    func xFont(_ style: OnuiFontStyle, weight: OnuiFontWeight, color: Color) -> some View {
+    func onuiFont(_ style: OnuiFontStyle, color: Color) -> some View {
         self
-            .xFont(style, weight: weight)
+            .onuiFont(style)
             .foregroundColor(color)
     }
 }

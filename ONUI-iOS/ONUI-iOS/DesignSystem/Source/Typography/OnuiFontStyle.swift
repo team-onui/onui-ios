@@ -2,6 +2,7 @@ import SwiftUI
 
 protocol OnuiFontable {
     var size: FontSize { get }
+    var weight: OnuiFontWeight { get }
 }
 
 public struct FontSize {
@@ -74,6 +75,19 @@ extension OnuiFontStyle {
 
         case .label:
             return .init(size: 12, lineSpacing: 22)
+        }
+    }
+
+    var weight: OnuiFontWeight {
+        switch self {
+        case .headline:
+            return .medium
+
+        case .title:
+            return .bold
+
+        case .body, .label:
+            return .regular
         }
     }
 }
