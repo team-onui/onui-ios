@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SigninView: View {
     @StateObject var viewModel: SigninViewModel
+    @StateObject var uiState = UIStateModel()
 
     init(
         viewModel: SigninViewModel
@@ -11,6 +12,27 @@ struct SigninView: View {
 
     var body: some View {
         VStack {
+            CarouselView(uiState: uiState)
+            let count = 4
+            HStack(spacing: 4) {
+                ForEach(0..<count, id: \.self) { index in
+                    let cardIndex: Int = uiState.activeCard
+                    Capsule()
+                        .fill(cardIndex == index ?
+                              Color.GrayScale.Background.onBackground :
+                                .GrayScale.Background.onBackgroundVariant)
+                        .frame(width: cardIndex == index ? 24 : 8, height: 8)
+                        .animation(
+                            .spring(
+                                response: 0.5,
+                                dampingFraction: 0.7,
+                                blendDuration: 1
+                            ),
+                            value: cardIndex
+                        )
+                }
+            }
+
             Spacer()
 
             HStack(spacing: 8) {
