@@ -3,10 +3,16 @@ import SwiftUI
 public struct OnuiFont: ViewModifier {
     public var style: OnuiFontStyle
 
+    init(style: OnuiFontStyle) {
+        self.style = style
+    }
+
     public func body(content: Content) -> some View {
+        let fontHeight = Roboto.fontHeight(weight: style.weight, size: style.size.size)
         content
-            .font(.custom("Roboto-\(style.weight.rawValue)", size: style.size.size))
-            .lineSpacing(style.size.lineSpacing)
+            .font(.custom("Roboto-\(style.weight)", size: style.size.size))
+            .lineSpacing(style.size.lineHeight - fontHeight)
+            .padding(.vertical, (style.size.lineHeight - fontHeight) / 2)
     }
 }
 
