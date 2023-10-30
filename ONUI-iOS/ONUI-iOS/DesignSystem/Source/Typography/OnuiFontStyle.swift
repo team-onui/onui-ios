@@ -7,11 +7,11 @@ protocol OnuiFontable {
 
 public struct FontSize {
     var size: CGFloat
-    var lineSpacing: CGFloat
+    var lineHeight: CGFloat
 
-    init(size: CGFloat, lineSpacing: CGFloat) {
+    init(size: CGFloat, lineHeight: CGFloat) {
         self.size = size
-        self.lineSpacing = lineSpacing - size
+        self.lineHeight = lineHeight
     }
 }
 
@@ -40,41 +40,41 @@ extension OnuiFontStyle {
         case let .headline(sizeStyle):
             switch sizeStyle {
             case .large:
-                return .init(size: 36, lineSpacing: 50)
+                return .init(size: 36, lineHeight: 50)
 
             case .medium:
-                return .init(size: 30, lineSpacing: 42)
+                return .init(size: 30, lineHeight: 42)
 
             case .small:
-                return .init(size: 24, lineSpacing: 34)
+                return .init(size: 24, lineHeight: 34)
             }
 
         case let .title(sizeStyle):
             switch sizeStyle {
             case .large:
-                return .init(size: 22, lineSpacing: 34)
+                return .init(size: 22, lineHeight: 34)
 
             case .medium:
-                return .init(size: 20, lineSpacing: 32)
+                return .init(size: 20, lineHeight: 32)
 
             case .small:
-                return .init(size: 18, lineSpacing: 28)
+                return .init(size: 18, lineHeight: 28)
             }
 
         case let .body(sizeStyle):
             switch sizeStyle {
             case .large:
-                return .init(size:18, lineSpacing: 28)
+                return .init(size:18, lineHeight: 28)
 
             case .medium:
-                return .init(size: 26, lineSpacing: 26)
+                return .init(size: 16, lineHeight: 26)
 
             case .small:
-                return .init(size: 14, lineSpacing: 22)
+                return .init(size: 14, lineHeight: 22)
             }
 
         case .label:
-            return .init(size: 12, lineSpacing: 22)
+            return .init(size: 12, lineHeight: 22)
         }
     }
 
