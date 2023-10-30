@@ -5,6 +5,7 @@ public struct OnuiImage: View {
         case SplashImage
         case Google
         case Link
+        case chatProfile
     }
 
     private var image: Image
@@ -33,7 +34,10 @@ public struct OnuiImage: View {
             return SwiftUI.Image(ImageResource.google)
 
         case .Link:
-            return SwiftUI.Image(ImageResource.linkf)
+            return SwiftUI.Image(ImageResource.link)
+
+        case .chatProfile:
+            return SwiftUI.Image(ImageResource.onuiChat)
         }
     }
 }
