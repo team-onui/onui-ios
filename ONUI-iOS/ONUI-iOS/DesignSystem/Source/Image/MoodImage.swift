@@ -1,5 +1,32 @@
 import SwiftUI
 
+enum Mood: CaseIterable {
+    case veryGood
+    case good
+    case normal
+    case bad
+    case veryBad
+
+    func moodImage(isOn: Bool) -> MoodImage {
+        switch self {
+        case .good:
+            MoodImage(.good, isOn: isOn)
+
+        case .bad:
+            MoodImage(.bad, isOn: isOn)
+
+        case .normal:
+            MoodImage(.normal, isOn: isOn)
+
+        case .veryGood:
+            MoodImage(.veryGood, isOn: isOn)
+
+        case .veryBad:
+            MoodImage(.veryBad, isOn: isOn)
+        }
+    }
+}
+
 public struct MoodImage: View {
     public enum Image: Hashable {
         case bad
