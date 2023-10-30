@@ -1,103 +1,56 @@
 import SwiftUI
 import SwiftUIFlowLayout
 
-struct RecordeView: View {
-    enum AnswerStep: Int {
-        case appear = -1
-        case mood = 0
-        case moodDetail
-        case happening
-        case memorableImage
-        case share
-        case finish
+struct RecordView: View {
+    @StateObject var viewModel: RecordViewModel
 
-        mutating func nextStep() {
-            switch self {
-            case .appear:
-                self = .mood
-            case .mood:
-                self = .moodDetail
-            case .moodDetail:
-                self = .happening
-            case .happening:
-                self = .memorableImage
-            case .memorableImage:
-                self = .share
-            case .share:
-                self = .finish
-            case .finish:
-                self = .finish
-            }
-        }
+    init(
+        viewModel: RecordViewModel
+    ) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
-    @State private var isLoadingChat: Bool = false
-    @State private var selectedMood: Mood?
-    @State private var selectedMoodDetail: String?
-    @State private var whatisHappening: String = ""
-    @State private var isShowImagePicker: Bool = false
-    @State private var selectedImage: Image?
-
-    @State private var step: AnswerStep = .appear
-    @State private var answerStep: AnswerStep = .appear
-
-    private let loadingTime = 0.5
-    private let moodDetailList: [String] = [
-        "행복해요",
-        "편안해요",
-        "신나요",
-        "자랑스러워요",
-        "희망차요",
-        "열정적이에요",
-        "설레요",
-        "새로워요",
-        "우울해요",
-        "외로워요",
-        "불안해요",
-        "슬퍼요",
-        "화나요",
-        "부담돼요",
-        "짜증나요",
-        "피곤해요"
-    ]
 
     var body: some View {
+        let questionStepRawValue = viewModel.questionStep.rawValue
+        let answerStepRawValue = viewModel.answerStep.rawValue
+
         ScrollViewReader { value in
             ScrollView {
                 VStack(spacing: 16) {
-                    if step.rawValue >= 0 {
+                    if questionStepRawValue >= 0 {
                         questionChat("안녕하세요~ 오늘은 어떤 하루였나요?", step: .mood)
                         
-                        if answerStep.rawValue >= 0 {
+                        if answerStepRawValue >= 0 {
                             selectMood()
                                 .id(0)
                         }
                     }
                     
-                    if step.rawValue > 0 {
+                    if questionStepRawValue > 0 {
                         questionChat("""
                                      그렇군요, 오늘 하루 수고 많으셨어요.
                                      (선택한 표정에 따른 메시지)
                                      어떤 감정을 느끼셨나요?
                                      """, step: .moodDetail)
                         
-                        if answerStep.rawValue > 0 {
+                        if answerStepRawValue > 0 {
                             selectMoodDetail()
                                 .id(1)
                         }
                     }
                     
-                    if step.rawValue > 1 {
+                    if questionStepRawValue > 1 {
                         questionChat("""
                                  (선택한 감정에 따른 메시지)
                                  무슨 일이 있었는지 알려주세요.
                                  """, step: .happening)
                         
-                        if answerStep.rawValue > 1 {
+                        if answerStepRawValue > 1 {
                             VStack(spacing: 8) {
                                 inputWhatIsHappening()
                                 
                                 nextButton(
-                                    isFill: !whatisHappening.isEmpty,
+                                    isFill: !viewModel.whatisHappening.isEmpty,
                                     step: .happening
                                 )
                                 .padding(.horizontal, 16)
@@ -106,18 +59,18 @@ struct RecordeView: View {
                         }
                     }
                     
-                    if step.rawValue > 2 {
+                    if questionStepRawValue > 2 {
                         questionChat("""
                                  (격려 메시지)
                                  기억에 남는 사진이 있나요?
                                  """, step: .memorableImage)
                         
-                        if answerStep.rawValue > 2 {
+                        if answerStepRawValue > 2 {
                             VStack(spacing: 8) {
                                 inputMemorableImage()
                                 
                                 nextButton(
-                                    isFill: selectedImage != nil,
+                                    isFill: viewModel.selectedImage != nil,
                                     step: .memorableImage
                                 )
                                 .padding(.horizontal, 16)
@@ -126,10 +79,10 @@ struct RecordeView: View {
                         }
                     }
                     
-                    if step.rawValue > 3 {
+                    if questionStepRawValue > 3 {
                         questionChat("다른 사람들과 감정을 공유해보실래요?", step: .share)
                         
-                        if answerStep.rawValue > 3 {
+                        if answerStepRawValue > 3 {
                             HStack(spacing: 8) {
                                 nextButton(
                                     isFill: false,
@@ -153,39 +106,39 @@ struct RecordeView: View {
                     }
                 }
             }
-            .onChange(of: step) { newValue in
-                isLoadingChat = true
-                delayAfter(loadingTime) {
+            .onChange(of: viewModel.questionStep) { newValue in
+                viewModel.isLoadingChat = true
+                delayAfter(viewModel.loadingTime) {
                     deferDelayAfter(){
                         withAnimation {
                             value.scrollTo(newValue.rawValue, anchor: .bottom)
                         }
                     }
                     withAnimation {
-                        isLoadingChat = false
-                        answerStep.nextStep()
+                        viewModel.isLoadingChat = false
+                        viewModel.answerStep.nextStep()
                     }
                 }
             }
         }
         .onAppear {
-            step.nextStep()
+            viewModel.questionStep.nextStep()
         }
         .hideKeyboardWhenTap()
         .background(Color.GrayScale.Background.background)
         .imagePicker(
-            isShow: $isShowImagePicker,
-            image: $selectedImage
+            isShow: $viewModel.isShowImagePicker,
+            uiImage: $viewModel.selectedImage
         )
     }
 
     @ViewBuilder
-    func questionChat(_ chatString: String, step: AnswerStep) -> some View {
+    func questionChat(_ chatString: String, step: RecordStep) -> some View {
         HStack(spacing: 8) {
             OnuiImage(.chatProfile)
                 .frame(48)
 
-            if step == self.step && self.isLoadingChat {
+            if step == viewModel.questionStep && viewModel.isLoadingChat {
                 HStack(spacing: 8) {
                     Circle().fill(Color.GrayScale.Surface.onSurfaceVariant)
                         .frame(8)
@@ -213,7 +166,7 @@ struct RecordeView: View {
     }
 
     @ViewBuilder
-    func nextButton(isFill: Bool, step: AnswerStep) -> some View {
+    func nextButton(isFill: Bool, step: RecordStep) -> some View {
         var foregroundColor: Color {
             isFill ?
                 .Primary.onPrimaryContainer:
@@ -222,8 +175,8 @@ struct RecordeView: View {
         Button {
             hideKeyboard()
             withAnimation {
-                if step == self.step {
-                    self.step.nextStep()
+                if step == viewModel.questionStep {
+                    viewModel.questionStep.nextStep()
                 }
             }
         } label: {
@@ -252,14 +205,14 @@ struct RecordeView: View {
             HStack {
                 ForEach(Mood.allCases, id: \.self) { mood in
                     Button {
-                        if selectedMood == nil {
-                            self.selectedMood = mood
+                        if viewModel.selectedMood == nil {
+                            viewModel.selectedMood = mood
                             withAnimation {
-                                step.nextStep()
+                                viewModel.questionStep.nextStep()
                             }
                         }
                     } label: {
-                        mood.moodImage(isOn: selectedMood == mood)
+                        mood.moodImage(isOn: viewModel.selectedMood == mood)
                             .frame(48)
                     }
                     
@@ -284,21 +237,21 @@ struct RecordeView: View {
 
             FlowLayout(
                 mode: .scrollable,
-                binding: $selectedMoodDetail,
-                items: moodDetailList,
+                binding: $viewModel.selectedMoodDetail,
+                items: viewModel.moodDetailList,
                 itemSpacing: 4
             ) { moodDetail in
                 var foregroundColor: Color {
-                    moodDetail == selectedMoodDetail ?
+                    moodDetail == viewModel.selectedMoodDetail ?
                         .Primary.primary :
                         .GrayScale.Outline.outline
                 }
 
                 Button {
-                    if selectedMoodDetail == nil {
-                        selectedMoodDetail = moodDetail
+                    if viewModel.selectedMoodDetail == nil {
+                        viewModel.selectedMoodDetail = moodDetail
                         withAnimation {
-                            step.nextStep()
+                            viewModel.questionStep.nextStep()
                         }
                     }
                 } label: {
@@ -327,7 +280,7 @@ struct RecordeView: View {
             Text("무슨 일이 있었나요?")
                 .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
             
-            TextField("", text: $whatisHappening)
+            TextField("", text: $viewModel.whatisHappening)
                 .onuiFont(.body(.medium), color: .black)
                 .accentColor(.black)
                 .frame(height: 34)
@@ -349,8 +302,8 @@ struct RecordeView: View {
             Text("사진을 선택해주세요")
                 .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
             
-            if let selectedImage {
-                selectedImage
+            if let selectedImage = viewModel.selectedImage {
+                Image(uiImage: selectedImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(
@@ -362,7 +315,7 @@ struct RecordeView: View {
             } else {
                 Button {
                     DispatchQueue.main.async {
-                        isShowImagePicker.toggle()
+                        viewModel.isShowImagePicker.toggle()
                     }
                 } label: {
                     Image(systemName: "photo")
@@ -386,5 +339,5 @@ struct RecordeView: View {
 }
 
 #Preview {
-    RecordeView()
+    RecordView(viewModel: .init())
 }
