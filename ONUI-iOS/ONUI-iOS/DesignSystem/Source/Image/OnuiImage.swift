@@ -6,6 +6,9 @@ public struct OnuiImage: View {
         case Google
         case Link
         case chatProfile
+        case chevronLeft
+        case chevronRight
+        case moodBorder
     }
 
     private var image: Image
@@ -28,16 +31,25 @@ public struct OnuiImage: View {
     private func oriToImage() -> SwiftUI.Image {
         switch image {
         case .SplashImage:
-            return SwiftUI.Image(ImageResource.오누이Splash)
+            return SwiftUI.Image(.오누이Splash)
 
         case .Google:
-            return SwiftUI.Image(ImageResource.google)
+            return SwiftUI.Image(.google)
 
         case .Link:
-            return SwiftUI.Image(ImageResource.link)
+            return SwiftUI.Image(.link)
 
         case .chatProfile:
-            return SwiftUI.Image(ImageResource.onuiChat)
+            return SwiftUI.Image(.onuiChat)
+
+        case .chevronLeft:
+            return SwiftUI.Image(.chevronLeft)
+
+        case .chevronRight:
+            return SwiftUI.Image(.chevronRight)
+
+        case .moodBorder:
+            return SwiftUI.Image(.moodBorder)
         }
     }
 }

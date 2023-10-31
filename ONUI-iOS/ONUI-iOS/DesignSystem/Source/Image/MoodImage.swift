@@ -7,22 +7,22 @@ enum Mood: CaseIterable {
     case bad
     case veryBad
 
-    func moodImage(isOn: Bool) -> MoodImage {
+    func moodImage() -> MoodImage.Image {
         switch self {
         case .good:
-            MoodImage(.good, isOn: isOn)
+            .good
 
         case .bad:
-            MoodImage(.bad, isOn: isOn)
+            .bad
 
         case .normal:
-            MoodImage(.normal, isOn: isOn)
+            .normal
 
         case .veryGood:
-            MoodImage(.veryGood, isOn: isOn)
+            .veryGood
 
         case .veryBad:
-            MoodImage(.veryBad, isOn: isOn)
+            .veryBad
         }
     }
 }

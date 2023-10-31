@@ -2,17 +2,17 @@ import SwiftUI
 import PhotosUI
 
 public extension View {
-    func imagePicker(isShow: Binding<Bool>, image: Binding<Image?>) -> some View {
+    func imagePicker(isShow: Binding<Bool>, uiImage: Binding<UIImage?>) -> some View {
         self
             .sheet(isPresented: isShow) {
-                ImagePicker(image: image)
+                ImagePicker(uiImage: uiImage)
                     .ignoresSafeArea()
             }
     }
 }
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var image: Image?
+    @Binding var uiImage: UIImage?
     private let controller = UIImagePickerController()
     func makeCoordinator() -> Coordinator {
         return Coordinator(photoPicker: self)
@@ -29,7 +29,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let image = info[.editedImage] as? UIImage {
                 guard let data = image.jpegData(compressionQuality: 0.1),
                       let compressedImage = UIImage(data: data) else { return }
-                photoPicker.image = Image(uiImage: compressedImage)
+                photoPicker.uiImage = compressedImage
             }
             picker.dismiss(animated: true)
         }

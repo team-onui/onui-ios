@@ -6,7 +6,7 @@ public extension Color {
 
 public extension Color.GrayScale {
     private static let gray0 = Color(type: .gray0)
-    private static let gray3 = Color(type: .gray3)
+    static let gray3 = Color(type: .gray3)
     private static let gray5 = Color(type: .gray5)
     private static let gray7 = Color(type: .gray7)
     private static let gray10 = Color(type: .gray10)
