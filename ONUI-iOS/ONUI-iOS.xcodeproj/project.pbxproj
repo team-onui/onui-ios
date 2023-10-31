@@ -49,6 +49,26 @@
 		90ECEFE92AF0D08400FD0147 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFE82AF0D08400FD0147 /* CalendarViewModel.swift */; };
 		90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFEB2AF0D47000FD0147 /* CalendarSheetModel.swift */; };
 		90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFEE2AF0D4D800FD0147 /* DateUtil.swift */; };
+		90ECEFF32AF0E66E00FD0147 /* JwtImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFF22AF0E66E00FD0147 /* JwtImpl.swift */; };
+		90ECEFF52AF0E67E00FD0147 /* JwtStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFF42AF0E67D00FD0147 /* JwtStore.swift */; };
+		90ECEFF72AF0E6C200FD0147 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFF62AF0E6C200FD0147 /* MoyaLoggingPlugin.swift */; };
+		90ECEFF92AF0E6D900FD0147 /* JwtAuthorizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFF82AF0E6D900FD0147 /* JwtAuthorizable.swift */; };
+		90ECEFFB2AF0E6E700FD0147 /* JwtPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFFA2AF0E6E700FD0147 /* JwtPlugin.swift */; };
+		90ECEFFD2AF0E6F200FD0147 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFFC2AF0E6F200FD0147 /* TokenDTO.swift */; };
+		90ECF00A2AF1107C00FD0147 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0092AF1107C00FD0147 /* AuthAPI.swift */; };
+		90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF00C2AF1112500FD0147 /* AuthError.swift */; };
+		90ECF0112AF1122000FD0147 /* RefreshTokenRequestQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */; };
+		90ECF0142AF113C600FD0147 /* RemoteAuthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */; };
+		90ECF0172AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0162AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift */; };
+		90ECF01A2AF1148600FD0147 /* GoogleSigninUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0192AF1148600FD0147 /* GoogleSigninUrlEntity.swift */; };
+		90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */; };
+		90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */; };
+		90ECF0222AF1185600FD0147 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0212AF1185600FD0147 /* AuthRepository.swift */; };
+		90ECF0252AF118ED00FD0147 /* LocalAuthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0242AF118ED00FD0147 /* LocalAuthDataSource.swift */; };
+		90ECF0292AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0282AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift */; };
+		90ECF02B2AF11A3D00FD0147 /* GoogleSigninUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF02A2AF11A3D00FD0147 /* GoogleSigninUseCase.swift */; };
+		90ECF02D2AF11A5200FD0147 /* RefreshTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF02C2AF11A5200FD0147 /* RefreshTokenUseCase.swift */; };
+		90ECF02F2AF11A8000FD0147 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF02E2AF11A8000FD0147 /* LogoutUseCase.swift */; };
 		90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670E2AC3C56200BE5A5F /* SigninView.swift */; };
 		90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */; };
 		90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */; };
@@ -98,6 +118,27 @@
 		90ECEFE82AF0D08400FD0147 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		90ECEFEB2AF0D47000FD0147 /* CalendarSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSheetModel.swift; sourceTree = "<group>"; };
 		90ECEFEE2AF0D4D800FD0147 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		90ECEFF22AF0E66E00FD0147 /* JwtImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtImpl.swift; sourceTree = "<group>"; };
+		90ECEFF42AF0E67D00FD0147 /* JwtStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtStore.swift; sourceTree = "<group>"; };
+		90ECEFF62AF0E6C200FD0147 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		90ECEFF82AF0E6D900FD0147 /* JwtAuthorizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtAuthorizable.swift; sourceTree = "<group>"; };
+		90ECEFFA2AF0E6E700FD0147 /* JwtPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtPlugin.swift; sourceTree = "<group>"; };
+		90ECEFFC2AF0E6F200FD0147 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
+		90ECEFFE2AF0E71200FD0147 /* ONUI-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ONUI-iOS.entitlements"; sourceTree = "<group>"; };
+		90ECF0092AF1107C00FD0147 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		90ECF00C2AF1112500FD0147 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequestQuery.swift; sourceTree = "<group>"; };
+		90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthDataSource.swift; sourceTree = "<group>"; };
+		90ECF0162AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGoogleSigninUrlResponseDTO.swift; sourceTree = "<group>"; };
+		90ECF0192AF1148600FD0147 /* GoogleSigninUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninUrlEntity.swift; sourceTree = "<group>"; };
+		90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBaseDataSource.swift; sourceTree = "<group>"; };
+		90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
+		90ECF0212AF1185600FD0147 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		90ECF0242AF118ED00FD0147 /* LocalAuthDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthDataSource.swift; sourceTree = "<group>"; };
+		90ECF0282AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGoogleSigninUrlUseCase.swift; sourceTree = "<group>"; };
+		90ECF02A2AF11A3D00FD0147 /* GoogleSigninUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninUseCase.swift; sourceTree = "<group>"; };
+		90ECF02C2AF11A5200FD0147 /* RefreshTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenUseCase.swift; sourceTree = "<group>"; };
+		90ECF02E2AF11A8000FD0147 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		90F3670E2AC3C56200BE5A5F /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -242,6 +283,8 @@
 		90BCBFF62AA02E160067A284 /* ONUI-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				90ECEFFE2AF0E71200FD0147 /* ONUI-iOS.entitlements */,
+				90ECEFF02AF0E66200FD0147 /* Core */,
 				906361252AD7AD750046D2B7 /* Shared */,
 				90E976022AD40E1D008F8448 /* Info.plist */,
 				90E975DE2AD3D426008F8448 /* DesignSystem */,
@@ -284,6 +327,11 @@
 		90BCC0082AA0302E0067A284 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				90ECF0262AF119B300FD0147 /* UseCases */,
+				90ECF0202AF1184F00FD0147 /* Repository */,
+				90ECF0182AF1147000FD0147 /* Entities */,
+				90ECF00E2AF111FC00FD0147 /* Parameters */,
+				90ECF00B2AF1111B00FD0147 /* Error */,
 				90BCC0162AA03E6D0067A284 /* domainFile.swift */,
 			);
 			path = Domain;
@@ -292,7 +340,9 @@
 		90BCC00D2AA038B80067A284 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				90BCC0142AA03E660067A284 /* OnuiAPI.swift */,
+				90ECF01D2AF1183300FD0147 /* Repository */,
+				90ECF0152AF1141400FD0147 /* DTO */,
+				90ECF0002AF0E8FD00FD0147 /* DataSource */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -416,6 +466,138 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		90ECEFF02AF0E66200FD0147 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				90ECEFF12AF0E66400FD0147 /* Jwt */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		90ECEFF12AF0E66400FD0147 /* Jwt */ = {
+			isa = PBXGroup;
+			children = (
+				90ECEFF22AF0E66E00FD0147 /* JwtImpl.swift */,
+				90ECEFF42AF0E67D00FD0147 /* JwtStore.swift */,
+				90ECEFF62AF0E6C200FD0147 /* MoyaLoggingPlugin.swift */,
+				90ECEFF82AF0E6D900FD0147 /* JwtAuthorizable.swift */,
+				90ECEFFA2AF0E6E700FD0147 /* JwtPlugin.swift */,
+				90ECEFFC2AF0E6F200FD0147 /* TokenDTO.swift */,
+			);
+			path = Jwt;
+			sourceTree = "<group>";
+		};
+		90ECF0002AF0E8FD00FD0147 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0232AF118E100FD0147 /* Local */,
+				90ECF0122AF113B500FD0147 /* Remote */,
+				90ECF0012AF0E90400FD0147 /* API */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		90ECF0012AF0E90400FD0147 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				90BCC0142AA03E660067A284 /* OnuiAPI.swift */,
+				90ECF0092AF1107C00FD0147 /* AuthAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		90ECF00B2AF1111B00FD0147 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF00C2AF1112500FD0147 /* AuthError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		90ECF00E2AF111FC00FD0147 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF00F2AF1120700FD0147 /* Auth */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		90ECF00F2AF1120700FD0147 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		90ECF0122AF113B500FD0147 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */,
+				90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		90ECF0152AF1141400FD0147 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0162AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		90ECF0182AF1147000FD0147 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0192AF1148600FD0147 /* GoogleSigninUrlEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		90ECF01D2AF1183300FD0147 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		90ECF0202AF1184F00FD0147 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0212AF1185600FD0147 /* AuthRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		90ECF0232AF118E100FD0147 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0242AF118ED00FD0147 /* LocalAuthDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		90ECF0262AF119B300FD0147 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0272AF119C200FD0147 /* Auth */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		90ECF0272AF119C200FD0147 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF0282AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift */,
+				90ECF02A2AF11A3D00FD0147 /* GoogleSigninUseCase.swift */,
+				90ECF02C2AF11A5200FD0147 /* RefreshTokenUseCase.swift */,
+				90ECF02E2AF11A8000FD0147 /* LogoutUseCase.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		90F367132AC3C57300BE5A5F /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,20 +694,30 @@
 				907549B52AEF2F05009F5BBF /* AsyncUtil.swift in Sources */,
 				90E975F02AD3DD51008F8448 /* PrimaryColor.swift in Sources */,
 				90ECEFE72AF0D07B00FD0147 /* CalendarView.swift in Sources */,
+				90ECF0222AF1185600FD0147 /* AuthRepository.swift in Sources */,
+				90ECEFF32AF0E66E00FD0147 /* JwtImpl.swift in Sources */,
+				90ECF0142AF113C600FD0147 /* RemoteAuthDataSource.swift in Sources */,
+				90ECEFFD2AF0E6F200FD0147 /* TokenDTO.swift in Sources */,
+				90ECEFF72AF0E6C200FD0147 /* MoyaLoggingPlugin.swift in Sources */,
 				907549992AE8B941009F5BBF /* UIStateModel.swift in Sources */,
 				906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */,
+				90ECF0112AF1122000FD0147 /* RefreshTokenRequestQuery.swift in Sources */,
 				90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */,
+				90ECF02F2AF11A8000FD0147 /* LogoutUseCase.swift in Sources */,
 				907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */,
 				90BCC0172AA03E6D0067A284 /* domainFile.swift in Sources */,
 				907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */,
 				90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */,
 				90ECEFE92AF0D08400FD0147 /* CalendarViewModel.swift in Sources */,
 				90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */,
+				90ECEFFB2AF0E6E700FD0147 /* JwtPlugin.swift in Sources */,
 				90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */,
 				90BCB9A22AD791EE0076459C /* RootView.swift in Sources */,
 				907549B22AED4046009F5BBF /* View+hideKeyboard.swift in Sources */,
 				906361242AD7AC8C0046D2B7 /* BottomSheetView.swift in Sources */,
 				9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */,
+				90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */,
+				90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */,
 				907549A02AE8B9A8009F5BBF /* View+navigate.swift in Sources */,
 				90E976062AD40EAE008F8448 /* OnuiFontStyle.swift in Sources */,
 				90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */,
@@ -535,14 +727,24 @@
 				907549B02AED3AF9009F5BBF /* ImagePicker.swift in Sources */,
 				907549A82AED0787009F5BBF /* View+frame.swift in Sources */,
 				9075499D2AE8B989009F5BBF /* Carousel.swift in Sources */,
+				90ECF02D2AF11A5200FD0147 /* RefreshTokenUseCase.swift in Sources */,
 				907549942AE8B6AC009F5BBF /* MoodImage.swift in Sources */,
 				90E976042AD40EA7008F8448 /* OnuiFont.swift in Sources */,
+				90ECF01A2AF1148600FD0147 /* GoogleSigninUrlEntity.swift in Sources */,
 				907549A62AED06DA009F5BBF /* RecordView.swift in Sources */,
+				90ECF0172AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift in Sources */,
 				90E975F42AD3E1B9008F8448 /* ErrorVariantColor.swift in Sources */,
+				90ECF00A2AF1107C00FD0147 /* AuthAPI.swift in Sources */,
+				90ECF0252AF118ED00FD0147 /* LocalAuthDataSource.swift in Sources */,
+				90ECF02B2AF11A3D00FD0147 /* GoogleSigninUseCase.swift in Sources */,
+				90ECEFF92AF0E6D900FD0147 /* JwtAuthorizable.swift in Sources */,
 				90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */,
+				90ECF0292AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift in Sources */,
 				90E975F22AD3E157008F8448 /* GrayColor.swift in Sources */,
 				90BCB9AC2AD79D800076459C /* MainView.swift in Sources */,
 				90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */,
+				90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */,
+				90ECEFF52AF0E67E00FD0147 /* JwtStore.swift in Sources */,
 				90BCB9AE2AD79D840076459C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +873,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ONUI-iOS/ONUI-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -699,6 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ONUI-iOS/ONUI-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
