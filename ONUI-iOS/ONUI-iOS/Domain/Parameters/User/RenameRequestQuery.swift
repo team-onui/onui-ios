@@ -1,9 +1,9 @@
 import Foundation
 
 struct RenameRequestQuery: Encodable {
-    public let name: String
+    let name: String
 
     init(name: String) {
-        self.name = refreshToken
+        self.name = name
     }
 }

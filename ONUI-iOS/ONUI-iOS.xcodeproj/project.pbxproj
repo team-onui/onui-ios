@@ -77,6 +77,13 @@
 		90ECF03C2AF1C3C100FD0147 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF03B2AF1C3C100FD0147 /* UserRepositoryImpl.swift */; };
 		90ECF03E2AF1C3C800FD0147 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF03D2AF1C3C800FD0147 /* UserRepository.swift */; };
 		90ECF0412AF1C43F00FD0147 /* RenameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0402AF1C43F00FD0147 /* RenameUseCase.swift */; };
+		90ECF0432AF1C4EA00FD0147 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0422AF1C4EA00FD0147 /* ImageAPI.swift */; };
+		90ECF0452AF1C4FF00FD0147 /* ImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0442AF1C4FF00FD0147 /* ImageError.swift */; };
+		90ECF0472AF1C81400FD0147 /* RemoteImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0462AF1C81400FD0147 /* RemoteImageDataSource.swift */; };
+		90ECF0492AF1C8DC00FD0147 /* UploadImageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0482AF1C8DC00FD0147 /* UploadImageResponseDTO.swift */; };
+		90ECF04B2AF1C96A00FD0147 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF04A2AF1C96A00FD0147 /* ImageRepository.swift */; };
+		90ECF04D2AF1C98700FD0147 /* ImageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF04C2AF1C98700FD0147 /* ImageRepositoryImpl.swift */; };
+		90ECF0502AF1C9D600FD0147 /* UploadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF04F2AF1C9D600FD0147 /* UploadImageUseCase.swift */; };
 		90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670E2AC3C56200BE5A5F /* SigninView.swift */; };
 		90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */; };
 		90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */; };
@@ -155,6 +162,13 @@
 		90ECF03B2AF1C3C100FD0147 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		90ECF03D2AF1C3C800FD0147 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		90ECF0402AF1C43F00FD0147 /* RenameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameUseCase.swift; sourceTree = "<group>"; };
+		90ECF0422AF1C4EA00FD0147 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
+		90ECF0442AF1C4FF00FD0147 /* ImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageError.swift; sourceTree = "<group>"; };
+		90ECF0462AF1C81400FD0147 /* RemoteImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageDataSource.swift; sourceTree = "<group>"; };
+		90ECF0482AF1C8DC00FD0147 /* UploadImageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageResponseDTO.swift; sourceTree = "<group>"; };
+		90ECF04A2AF1C96A00FD0147 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		90ECF04C2AF1C98700FD0147 /* ImageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryImpl.swift; sourceTree = "<group>"; };
+		90ECF04F2AF1C9D600FD0147 /* UploadImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageUseCase.swift; sourceTree = "<group>"; };
 		90F3670E2AC3C56200BE5A5F /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -519,6 +533,7 @@
 				90BCC0142AA03E660067A284 /* OnuiAPI.swift */,
 				90ECF0092AF1107C00FD0147 /* AuthAPI.swift */,
 				90ECF0302AF11BED00FD0147 /* UserAPI.swift */,
+				90ECF0422AF1C4EA00FD0147 /* ImageAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -527,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				90ECF00C2AF1112500FD0147 /* AuthError.swift */,
+				90ECF0442AF1C4FF00FD0147 /* ImageError.swift */,
 				90ECF0352AF11C9B00FD0147 /* UserError.swift */,
 			);
 			path = Error;
@@ -555,6 +571,7 @@
 				90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */,
 				90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */,
 				90ECF0372AF11CBA00FD0147 /* RemoteUserDataSource.swift */,
+				90ECF0462AF1C81400FD0147 /* RemoteImageDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -564,6 +581,7 @@
 			children = (
 				90ECF0162AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift */,
 				90ECF0392AF1C33600FD0147 /* RenameResponseDTO.swift */,
+				90ECF0482AF1C8DC00FD0147 /* UploadImageResponseDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -581,6 +599,7 @@
 			children = (
 				90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */,
 				90ECF03B2AF1C3C100FD0147 /* UserRepositoryImpl.swift */,
+				90ECF04C2AF1C98700FD0147 /* ImageRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -590,6 +609,7 @@
 			children = (
 				90ECF0212AF1185600FD0147 /* AuthRepository.swift */,
 				90ECF03D2AF1C3C800FD0147 /* UserRepository.swift */,
+				90ECF04A2AF1C96A00FD0147 /* ImageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -605,6 +625,7 @@
 		90ECF0262AF119B300FD0147 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				90ECF04E2AF1C9CF00FD0147 /* Image */,
 				90ECF03F2AF1C43700FD0147 /* User */,
 				90ECF0272AF119C200FD0147 /* Auth */,
 			);
@@ -636,6 +657,14 @@
 				90ECF0402AF1C43F00FD0147 /* RenameUseCase.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		90ECF04E2AF1C9CF00FD0147 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				90ECF04F2AF1C9D600FD0147 /* UploadImageUseCase.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		90F367132AC3C57300BE5A5F /* Base */ = {
@@ -735,12 +764,14 @@
 				90E975F02AD3DD51008F8448 /* PrimaryColor.swift in Sources */,
 				90ECEFE72AF0D07B00FD0147 /* CalendarView.swift in Sources */,
 				90ECF0222AF1185600FD0147 /* AuthRepository.swift in Sources */,
+				90ECF0472AF1C81400FD0147 /* RemoteImageDataSource.swift in Sources */,
 				90ECEFF32AF0E66E00FD0147 /* JwtImpl.swift in Sources */,
 				90ECF0142AF113C600FD0147 /* RemoteAuthDataSource.swift in Sources */,
 				90ECEFFD2AF0E6F200FD0147 /* TokenDTO.swift in Sources */,
 				90ECEFF72AF0E6C200FD0147 /* MoyaLoggingPlugin.swift in Sources */,
 				907549992AE8B941009F5BBF /* UIStateModel.swift in Sources */,
 				906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */,
+				90ECF04B2AF1C96A00FD0147 /* ImageRepository.swift in Sources */,
 				90ECF0112AF1122000FD0147 /* RefreshTokenRequestQuery.swift in Sources */,
 				90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */,
 				90ECF02F2AF11A8000FD0147 /* LogoutUseCase.swift in Sources */,
@@ -749,9 +780,11 @@
 				90BCC0172AA03E6D0067A284 /* domainFile.swift in Sources */,
 				90ECF03E2AF1C3C800FD0147 /* UserRepository.swift in Sources */,
 				907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */,
+				90ECF0452AF1C4FF00FD0147 /* ImageError.swift in Sources */,
 				90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */,
 				90ECEFE92AF0D08400FD0147 /* CalendarViewModel.swift in Sources */,
 				90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */,
+				90ECF0492AF1C8DC00FD0147 /* UploadImageResponseDTO.swift in Sources */,
 				90ECEFFB2AF0E6E700FD0147 /* JwtPlugin.swift in Sources */,
 				90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */,
 				90BCB9A22AD791EE0076459C /* RootView.swift in Sources */,
@@ -759,6 +792,7 @@
 				907549B22AED4046009F5BBF /* View+hideKeyboard.swift in Sources */,
 				906361242AD7AC8C0046D2B7 /* BottomSheetView.swift in Sources */,
 				90ECF03A2AF1C33600FD0147 /* RenameResponseDTO.swift in Sources */,
+				90ECF0502AF1C9D600FD0147 /* UploadImageUseCase.swift in Sources */,
 				9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */,
 				90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */,
 				90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */,
@@ -769,6 +803,7 @@
 				90E975EE2AD3DB99008F8448 /* Color+init.swift in Sources */,
 				907549B72AEF3569009F5BBF /* RecordViewModel.swift in Sources */,
 				907549B02AED3AF9009F5BBF /* ImagePicker.swift in Sources */,
+				90ECF0432AF1C4EA00FD0147 /* ImageAPI.swift in Sources */,
 				907549A82AED0787009F5BBF /* View+frame.swift in Sources */,
 				90ECF0412AF1C43F00FD0147 /* RenameUseCase.swift in Sources */,
 				9075499D2AE8B989009F5BBF /* Carousel.swift in Sources */,
@@ -792,6 +827,7 @@
 				90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */,
 				90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */,
 				90ECEFF52AF0E67E00FD0147 /* JwtStore.swift in Sources */,
+				90ECF04D2AF1C98700FD0147 /* ImageRepositoryImpl.swift in Sources */,
 				90BCB9AE2AD79D840076459C /* MainViewModel.swift in Sources */,
 				90ECF0382AF11CBA00FD0147 /* RemoteUserDataSource.swift in Sources */,
 			);

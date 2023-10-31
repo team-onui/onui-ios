@@ -7,7 +7,3 @@ struct RenameResponseDTO: Decodable {
         self.name = name
     }
 }
-
-extension RenameResponseDTO {
-    func toDomain() -> String { name }
-}

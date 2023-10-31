@@ -1,7 +1,7 @@
 import Foundation
 
 struct RefreshTokenRequestQuery: Encodable {
-    public let refreshToken: String
+    let refreshToken: String
 
     init(refreshToken: String) {
         self.refreshToken = refreshToken
