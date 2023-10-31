@@ -46,14 +46,17 @@ struct RecordView: View {
                                  """, step: .happening)
                         
                         if answerStepRawValue > 1 {
+                            let thisStep: RecordStep = .happening
                             VStack(spacing: 8) {
                                 inputWhatIsHappening()
                                 
-                                nextButton(
-                                    isFill: !viewModel.whatisHappening.isEmpty,
-                                    step: .happening
-                                )
-                                .padding(.horizontal, 16)
+                                if viewModel.answerStep == thisStep {
+                                    nextButton(
+                                        isFill: !viewModel.whatisHappening.isEmpty,
+                                        step: thisStep
+                                    )
+                                    .padding(.horizontal, 16)
+                                }
                             }
                             .id(2)
                         }
@@ -65,15 +68,18 @@ struct RecordView: View {
                                  기억에 남는 사진이 있나요?
                                  """, step: .memorableImage)
                         
+                        let thisStep: RecordStep = .memorableImage
                         if answerStepRawValue > 2 {
                             VStack(spacing: 8) {
                                 inputMemorableImage()
                                 
-                                nextButton(
-                                    isFill: viewModel.selectedImage != nil,
-                                    step: .memorableImage
-                                )
-                                .padding(.horizontal, 16)
+                                if viewModel.answerStep == thisStep {
+                                    nextButton(
+                                        isFill: viewModel.selectedImage != nil,
+                                        step: thisStep
+                                    )
+                                    .padding(.horizontal, 16)
+                                }
                             }
                             .id(3)
                         }
@@ -172,6 +178,7 @@ struct RecordView: View {
                 .Primary.onPrimaryContainer:
                 .GrayScale.Background.onBackgroundVariant
         }
+
         Button {
             hideKeyboard()
             withAnimation {
@@ -205,15 +212,18 @@ struct RecordView: View {
             HStack {
                 ForEach(Mood.allCases, id: \.self) { mood in
                     Button {
-                        if viewModel.selectedMood == nil {
-                            viewModel.selectedMood = mood
+                        viewModel.selectedMood = mood
+                        if viewModel.answerStep == .mood {
                             withAnimation {
                                 viewModel.questionStep.nextStep()
                             }
                         }
                     } label: {
-                        mood.moodImage(isOn: viewModel.selectedMood == mood)
-                            .frame(48)
+                        MoodImage(
+                            mood.moodImage(),
+                            isOn: viewModel.selectedMood == mood
+                        )
+                        .frame(48)
                     }
                     
                     if mood != .veryBad {
@@ -248,8 +258,8 @@ struct RecordView: View {
                 }
 
                 Button {
-                    if viewModel.selectedMoodDetail == nil {
-                        viewModel.selectedMoodDetail = moodDetail
+                    viewModel.selectedMoodDetail = moodDetail
+                    if viewModel.answerStep == .moodDetail {
                         withAnimation {
                             viewModel.questionStep.nextStep()
                         }
@@ -280,10 +290,11 @@ struct RecordView: View {
             Text("무슨 일이 있었나요?")
                 .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
             
-            TextField("", text: $viewModel.whatisHappening)
+            TextField("", text: $viewModel.whatisHappening, axis: .vertical)
                 .onuiFont(.body(.medium), color: .black)
                 .accentColor(.black)
-                .frame(height: 34)
+                .lineLimit(...4)
+                .padding(.vertical, 4)
                 .padding(.horizontal, 8)
                 .background(Color.GrayScale.Outline.outlineVariant)
                 .cornerRadius(16)
