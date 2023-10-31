@@ -32,25 +32,14 @@ struct CarouselView: View {
     @ViewBuilder
     func cardView(cardType: CardType) -> some View {
         VStack(spacing: 8) {
-            Image(systemName: "sun")
-                .resizable()
-                .frame(width: 28, height: 28)
-                .padding(.top, 16)
-
             VStack {
                 Text("asdf")
             }
             .padding(.vertical, 12)
             .frame(maxHeight: .infinity)
         }
-//        .frame(
-//            width: UIScreen.main.bounds.width - (widthOfHiddenCards*2) - (spacing*2),
-//            height: uiState.activeCard == cardType.rawValue ?
-//                UIScreen.main.bounds.height * 0.4546 :
-//                UIScreen.main.bounds.height * 0.4103
-//        )
         .frame(
-            width: uiState.activeCard == cardType.rawValue ? 320: 240,
+            width: 320,
             height: uiState.activeCard == cardType.rawValue ? 400: 300
         )
         .background {

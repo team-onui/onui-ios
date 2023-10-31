@@ -13,6 +13,7 @@ struct SigninView: View {
     var body: some View {
         VStack {
             CarouselView(uiState: uiState)
+
             let count = 4
             HStack(spacing: 4) {
                 ForEach(0..<count, id: \.self) { index in

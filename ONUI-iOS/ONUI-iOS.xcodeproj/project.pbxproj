@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		906361242AD7AC8C0046D2B7 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */; };
+		906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906361272AD7AD880046D2B7 /* View+cornerRadius.swift */; };
+		907549942AE8B6AC009F5BBF /* MoodImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549932AE8B6AC009F5BBF /* MoodImage.swift */; };
+		907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549962AE8B932009F5BBF /* CarouselCanvas.swift */; };
+		907549992AE8B941009F5BBF /* UIStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549982AE8B941009F5BBF /* UIStateModel.swift */; };
+		9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075499A2AE8B957009F5BBF /* CarouselView.swift */; };
+		9075499D2AE8B989009F5BBF /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075499C2AE8B989009F5BBF /* Carousel.swift */; };
+		907549A02AE8B9A8009F5BBF /* View+navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075499F2AE8B9A8009F5BBF /* View+navigate.swift */; };
+		907549A62AED06DA009F5BBF /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549A52AED06DA009F5BBF /* RecordView.swift */; };
+		907549A82AED0787009F5BBF /* View+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549A72AED0787009F5BBF /* View+frame.swift */; };
+		907549AB2AED21FB009F5BBF /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 907549AA2AED21FB009F5BBF /* SwiftUIFlowLayout */; };
+		907549B02AED3AF9009F5BBF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549AF2AED3AF9009F5BBF /* ImagePicker.swift */; };
+		907549B22AED4046009F5BBF /* View+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549B12AED4046009F5BBF /* View+hideKeyboard.swift */; };
+		907549B52AEF2F05009F5BBF /* AsyncUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549B42AEF2F05009F5BBF /* AsyncUtil.swift */; };
+		907549B72AEF3569009F5BBF /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549B62AEF3569009F5BBF /* RecordViewModel.swift */; };
+		907803662ADEA0BA00B4A95D /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907803652ADEA0BA00B4A95D /* Image.xcassets */; };
+		907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907803682ADEA0DC00B4A95D /* OnuiImage.swift */; };
+		90BCB9A22AD791EE0076459C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9A12AD791EE0076459C /* RootView.swift */; };
+		90BCB9AC2AD79D800076459C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9AB2AD79D800076459C /* MainView.swift */; };
+		90BCB9AE2AD79D840076459C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9AD2AD79D840076459C /* MainViewModel.swift */; };
 		90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */; };
 		90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0142AA03E660067A284 /* OnuiAPI.swift */; };
 		90BCC0172AA03E6D0067A284 /* domainFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0162AA03E6D0067A284 /* domainFile.swift */; };
@@ -25,6 +45,10 @@
 		90E976012AD40D25008F8448 /* Roboto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E976002AD40D25008F8448 /* Roboto.swift */; };
 		90E976042AD40EA7008F8448 /* OnuiFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E976032AD40EA7008F8448 /* OnuiFont.swift */; };
 		90E976062AD40EAE008F8448 /* OnuiFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E976052AD40EAE008F8448 /* OnuiFontStyle.swift */; };
+		90ECEFE72AF0D07B00FD0147 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFE62AF0D07B00FD0147 /* CalendarView.swift */; };
+		90ECEFE92AF0D08400FD0147 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFE82AF0D08400FD0147 /* CalendarViewModel.swift */; };
+		90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFEB2AF0D47000FD0147 /* CalendarSheetModel.swift */; };
+		90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFEE2AF0D4D800FD0147 /* DateUtil.swift */; };
 		90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670E2AC3C56200BE5A5F /* SigninView.swift */; };
 		90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */; };
 		90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */; };
@@ -32,6 +56,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		906361272AD7AD880046D2B7 /* View+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+cornerRadius.swift"; sourceTree = "<group>"; };
+		907549932AE8B6AC009F5BBF /* MoodImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodImage.swift; sourceTree = "<group>"; };
+		907549962AE8B932009F5BBF /* CarouselCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCanvas.swift; sourceTree = "<group>"; };
+		907549982AE8B941009F5BBF /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
+		9075499A2AE8B957009F5BBF /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		9075499C2AE8B989009F5BBF /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		9075499F2AE8B9A8009F5BBF /* View+navigate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+navigate.swift"; sourceTree = "<group>"; };
+		907549A52AED06DA009F5BBF /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		907549A72AED0787009F5BBF /* View+frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+frame.swift"; sourceTree = "<group>"; };
+		907549AF2AED3AF9009F5BBF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		907549B12AED4046009F5BBF /* View+hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+hideKeyboard.swift"; sourceTree = "<group>"; };
+		907549B42AEF2F05009F5BBF /* AsyncUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUtil.swift; sourceTree = "<group>"; };
+		907549B62AEF3569009F5BBF /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		907803652ADEA0BA00B4A95D /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		907803682ADEA0DC00B4A95D /* OnuiImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiImage.swift; sourceTree = "<group>"; };
+		90BCB9A12AD791EE0076459C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		90BCB9AB2AD79D800076459C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		90BCB9AD2AD79D840076459C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		90BCBFF42AA02E160067A284 /* ONUI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ONUI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONUI_iOSApp.swift; sourceTree = "<group>"; };
 		90BCBFFB2AA02E170067A284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +94,10 @@
 		90E976022AD40E1D008F8448 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		90E976032AD40EA7008F8448 /* OnuiFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiFont.swift; sourceTree = "<group>"; };
 		90E976052AD40EAE008F8448 /* OnuiFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiFontStyle.swift; sourceTree = "<group>"; };
+		90ECEFE62AF0D07B00FD0147 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		90ECEFE82AF0D08400FD0147 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		90ECEFEB2AF0D47000FD0147 /* CalendarSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSheetModel.swift; sourceTree = "<group>"; };
+		90ECEFEE2AF0D4D800FD0147 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		90F3670E2AC3C56200BE5A5F /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -63,12 +110,119 @@
 			files = (
 				90E975DD2AD3D3F2008F8448 /* Moya in Frameworks */,
 				90E975DB2AD3D3F2008F8448 /* CombineMoya in Frameworks */,
+				907549AB2AED21FB009F5BBF /* SwiftUIFlowLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		906361222AD7AC820046D2B7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		906361252AD7AD750046D2B7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				906361262AD7AD7B0046D2B7 /* Extension */,
+				90ECEFEE2AF0D4D800FD0147 /* DateUtil.swift */,
+				907549B42AEF2F05009F5BBF /* AsyncUtil.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		906361262AD7AD7B0046D2B7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				906361272AD7AD880046D2B7 /* View+cornerRadius.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		907549952AE8B921009F5BBF /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				907549962AE8B932009F5BBF /* CarouselCanvas.swift */,
+				907549982AE8B941009F5BBF /* UIStateModel.swift */,
+				9075499C2AE8B989009F5BBF /* Carousel.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		9075499E2AE8B99D009F5BBF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9075499F2AE8B9A8009F5BBF /* View+navigate.swift */,
+				907549A72AED0787009F5BBF /* View+frame.swift */,
+				907549B12AED4046009F5BBF /* View+hideKeyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		907549A12AE8BB45009F5BBF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9075499A2AE8B957009F5BBF /* CarouselView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		907549A22AED068A009F5BBF /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				907549A52AED06DA009F5BBF /* RecordView.swift */,
+				907549B62AEF3569009F5BBF /* RecordViewModel.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		907549AE2AED3AF2009F5BBF /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				907549AF2AED3AF9009F5BBF /* ImagePicker.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		907803642ADEA0B200B4A95D /* Imags */ = {
+			isa = PBXGroup;
+			children = (
+				907803652ADEA0BA00B4A95D /* Image.xcassets */,
+			);
+			path = Imags;
+			sourceTree = "<group>";
+		};
+		907803672ADEA0D400B4A95D /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				907803682ADEA0DC00B4A95D /* OnuiImage.swift */,
+				907549932AE8B6AC009F5BBF /* MoodImage.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		90BCB9A32AD791F20076459C /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				90BCB9A12AD791EE0076459C /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		90BCB9AA2AD79D5B0076459C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				906361222AD7AC820046D2B7 /* Components */,
+				90BCB9AB2AD79D800076459C /* MainView.swift */,
+				90BCB9AD2AD79D840076459C /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		90BCBFEB2AA02E160067A284 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +242,7 @@
 		90BCBFF62AA02E160067A284 /* ONUI-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				906361252AD7AD750046D2B7 /* Shared */,
 				90E976022AD40E1D008F8448 /* Info.plist */,
 				90E975DE2AD3D426008F8448 /* DesignSystem */,
 				90BCC00E2AA038BF0067A284 /* Presentation */,
@@ -116,6 +271,10 @@
 		90BCC0072AA030270067A284 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				90ECEFE52AF0D06800FD0147 /* Calendar */,
+				907549A22AED068A009F5BBF /* Record */,
+				90BCB9AA2AD79D5B0076459C /* Main */,
+				90BCB9A32AD791F20076459C /* Root */,
 				90F367132AC3C57300BE5A5F /* Base */,
 				90BCC0112AA039EE0067A284 /* Signin */,
 			);
@@ -151,6 +310,7 @@
 		90BCC0112AA039EE0067A284 /* Signin */ = {
 			isa = PBXGroup;
 			children = (
+				907549A12AE8BB45009F5BBF /* Components */,
 				90F3670E2AC3C56200BE5A5F /* SigninView.swift */,
 				90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */,
 			);
@@ -169,6 +329,7 @@
 		90E975DF2AD3D438008F8448 /* Resourece */ = {
 			isa = PBXGroup;
 			children = (
+				907803642ADEA0B200B4A95D /* Imags */,
 				90E975F72AD40CD2008F8448 /* Fonts */,
 				90E975E32AD3D772008F8448 /* Colors */,
 			);
@@ -178,6 +339,10 @@
 		90E975E02AD3D43D008F8448 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				907549AE2AED3AF2009F5BBF /* Picker */,
+				9075499E2AE8B99D009F5BBF /* Extensions */,
+				907549952AE8B921009F5BBF /* Carousel */,
+				907803672ADEA0D400B4A95D /* Image */,
 				90E975FF2AD40D04008F8448 /* Typography */,
 				90E975EC2AD3DB86008F8448 /* Color */,
 			);
@@ -233,6 +398,24 @@
 			path = Typography;
 			sourceTree = "<group>";
 		};
+		90ECEFE52AF0D06800FD0147 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				90ECEFEA2AF0D46200FD0147 /* Components */,
+				90ECEFE62AF0D07B00FD0147 /* CalendarView.swift */,
+				90ECEFE82AF0D08400FD0147 /* CalendarViewModel.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		90ECEFEA2AF0D46200FD0147 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				90ECEFEB2AF0D47000FD0147 /* CalendarSheetModel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		90F367132AC3C57300BE5A5F /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +443,7 @@
 			packageProductDependencies = (
 				90E975DA2AD3D3F2008F8448 /* CombineMoya */,
 				90E975DC2AD3D3F2008F8448 /* Moya */,
+				907549AA2AED21FB009F5BBF /* SwiftUIFlowLayout */,
 			);
 			productName = "ONUI-iOS";
 			productReference = 90BCBFF42AA02E160067A284 /* ONUI-iOS.app */;
@@ -291,6 +475,7 @@
 			mainGroup = 90BCBFEB2AA02E160067A284;
 			packageReferences = (
 				90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */,
+				907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
 			);
 			productRefGroup = 90BCBFF52AA02E160067A284 /* Products */;
 			projectDirPath = "";
@@ -311,6 +496,7 @@
 				90F3671F2AC3C6E800BE5A5F /* Assets.xcassets in Resources */,
 				90E975FD2AD40CE8008F8448 /* Roboto-Medium.ttf in Resources */,
 				90E975FC2AD40CE8008F8448 /* Roboto-Bold.ttf in Resources */,
+				907803662ADEA0BA00B4A95D /* Image.xcassets in Resources */,
 				90E975E22AD3D4AF008F8448 /* Primary.xcassets in Resources */,
 				90E975E72AD3D95C008F8448 /* GrayScale.xcassets in Resources */,
 			);
@@ -323,19 +509,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907549B52AEF2F05009F5BBF /* AsyncUtil.swift in Sources */,
 				90E975F02AD3DD51008F8448 /* PrimaryColor.swift in Sources */,
+				90ECEFE72AF0D07B00FD0147 /* CalendarView.swift in Sources */,
+				907549992AE8B941009F5BBF /* UIStateModel.swift in Sources */,
+				906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */,
 				90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */,
+				907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */,
 				90BCC0172AA03E6D0067A284 /* domainFile.swift in Sources */,
+				907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */,
+				90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */,
+				90ECEFE92AF0D08400FD0147 /* CalendarViewModel.swift in Sources */,
 				90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */,
+				90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */,
+				90BCB9A22AD791EE0076459C /* RootView.swift in Sources */,
+				907549B22AED4046009F5BBF /* View+hideKeyboard.swift in Sources */,
+				906361242AD7AC8C0046D2B7 /* BottomSheetView.swift in Sources */,
+				9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */,
+				907549A02AE8B9A8009F5BBF /* View+navigate.swift in Sources */,
 				90E976062AD40EAE008F8448 /* OnuiFontStyle.swift in Sources */,
 				90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */,
 				90E976012AD40D25008F8448 /* Roboto.swift in Sources */,
 				90E975EE2AD3DB99008F8448 /* Color+init.swift in Sources */,
+				907549B72AEF3569009F5BBF /* RecordViewModel.swift in Sources */,
+				907549B02AED3AF9009F5BBF /* ImagePicker.swift in Sources */,
+				907549A82AED0787009F5BBF /* View+frame.swift in Sources */,
+				9075499D2AE8B989009F5BBF /* Carousel.swift in Sources */,
+				907549942AE8B6AC009F5BBF /* MoodImage.swift in Sources */,
 				90E976042AD40EA7008F8448 /* OnuiFont.swift in Sources */,
+				907549A62AED06DA009F5BBF /* RecordView.swift in Sources */,
 				90E975F42AD3E1B9008F8448 /* ErrorVariantColor.swift in Sources */,
 				90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */,
 				90E975F22AD3E157008F8448 /* GrayColor.swift in Sources */,
+				90BCB9AC2AD79D800076459C /* MainView.swift in Sources */,
 				90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */,
+				90BCB9AE2AD79D840076459C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +746,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-flow-layout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 		90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -549,6 +765,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		907549AA2AED21FB009F5BBF /* SwiftUIFlowLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
+			productName = SwiftUIFlowLayout;
+		};
 		90E975DA2AD3D3F2008F8448 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */;
