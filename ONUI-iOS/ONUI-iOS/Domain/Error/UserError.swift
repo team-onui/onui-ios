@@ -1,6 +1,6 @@
 import Foundation
 
-public enum UserError: Error {
+enum UserError: Error {
     case error
 }
 

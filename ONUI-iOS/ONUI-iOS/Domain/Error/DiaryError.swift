@@ -1,6 +1,6 @@
 import Foundation
 
-public enum DiaryError: Error {
+enum DiaryError: Error {
     case error
 }
 

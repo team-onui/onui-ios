@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ImageError: Error {
+enum ImageError: Error {
     case error
 }
 

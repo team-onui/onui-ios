@@ -1,14 +1,14 @@
 import Foundation
 import Moya 
 
-public protocol OnuiAPI: TargetType, JwtAuthorizable {
+protocol OnuiAPI: TargetType, JwtAuthorizable {
     associatedtype ErrorType: Error
     var domain: JobisDomain { get }
     var urlPath: String { get }
     var errorMap: [Int: ErrorType] { get }
 }
 
-public extension OnuiAPI {
+extension OnuiAPI {
     var baseURL: URL {
         URL(
             string: Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String ?? ""
@@ -28,7 +28,7 @@ public extension OnuiAPI {
     }
 }
 
-public enum JobisDomain: String {
+enum JobisDomain: String {
     case auth
     case user
     case image = "img"

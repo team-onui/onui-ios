@@ -1,6 +1,6 @@
 import Foundation
 
-public enum AuthError: Error {
+enum AuthError: Error {
     case error
 }
 

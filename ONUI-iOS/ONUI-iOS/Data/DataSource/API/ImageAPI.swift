@@ -1,7 +1,7 @@
 import Foundation
 import Moya
 
-public enum ImageAPI {
+enum ImageAPI {
     case uploadImage(data: Data, fileName: String)
 }
 

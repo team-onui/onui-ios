@@ -3,7 +3,7 @@ import CombineMoya
 import Foundation
 import Moya
 
-open class BaseRemoteDataSource<API: OnuiAPI> {
+class BaseRemoteDataSource<API: OnuiAPI> {
     private let keychain: any Keychain
     private let provider: MoyaProvider<API>
     private let decoder = JSONDecoder()
