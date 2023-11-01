@@ -1,20 +1,20 @@
 import Foundation
 
 struct WriteDiaryRequestQuery: Encodable {
-    let name: String
+    let title: String
     let content: String
     let mood: MoodType
     let tagList: [String]
     let image: String?
 
     init(
-        name: String,
+        title: String,
         content: String,
         mood: MoodType,
         tagList: [String],
         image: String?
     ) {
-        self.name = name
+        self.title = title
         self.content = content
         self.mood = mood
         self.tagList = tagList
@@ -22,7 +22,7 @@ struct WriteDiaryRequestQuery: Encodable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case name
+        case title
         case content
         case mood
         case tagList = "tag_list"

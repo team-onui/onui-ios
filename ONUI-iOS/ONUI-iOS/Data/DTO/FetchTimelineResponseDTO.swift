@@ -1,13 +1,23 @@
 import Foundation
 
-struct FetchDiaryDetailResponseDTO: Decodable {
+struct FetchTimelinesResponseDTO: Decodable {
+    let content: [TimelineResponseDTO]
+
+    init(content: [TimelineResponseDTO]) {
+        self.content = content
+    }
+}
+
+struct TimelineResponseDTO: Decodable {
     let id: String
     let title: String
     let content: String
     let mood: MoodType
     let tagList: [String]
-    let createdAt: String
     let image: String?
+    let dayOfWeek: DayOfWeekType
+    let createdAt: String
+    let isUpdated: Bool
 
     init(
         id: String,
@@ -15,16 +25,20 @@ struct FetchDiaryDetailResponseDTO: Decodable {
         content: String,
         mood: MoodType,
         tagList: [String],
+        image: String?,
+        dayOfWeek: DayOfWeekType,
         createdAt: String,
-        image: String?
+        isUpdated: Bool
     ) {
         self.id = id
         self.title = title
         self.content = content
         self.mood = mood
         self.tagList = tagList
-        self.createdAt = createdAt
         self.image = image
+        self.dayOfWeek = dayOfWeek
+        self.createdAt = createdAt
+        self.isUpdated = isUpdated
     }
 
     enum CodingKeys: String, CodingKey {
@@ -33,21 +47,25 @@ struct FetchDiaryDetailResponseDTO: Decodable {
         case content
         case mood
         case tagList = "tag_list"
-        case createdAt = "created_at"
         case image
+        case dayOfWeek = "day_of_week"
+        case createdAt = "created_at"
+        case isUpdated = "is_updated"
     }
 }
 
-extension FetchDiaryDetailResponseDTO {
-    func toDomain() -> DiaryDetailEntity {
-        DiaryDetailEntity(
+extension TimelineResponseDTO {
+    func toDomain() -> TimelineEntity {
+        TimelineEntity(
             id: id,
             title: title,
             content: content,
             mood: mood,
             tagList: tagList,
+            image: image,
+            dayOfWeek: dayOfWeek,
             createdAt: createdAt,
-            image: image
+            isUpdated: isUpdated
         )
     }
 }

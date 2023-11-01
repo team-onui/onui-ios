@@ -2,7 +2,7 @@ import Foundation
 
 struct DiaryResponseDTO: Decodable {
     let id: String
-    let name: String
+    let title: String
     let content: String
     let mood: MoodType
     let tagList: [String]
@@ -10,14 +10,14 @@ struct DiaryResponseDTO: Decodable {
 
     init(
         id: String,
-        name: String,
+        title: String,
         content: String,
         mood: MoodType,
         tagList: [String],
         image: String?
     ) {
         self.id = id
-        self.name = name
+        self.title = title
         self.content = content
         self.mood = mood
         self.tagList = tagList
@@ -26,7 +26,7 @@ struct DiaryResponseDTO: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case id
-        case name
+        case title
         case content
         case mood
         case tagList = "tag_list"
@@ -38,7 +38,7 @@ extension DiaryResponseDTO {
     func toDomain() -> DiaryEntity {
         DiaryEntity(
             id: id,
-            name: name,
+            title: title,
             content: content,
             mood: mood,
             tagList: tagList,
