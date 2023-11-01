@@ -29,8 +29,8 @@ struct CalendarView: View {
             }
 
             LazyVGrid(columns: columns) {
-                ForEach(fetchWeekInKorean(), id: \.self) { week in
-                    Text(week)
+                ForEach(DayOfWeekType.allCases, id: \.self) { week in
+                    Text(week.toKorean())
                         .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
                 }
 
@@ -83,18 +83,6 @@ struct CalendarView: View {
         .padding(.vertical, 12)
         .padding(.horizontal, 16)
         .background(Color.GrayScale.Background.background)
-    }
-
-    func fetchWeekInKorean() -> [String] {
-        [
-            "월",
-            "화",
-            "수",
-            "목",
-            "금",
-            "토",
-            "일"
-        ]
     }
 
     func fetchAllDates() -> [CalendarSheetModel] {
