@@ -2,13 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BASE_URL</key>
+	<string>https://onui.kanghyuk.co.kr</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.797489065606-app51ou4l1ngvs2d9j0ikkom79fuateb</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Medium.ttf</string>
 		<string>Roboto-Bold.ttf</string>
 		<string>Roboto-Regular.ttf</string>
 	</array>
-	<key>BASE_URL</key>
-	<string>https://onui.kanghyuk.co.kr</string>
 </dict>
 </plist>
