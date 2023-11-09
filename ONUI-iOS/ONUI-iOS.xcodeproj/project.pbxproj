@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902212B22AFB31CC0054326E /* View+NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212B12AFB31CC0054326E /* View+NavigationBarColor.swift */; };
+		902212B42AFB33920054326E /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212B32AFB33920054326E /* DiaryView.swift */; };
+		902212B72AFB37D00054326E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 902212B62AFB37D00054326E /* Kingfisher */; };
+		902212BC2AFBCED30054326E /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212BB2AFBCED30054326E /* TimelineView.swift */; };
+		902212BE2AFBCEDA0054326E /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212BD2AFBCEDA0054326E /* TimelineViewModel.swift */; };
+		902212C12AFBD73F0054326E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 902212C02AFBD73F0054326E /* GoogleSignIn */; };
+		902212C32AFBD73F0054326E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 902212C22AFBD73F0054326E /* GoogleSignInSwift */; };
+		902212C62AFBE2AD0054326E /* TimelineCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212C52AFBE2AD0054326E /* TimelineCellView.swift */; };
+		902212C82AFBE5C60054326E /* TimelineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212C72AFBE5C60054326E /* TimelineDetailView.swift */; };
+		902212CB2AFC67F60054326E /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 902212CA2AFC67F60054326E /* SwiftKeychainWrapper */; };
 		906361242AD7AC8C0046D2B7 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */; };
 		906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906361272AD7AD880046D2B7 /* View+cornerRadius.swift */; };
 		907549942AE8B6AC009F5BBF /* MoodImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549932AE8B6AC009F5BBF /* MoodImage.swift */; };
@@ -24,6 +34,8 @@
 		907549B72AEF3569009F5BBF /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549B62AEF3569009F5BBF /* RecordViewModel.swift */; };
 		907803662ADEA0BA00B4A95D /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907803652ADEA0BA00B4A95D /* Image.xcassets */; };
 		907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907803682ADEA0DC00B4A95D /* OnuiImage.swift */; };
+		9098ED502AFB017F000CE966 /* PagingBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098ED4F2AFB017E000CE966 /* PagingBanner.swift */; };
+		9098ED522AFB300E000CE966 /* View+setBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098ED512AFB300E000CE966 /* View+setBackButton.swift */; };
 		90BCB9A22AD791EE0076459C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9A12AD791EE0076459C /* RootView.swift */; };
 		90BCB9AC2AD79D800076459C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9AB2AD79D800076459C /* MainView.swift */; };
 		90BCB9AE2AD79D840076459C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9AD2AD79D840076459C /* MainViewModel.swift */; };
@@ -40,6 +52,14 @@
 		90D3AC722AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */; };
 		90D3AC752AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */; };
 		90D3AC772AF1EDBD00D77CE5 /* PostTimelineUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC762AF1EDBD00D77CE5 /* PostTimelineUseCase.swift */; };
+		90D3AC7F2AF1FBAD00D77CE5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 90D3AC7E2AF1FBAD00D77CE5 /* Swinject */; };
+		90D3AC812AF1FBAD00D77CE5 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 90D3AC802AF1FBAD00D77CE5 /* Swinject-Dynamic */; };
+		90D3AC832AF1FBF100D77CE5 /* JwtDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC822AF1FBF100D77CE5 /* JwtDI.swift */; };
+		90D3AC862AF1FC3000D77CE5 /* DataSourceDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC852AF1FC3000D77CE5 /* DataSourceDI.swift */; };
+		90D3AC882AF1FCC100D77CE5 /* RepositoryDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC872AF1FCC100D77CE5 /* RepositoryDI.swift */; };
+		90D3AC8A2AF1FD9100D77CE5 /* UseCaseDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC892AF1FD9100D77CE5 /* UseCaseDI.swift */; };
+		90D3AC8D2AF1FF0700D77CE5 /* PresentationDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC8C2AF1FF0700D77CE5 /* PresentationDI.swift */; };
+		90D3AC912AF20AAA00D77CE5 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC902AF20AAA00D77CE5 /* DI.swift */; };
 		90E975DB2AD3D3F2008F8448 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90E975DA2AD3D3F2008F8448 /* CombineMoya */; };
 		90E975DD2AD3D3F2008F8448 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90E975DC2AD3D3F2008F8448 /* Moya */; };
 		90E975E22AD3D4AF008F8448 /* Primary.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E975E12AD3D4AF008F8448 /* Primary.xcassets */; };
@@ -119,6 +139,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		902212B12AFB31CC0054326E /* View+NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+NavigationBarColor.swift"; sourceTree = "<group>"; };
+		902212B32AFB33920054326E /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		902212BB2AFBCED30054326E /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		902212BD2AFBCEDA0054326E /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
+		902212C52AFBE2AD0054326E /* TimelineCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCellView.swift; sourceTree = "<group>"; };
+		902212C72AFBE5C60054326E /* TimelineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDetailView.swift; sourceTree = "<group>"; };
 		906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		906361272AD7AD880046D2B7 /* View+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+cornerRadius.swift"; sourceTree = "<group>"; };
 		907549932AE8B6AC009F5BBF /* MoodImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodImage.swift; sourceTree = "<group>"; };
@@ -135,6 +161,8 @@
 		907549B62AEF3569009F5BBF /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		907803652ADEA0BA00B4A95D /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		907803682ADEA0DC00B4A95D /* OnuiImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiImage.swift; sourceTree = "<group>"; };
+		9098ED4F2AFB017E000CE966 /* PagingBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingBanner.swift; sourceTree = "<group>"; };
+		9098ED512AFB300E000CE966 /* View+setBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+setBackButton.swift"; sourceTree = "<group>"; };
 		90BCB9A12AD791EE0076459C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		90BCB9AB2AD79D800076459C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		90BCB9AD2AD79D840076459C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -143,16 +171,6 @@
 		90BCBFFB2AA02E170067A284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90BCC0142AA03E660067A284 /* OnuiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiAPI.swift; sourceTree = "<group>"; };
 		90BCC0162AA03E6D0067A284 /* domainFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domainFile.swift; sourceTree = "<group>"; };
-		90D3AC632AF1D7B300D77CE5 /* TimelineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineAPI.swift; sourceTree = "<group>"; };
-		90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekType.swift; sourceTree = "<group>"; };
-		90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineError.swift; sourceTree = "<group>"; };
-		90D3AC692AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTimelineDataSource.swift; sourceTree = "<group>"; };
-		90D3AC6B2AF1E73100D77CE5 /* FetchTimelineResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineResponseDTO.swift; sourceTree = "<group>"; };
-		90D3AC6D2AF1E74400D77CE5 /* TimelineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEntity.swift; sourceTree = "<group>"; };
-		90D3AC6F2AF1ED0700D77CE5 /* TimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepository.swift; sourceTree = "<group>"; };
-		90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepositoryImpl.swift; sourceTree = "<group>"; };
-		90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelinesUseCase.swift; sourceTree = "<group>"; };
-		90D3AC762AF1EDBD00D77CE5 /* PostTimelineUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTimelineUseCase.swift; sourceTree = "<group>"; };
 		90E975E12AD3D4AF008F8448 /* Primary.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Primary.xcassets; sourceTree = "<group>"; };
 		90E975E62AD3D95C008F8448 /* GrayScale.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GrayScale.xcassets; sourceTree = "<group>"; };
 		90E975EA2AD3D9E9008F8448 /* ErrorVariant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ErrorVariant.xcassets; sourceTree = "<group>"; };
@@ -235,19 +253,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				902212B72AFB37D00054326E /* Kingfisher in Frameworks */,
 				90E975DD2AD3D3F2008F8448 /* Moya in Frameworks */,
 				90E975DB2AD3D3F2008F8448 /* CombineMoya in Frameworks */,
+				902212C32AFBD73F0054326E /* GoogleSignInSwift in Frameworks */,
 				907549AB2AED21FB009F5BBF /* SwiftUIFlowLayout in Frameworks */,
+				90D3AC812AF1FBAD00D77CE5 /* Swinject-Dynamic in Frameworks */,
+				90D3AC7F2AF1FBAD00D77CE5 /* Swinject in Frameworks */,
+				902212C12AFBD73F0054326E /* GoogleSignIn in Frameworks */,
+				902212CB2AFC67F60054326E /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		902212BA2AFBCEC40054326E /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				902212C42AFBE26F0054326E /* Components */,
+				902212BB2AFBCED30054326E /* TimelineView.swift */,
+				902212BD2AFBCEDA0054326E /* TimelineViewModel.swift */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		902212C42AFBE26F0054326E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				902212C52AFBE2AD0054326E /* TimelineCellView.swift */,
+				902212C72AFBE5C60054326E /* TimelineDetailView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		906361222AD7AC820046D2B7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */,
+				9098ED4F2AFB017E000CE966 /* PagingBanner.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -286,6 +330,8 @@
 				9075499F2AE8B9A8009F5BBF /* View+navigate.swift */,
 				907549A72AED0787009F5BBF /* View+frame.swift */,
 				907549B12AED4046009F5BBF /* View+hideKeyboard.swift */,
+				9098ED512AFB300E000CE966 /* View+setBackButton.swift */,
+				902212B12AFB31CC0054326E /* View+NavigationBarColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */,
+				90D3AC902AF20AAA00D77CE5 /* DI.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -400,6 +447,8 @@
 		90BCC0072AA030270067A284 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				902212BA2AFBCEC40054326E /* Timeline */,
+				90D3AC8B2AF1FEFE00D77CE5 /* DI */,
 				90ECEFE52AF0D06800FD0147 /* Calendar */,
 				907549A22AED068A009F5BBF /* Record */,
 				90BCB9AA2AD79D5B0076459C /* Main */,
@@ -427,6 +476,7 @@
 		90BCC00D2AA038B80067A284 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				90D3AC842AF1FC2B00D77CE5 /* DI */,
 				90ECF01D2AF1183300FD0147 /* Repository */,
 				90ECF0152AF1141400FD0147 /* DTO */,
 				90ECF0002AF0E8FD00FD0147 /* DataSource */,
@@ -452,15 +502,6 @@
 				90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */,
 			);
 			path = Signin;
-			sourceTree = "<group>";
-		};
-		90D3AC732AF1ED5600D77CE5 /* Timeline */ = {
-			isa = PBXGroup;
-			children = (
-				90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */,
-				90D3AC762AF1EDBD00D77CE5 /* PostTimelineUseCase.swift */,
-			);
-			path = Timeline;
 			sourceTree = "<group>";
 		};
 		90E975DE2AD3D426008F8448 /* DesignSystem */ = {
@@ -558,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				90ECEFEB2AF0D47000FD0147 /* CalendarSheetModel.swift */,
+				902212B32AFB33920054326E /* DiaryView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -579,6 +621,7 @@
 				90ECEFF82AF0E6D900FD0147 /* JwtAuthorizable.swift */,
 				90ECEFFA2AF0E6E700FD0147 /* JwtPlugin.swift */,
 				90ECEFFC2AF0E6F200FD0147 /* TokenDTO.swift */,
+				90D3AC822AF1FBF100D77CE5 /* JwtDI.swift */,
 			);
 			path = Jwt;
 			sourceTree = "<group>";
@@ -811,6 +854,12 @@
 				90E975DA2AD3D3F2008F8448 /* CombineMoya */,
 				90E975DC2AD3D3F2008F8448 /* Moya */,
 				907549AA2AED21FB009F5BBF /* SwiftUIFlowLayout */,
+				90D3AC7E2AF1FBAD00D77CE5 /* Swinject */,
+				90D3AC802AF1FBAD00D77CE5 /* Swinject-Dynamic */,
+				902212B62AFB37D00054326E /* Kingfisher */,
+				902212C02AFBD73F0054326E /* GoogleSignIn */,
+				902212C22AFBD73F0054326E /* GoogleSignInSwift */,
+				902212CA2AFC67F60054326E /* SwiftKeychainWrapper */,
 			);
 			productName = "ONUI-iOS";
 			productReference = 90BCBFF42AA02E160067A284 /* ONUI-iOS.app */;
@@ -843,6 +892,10 @@
 			packageReferences = (
 				90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */,
 				907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
+				90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */,
+				902212B52AFB37D00054326E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				902212BF2AFBD73F0054326E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				902212C92AFC67F60054326E /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 90BCBFF52AA02E160067A284 /* Products */;
 			projectDirPath = "";
@@ -882,8 +935,8 @@
 				90E975F02AD3DD51008F8448 /* PrimaryColor.swift in Sources */,
 				90ECEFE72AF0D07B00FD0147 /* CalendarView.swift in Sources */,
 				90ECF0222AF1185600FD0147 /* AuthRepository.swift in Sources */,
-				90D3AC772AF1EDBD00D77CE5 /* PostTimelineUseCase.swift in Sources */,
 				90ECF05C2AF1CC9200FD0147 /* FetchMoodOfMonthRequestQuery.swift in Sources */,
+				9098ED502AFB017F000CE966 /* PagingBanner.swift in Sources */,
 				90ECF0472AF1C81400FD0147 /* RemoteImageDataSource.swift in Sources */,
 				90ECEFF32AF0E66E00FD0147 /* JwtImpl.swift in Sources */,
 				90ECF05A2AF1CC3900FD0147 /* WriteDiaryRequestQuery.swift in Sources */,
@@ -892,6 +945,7 @@
 				90ECF0572AF1CB6800FD0147 /* DiaryError.swift in Sources */,
 				90ECEFFD2AF0E6F200FD0147 /* TokenDTO.swift in Sources */,
 				90ECEFF72AF0E6C200FD0147 /* MoyaLoggingPlugin.swift in Sources */,
+				90D3AC912AF20AAA00D77CE5 /* DI.swift in Sources */,
 				907549992AE8B941009F5BBF /* UIStateModel.swift in Sources */,
 				906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */,
 				90ECF04B2AF1C96A00FD0147 /* ImageRepository.swift in Sources */,
@@ -904,6 +958,7 @@
 				90ECF03E2AF1C3C800FD0147 /* UserRepository.swift in Sources */,
 				907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */,
 				90ECF0452AF1C4FF00FD0147 /* ImageError.swift in Sources */,
+				90D3AC832AF1FBF100D77CE5 /* JwtDI.swift in Sources */,
 				90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */,
 				90ECEFE92AF0D08400FD0147 /* CalendarViewModel.swift in Sources */,
 				90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */,
@@ -911,22 +966,26 @@
 				90ECF0492AF1C8DC00FD0147 /* UploadImageResponseDTO.swift in Sources */,
 				90D3AC722AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift in Sources */,
 				90ECEFFB2AF0E6E700FD0147 /* JwtPlugin.swift in Sources */,
+				902212BE2AFBCEDA0054326E /* TimelineViewModel.swift in Sources */,
 				90ECF0682AF1D28D00FD0147 /* DiaryDetailEntity.swift in Sources */,
 				90ECF0522AF1CA8800FD0147 /* DiaryAPI.swift in Sources */,
 				90D3AC642AF1D7B300D77CE5 /* TimelineAPI.swift in Sources */,
 				90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */,
 				90D3AC752AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift in Sources */,
 				90BCB9A22AD791EE0076459C /* RootView.swift in Sources */,
+				90D3AC8A2AF1FD9100D77CE5 /* UseCaseDI.swift in Sources */,
 				90ECF03C2AF1C3C100FD0147 /* UserRepositoryImpl.swift in Sources */,
 				90ECF06C2AF1D4D800FD0147 /* DiaryRepository.swift in Sources */,
 				90D3AC6A2AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift in Sources */,
 				907549B22AED4046009F5BBF /* View+hideKeyboard.swift in Sources */,
 				906361242AD7AC8C0046D2B7 /* BottomSheetView.swift in Sources */,
+				90D3AC8D2AF1FF0700D77CE5 /* PresentationDI.swift in Sources */,
 				90ECF03A2AF1C33600FD0147 /* RenameResponseDTO.swift in Sources */,
 				90ECF0502AF1C9D600FD0147 /* UploadImageUseCase.swift in Sources */,
 				90D3AC6E2AF1E74400D77CE5 /* TimelineEntity.swift in Sources */,
 				9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */,
 				90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */,
+				902212C62AFBE2AD0054326E /* TimelineCellView.swift in Sources */,
 				90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */,
 				907549A02AE8B9A8009F5BBF /* View+navigate.swift in Sources */,
 				90E976062AD40EAE008F8448 /* OnuiFontStyle.swift in Sources */,
@@ -939,6 +998,8 @@
 				90ECF0432AF1C4EA00FD0147 /* ImageAPI.swift in Sources */,
 				907549A82AED0787009F5BBF /* View+frame.swift in Sources */,
 				90ECF0412AF1C43F00FD0147 /* RenameUseCase.swift in Sources */,
+				90D3AC862AF1FC3000D77CE5 /* DataSourceDI.swift in Sources */,
+				902212C82AFBE5C60054326E /* TimelineDetailView.swift in Sources */,
 				90ECF0732AF1D59000FD0147 /* FetchMoodOfMonthUseCase.swift in Sources */,
 				9075499D2AE8B989009F5BBF /* Carousel.swift in Sources */,
 				90ECF02D2AF11A5200FD0147 /* RefreshTokenUseCase.swift in Sources */,
@@ -948,7 +1009,9 @@
 				90ECF01A2AF1148600FD0147 /* GoogleSigninUrlEntity.swift in Sources */,
 				907549A62AED06DA009F5BBF /* RecordView.swift in Sources */,
 				90ECF0312AF11BED00FD0147 /* UserAPI.swift in Sources */,
+				902212BC2AFBCED30054326E /* TimelineView.swift in Sources */,
 				90ECF0772AF1D5A200FD0147 /* PutDiaryUseCase.swift in Sources */,
+				9098ED522AFB300E000CE966 /* View+setBackButton.swift in Sources */,
 				90ECF0172AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift in Sources */,
 				90E975F42AD3E1B9008F8448 /* ErrorVariantColor.swift in Sources */,
 				90ECF0602AF1CF9D00FD0147 /* FetchMoodOfMonthResponseDTO.swift in Sources */,
@@ -963,9 +1026,7 @@
 				90ECF0292AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift in Sources */,
 				90E975F22AD3E157008F8448 /* GrayColor.swift in Sources */,
 				90ECF06E2AF1D4EA00FD0147 /* DiaryRepositoryImpl.swift in Sources */,
-				90D3AC682AF1E5A900D77CE5 /* TimelineError.swift in Sources */,
 				90BCB9AC2AD79D800076459C /* MainView.swift in Sources */,
-				90D3AC702AF1ED0700D77CE5 /* TimelineRepository.swift in Sources */,
 				90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */,
 				90ECF0712AF1D58100FD0147 /* WriteDiaryUseCase.swift in Sources */,
 				90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */,
@@ -1178,12 +1239,44 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		902212B52AFB37D00054326E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+		902212BF2AFBD73F0054326E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		902212C92AFC67F60054326E /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-flow-layout";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.5;
+			};
+		};
+		90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
 			};
 		};
 		90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */ = {
@@ -1197,10 +1290,40 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		902212B62AFB37D00054326E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902212B52AFB37D00054326E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		902212C02AFBD73F0054326E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902212BF2AFBD73F0054326E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		902212C22AFBD73F0054326E /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902212BF2AFBD73F0054326E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		902212CA2AFC67F60054326E /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902212C92AFC67F60054326E /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
 		907549AA2AED21FB009F5BBF /* SwiftUIFlowLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
 			productName = SwiftUIFlowLayout;
+		};
+		90D3AC7E2AF1FBAD00D77CE5 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		90D3AC802AF1FBAD00D77CE5 /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
 		};
 		90E975DA2AD3D3F2008F8448 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
