@@ -15,11 +15,7 @@ class BaseRemoteDataSource<API: OnuiAPI> {
     ) {
         self.keychain = keychain
 
-        #if DEV || STAGE
         self.provider = provider ?? MoyaProvider(plugins: [JwtPlugin(keychain: keychain), MoyaLogginPlugin()])
-        #else
-        self.provider = provider ?? MoyaProvider(plugins: [JwtPlugin(keychain: keychain)])
-        #endif
     }
 
     public func request<T: Decodable>(_ api: API, dto: T.Type) -> AnyPublisher<T, Error> {
@@ -75,11 +71,7 @@ private extension BaseRemoteDataSource {
 
     func tokenReissue() -> AnyPublisher<Void, Error> {
         let provider: MoyaProvider<AuthAPI>
-        #if DEV || STAGE
         provider = MoyaProvider(plugins: [JwtPlugin(keychain: keychain), MoyaLogginPlugin()])
-        #else
-        provider = MoyaProvider(plugins: [JwtPlugin(keychain: keychain)])
-        #endif
         let refreshToken = keychain.load(type: .refreshToken)
         let requestPublisher = provider.requestPublisher(.refreshToken(.init(refreshToken: refreshToken)))
             .map { _ in }

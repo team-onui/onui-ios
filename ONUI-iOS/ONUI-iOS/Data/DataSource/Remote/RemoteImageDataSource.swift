@@ -5,7 +5,7 @@ protocol RemoteImageDataSource {
     func uploadImage(data: Data, fileName: String) -> AnyPublisher<String, Error>
 }
 
-final class RemoteImagedataSourceImpl: BaseRemoteDataSource<ImageAPI>, RemoteImageDataSource {
+final class RemoteImageDataSourceImpl: BaseRemoteDataSource<ImageAPI>, RemoteImageDataSource {
     func uploadImage(data: Data, fileName: String) -> AnyPublisher<String, Error> {
         request(.uploadImage(data: data, fileName: fileName), dto: UploadImageResponseDTO.self)
             .map { $0.url }

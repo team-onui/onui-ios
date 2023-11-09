@@ -2,7 +2,7 @@ import Moya
 
 enum AuthAPI {
     case fetchGoogleSigninUrl
-    case googleSignin(code: String)
+    case googleSignin(token: String)
     case refreshToken(RefreshTokenRequestQuery)
 }
 
@@ -41,9 +41,9 @@ extension AuthAPI: OnuiAPI {
         case .fetchGoogleSigninUrl:
             return .requestPlain
 
-        case let .googleSignin(code):
+        case let .googleSignin(token):
             return .requestParameters(parameters: [
-                "code": code
+                "token": token
             ], encoding: URLEncoding.queryString)
 
         case let .refreshToken(req):

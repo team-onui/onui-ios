@@ -4,7 +4,7 @@ protocol LocalAuthDataSource {
     func clearTokens()
 }
 
-final class localAuthDataSourceImpl: LocalAuthDataSource {
+final class LocalAuthDataSourceImpl: LocalAuthDataSource {
     private let keychain: any Keychain
 
     public init(keychain: any Keychain) {

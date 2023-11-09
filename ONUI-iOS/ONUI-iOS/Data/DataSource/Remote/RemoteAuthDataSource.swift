@@ -2,7 +2,7 @@ import Combine
 
 protocol RemoteAuthDataSource {
     func fetchGoogleSigninUrl() -> AnyPublisher<GoogleSigninUrlEntity, Error>
-    func googleSignin(code: String) -> AnyPublisher<Void, Error>
+    func googleSignin(token: String) -> AnyPublisher<Void, Error>
     func refreshToken(req: RefreshTokenRequestQuery) -> AnyPublisher<Void, Error>
 }
 
@@ -13,8 +13,8 @@ final class RemoteAuthDataSourceImpl: BaseRemoteDataSource<AuthAPI>, RemoteAuthD
             .eraseToAnyPublisher()
     }
     
-    func googleSignin(code: String) -> AnyPublisher<Void, Error> {
-        request(.googleSignin(code: code))
+    func googleSignin(token: String) -> AnyPublisher<Void, Error> {
+        request(.googleSignin(token: token))
     }
     
     func refreshToken(req: RefreshTokenRequestQuery) -> AnyPublisher<Void, Error> {
