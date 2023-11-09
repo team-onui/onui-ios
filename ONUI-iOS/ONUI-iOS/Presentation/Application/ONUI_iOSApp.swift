@@ -1,11 +1,34 @@
 import SwiftUI
+import GoogleSignIn
+import Swinject
 
 @main
 struct ONUI_iOSApp: App {
+    private let startView: any View
+    private var assembler: Assembler!
+    
+    init() {
+        Roboto.registerFonts()
+
+        assembler = Assembler([
+            KeychainDI(),
+            DataSourceDI(),
+            RepositoryDI(),
+            UseCaseDI(),
+            PresentationDI()
+        ], container: DI.container)
+
+        startView = DI.container.resolve(SigninView.self)!
+        let config = GIDConfiguration(clientID: "797489065606-app51ou4l1ngvs2d9j0ikkom79fuateb.apps.googleusercontent.com")
+                
+        GIDSignIn.sharedInstance.configuration = config
+    }
+
     var body: some Scene {
         WindowGroup {
-            SigninView(viewModel: .init())
-                .onAppear(perform: Roboto.registerFonts)
+            NavigationView {
+                AnyView(startView)
+            }
         }
     }
 }
