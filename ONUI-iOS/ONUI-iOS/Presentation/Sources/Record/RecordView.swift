@@ -2,7 +2,9 @@ import SwiftUI
 import SwiftUIFlowLayout
 
 struct RecordView: View {
+    @State private var selectedImage: UIImage?
     @StateObject var viewModel: RecordViewModel
+    @Environment(\.dismiss) var dismiss
 
     init(
         viewModel: RecordViewModel
@@ -75,7 +77,7 @@ struct RecordView: View {
                                 
                                 if viewModel.answerStep == thisStep {
                                     nextButton(
-                                        isFill: viewModel.selectedImage != nil,
+                                        isFill: selectedImage != nil,
                                         step: thisStep
                                     )
                                     .padding(.horizontal, 16)
@@ -93,9 +95,12 @@ struct RecordView: View {
                                 nextButton(
                                     isFill: false,
                                     step: .share
-                                )
+                                ) {
+                                    viewModel.writeDiary(.skip)
+                                }
                                 
                                 Button {
+                                    viewModel.writeDiary(.share)
                                     hideKeyboard()
                                 } label: {
                                     Text("공유하기")
@@ -111,6 +116,11 @@ struct RecordView: View {
                         }
                     }
                 }
+            }
+            .padding(.vertical, 12)
+            .onChange(of: selectedImage) { image in
+                guard let image else { return }
+                viewModel.fetchImageUrl(image: image)
             }
             .onChange(of: viewModel.questionStep) { newValue in
                 viewModel.isLoadingChat = true
@@ -134,8 +144,11 @@ struct RecordView: View {
         .background(Color.GrayScale.Background.background)
         .imagePicker(
             isShow: $viewModel.isShowImagePicker,
-            uiImage: $viewModel.selectedImage
+            uiImage: $selectedImage
         )
+        .setBackButton(title: "기록하기") {
+            dismiss()
+        }
     }
 
     @ViewBuilder
@@ -172,7 +185,7 @@ struct RecordView: View {
     }
 
     @ViewBuilder
-    func nextButton(isFill: Bool, step: RecordStep) -> some View {
+    func nextButton(isFill: Bool, step: RecordStep, action: (() -> Void)? = nil) -> some View {
         var foregroundColor: Color {
             isFill ?
                 .Primary.onPrimaryContainer:
@@ -180,9 +193,11 @@ struct RecordView: View {
         }
 
         Button {
+            (action ?? { })()
+            
             hideKeyboard()
             withAnimation {
-                if step == viewModel.questionStep {
+                if step == viewModel.questionStep && viewModel.answerStep == viewModel.questionStep {
                     viewModel.questionStep.nextStep()
                 }
             }
@@ -213,7 +228,7 @@ struct RecordView: View {
                 ForEach(Mood.allCases, id: \.self) { mood in
                     Button {
                         viewModel.selectedMood = mood
-                        if viewModel.answerStep == .mood {
+                        if viewModel.answerStep == .mood && viewModel.answerStep == viewModel.answerStep {
                             withAnimation {
                                 viewModel.questionStep.nextStep()
                             }
@@ -244,6 +259,7 @@ struct RecordView: View {
         VStack(spacing: 8) {
             Text("오늘 어떤 감정을 느끼셨나요?")
                 .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
+                .padding(.horizontal, 16)
 
             FlowLayout(
                 mode: .scrollable,
@@ -252,16 +268,22 @@ struct RecordView: View {
                 itemSpacing: 4
             ) { moodDetail in
                 var foregroundColor: Color {
-                    moodDetail == viewModel.selectedMoodDetail ?
+                    viewModel.selectedMoodDetail.contains(moodDetail) ?
                         .Primary.primary :
                         .GrayScale.Outline.outline
                 }
 
                 Button {
-                    viewModel.selectedMoodDetail = moodDetail
-                    if viewModel.answerStep == .moodDetail {
-                        withAnimation {
-                            viewModel.questionStep.nextStep()
+                    if viewModel.selectedMoodDetail.contains(moodDetail) {
+                        viewModel.selectedMoodDetail.removeAll { $0 == moodDetail }
+                    } else {
+                        viewModel.selectedMoodDetail.append(moodDetail)
+                    }
+                    if viewModel.questionStep == viewModel.answerStep {
+                        if viewModel.answerStep == .moodDetail {
+                            withAnimation {
+                                viewModel.questionStep.nextStep()
+                            }
                         }
                     }
                 } label: {
@@ -276,8 +298,8 @@ struct RecordView: View {
                 }
                 .buttonStyle(.plain)
             }
+            .padding(.horizontal, 12)
         }
-        .padding(.horizontal, 16)
         .padding(.vertical, 12)
         .background(Color.GrayScale.Surface.surface)
         .cornerRadius(24)
@@ -313,7 +335,7 @@ struct RecordView: View {
             Text("사진을 선택해주세요")
                 .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
             
-            if let selectedImage = viewModel.selectedImage {
+            if let selectedImage = selectedImage {
                 Image(uiImage: selectedImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -347,8 +369,4 @@ struct RecordView: View {
         .cornerRadius(24)
         .padding(.horizontal, 16)
     }
-}
-
-#Preview {
-    RecordView(viewModel: .init())
 }

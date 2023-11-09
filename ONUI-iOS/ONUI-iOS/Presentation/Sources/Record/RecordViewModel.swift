@@ -31,15 +31,33 @@ enum RecordStep: Int {
 }
 
 final class RecordViewModel: BaseViewModel {
+    enum PostType {
+        case skip
+        case share
+    }
     @Published var isLoadingChat: Bool = false
     @Published var selectedMood: Mood?
-    @Published var selectedMoodDetail: String?
+    @Published var selectedMoodDetail: [String] = []
     @Published var whatisHappening: String = ""
     @Published var isShowImagePicker: Bool = false
-    @Published var selectedImage: UIImage?
+    @Published var selectedImageUrl: String?
 
     @Published var questionStep: RecordStep = .appear
     @Published var answerStep: RecordStep = .appear
+
+    private let writeDiaryUseCase: WriteDiaryUseCase
+    private let uploadImageUseCase: UploadImageUseCase
+    private let postTimelineUseCase: PostTimelineUseCase
+
+    init(
+        writeDiaryUseCase: WriteDiaryUseCase,
+        uploadImageUseCase: UploadImageUseCase,
+        postTimelineUseCase: PostTimelineUseCase
+    ) {
+        self.writeDiaryUseCase = writeDiaryUseCase
+        self.uploadImageUseCase = uploadImageUseCase
+        self.postTimelineUseCase = postTimelineUseCase
+    }
 
     let loadingTime = 0.5
     let moodDetailList: [String] = [
@@ -60,4 +78,48 @@ final class RecordViewModel: BaseViewModel {
         "짜증나요",
         "피곤해요"
     ]
+
+    func fetchImageUrl(image: UIImage) {
+        guard let data = image.pngData() else { return }
+        addCancellable(
+            uploadImageUseCase.execute(data: data, fileName: "toDidImage.png")
+        ) { [weak self] url in
+            self?.selectedImageUrl = url
+        }
+    }
+    private func postTimeline(id: String) {
+        addCancellable(postTimelineUseCase.execute(id: id)) { _ in }
+    }
+
+    func writeDiary(_ type: PostType) {
+        var mood: MoodType {
+            guard let selectedMood else { return .notBad }
+            switch selectedMood {
+            case .veryGood:
+                return .good
+            case .good:
+                return .fine
+            case .normal:
+                return .notBad
+            case .bad:
+                return .bad
+            case .veryBad:
+                return .worst
+            }
+        }
+        addCancellable(
+            writeDiaryUseCase.execute(
+                req: .init(
+                    content: whatisHappening,
+                    mood: mood,
+                    tagList: selectedMoodDetail,
+                    image: selectedImageUrl
+                )
+            )
+        ) { [weak self] res in
+            if type == .share {
+                self?.postTimeline(id: res.id)
+            }
+        }
+    }
 }
