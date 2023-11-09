@@ -7,7 +7,7 @@ struct GoogleSigninUseCase {
 
     private let authRepository: AuthRepository
 
-    func execute(code: String) -> AnyPublisher<Void, Error> {
-        authRepository.googleSignin(code: code)
+    func execute(token: String) -> AnyPublisher<Void, Error> {
+        authRepository.googleSignin(token: token)
     }
 }
