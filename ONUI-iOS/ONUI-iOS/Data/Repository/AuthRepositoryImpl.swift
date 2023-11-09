@@ -16,8 +16,8 @@ final class AuthRepositoryImpl: AuthRepository {
         remoteAuthDataSource.fetchGoogleSigninUrl()
     }
 
-    func googleSignin(code: String) -> AnyPublisher<Void, Error> {
-        remoteAuthDataSource.googleSignin(code: code)
+    func googleSignin(token: String) -> AnyPublisher<Void, Error> {
+        remoteAuthDataSource.googleSignin(token: token)
     }
 
     func refreshToken(req: RefreshTokenRequestQuery) -> AnyPublisher<Void, Error> {
