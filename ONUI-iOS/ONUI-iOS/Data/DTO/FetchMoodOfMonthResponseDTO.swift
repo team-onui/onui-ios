@@ -29,7 +29,7 @@ struct ShortDiaryResponseDTO: Decodable {
 extension FetchMoodOfMonthResponseDTO {
     func toDomain() -> [ShortDiaryEntity] {
         diaries.map {
-            ShortDiaryEntity(id: $0.id, mood: $0.mood, createdAt: $0.createdAt)
+            ShortDiaryEntity(id: $0.id, mood: $0.mood, createdDay: $0.createdAt.toDate().day)
         }
     }
 }
