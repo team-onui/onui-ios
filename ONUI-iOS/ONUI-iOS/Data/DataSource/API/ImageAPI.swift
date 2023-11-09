@@ -29,10 +29,7 @@ extension ImageAPI: OnuiAPI {
                 fileName: fileName
             )
 
-            return .uploadCompositeMultipart(
-                [multipartData],
-                urlParameters: ["type": "EXTENSION_FILE"]
-            )
+            return .uploadMultipart([multipartData])
         }
     }
 
