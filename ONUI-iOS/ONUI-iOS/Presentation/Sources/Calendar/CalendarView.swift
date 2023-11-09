@@ -1,31 +1,30 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State private var selectedDate: Date?
-    @State private var appearedDate: Date = .init()
-    private var appearedDateString: String {
-        "\(appearedDate.year)년 \(appearedDate.month)월"
-    }
+    @Environment(\.dismiss) var dismiss
+    @State private var sheetHeight: CGFloat = 300
+
+    @StateObject var viewModel: CalendarViewModel
     private let columns = Array(repeating: GridItem(.flexible()), count: 7)
     private let currentDate = Date()
 
+    init(viewModel: CalendarViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
-        VStack(spacing: 35) {
+        VStack(spacing: 12) {
             HStack(spacing: 8) {
                 OnuiImage(.chevronLeft)
                     .frame(24)
-                    .onTapGesture {
-                        appearedDate = appearedDate.adding(by: .month, value: -1)
-                    }
+                    .onTapGesture(perform: viewModel.moveToPreviousMonth)
 
-                Text(appearedDateString)
+                Text(viewModel.appearedDateString)
                     .onuiFont(.title(.medium), color: .black)
 
                 OnuiImage(.chevronRight)
                     .frame(24)
-                    .onTapGesture {
-                        appearedDate = appearedDate.adding(by: .month, value: 1)
-                    }
+                    .onTapGesture(perform: viewModel.moveToNextMonth)
             }
 
             LazyVGrid(columns: columns) {
@@ -34,7 +33,7 @@ struct CalendarView: View {
                         .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
                 }
 
-                ForEach(fetchAllDates(), id: \.id) { model in
+                ForEach(viewModel.allDates, id: \.id) { model in
                     VStack(spacing: 0) {
                         if model.day != -1 {
                             MoodImage(
@@ -46,7 +45,7 @@ struct CalendarView: View {
                             .frame(36)
                             .overlay {
                                 VStack {
-                                    if let selectedDate {
+                                    if let selectedDate = viewModel.selectedDate {
                                         if selectedDate.isSameDay(model.date) {
                                             OnuiImage(.moodBorder)
                                                 .frame(36)
@@ -65,11 +64,10 @@ struct CalendarView: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background {
-                        Color.white
-                    }
+                    .background(Color.white)
                     .onTapGesture {
-                        selectedDate = model.date
+                        viewModel.selectedDate = model.date
+                        viewModel.fetchDiaryDetail(id: model.id)
                     }
                 }
             }
@@ -78,25 +76,27 @@ struct CalendarView: View {
             .background(Color.GrayScale.Surface.surface)
             .cornerRadius(24)
 
-            Spacer()
+            Spacer().overlay {
+                GeometryReader { proxy in
+                    Color.clear.onChange(of: proxy.size.height) { height in
+                        sheetHeight = height
+                    }
+                }
+            }
         }
         .padding(.vertical, 12)
         .padding(.horizontal, 16)
         .background(Color.GrayScale.Background.background)
-    }
-
-    func fetchAllDates() -> [CalendarSheetModel] {
-        let calendar = Calendar.current
-        var days = appearedDate.fetchAllDatesInCurrentMonth()
-            .map { CalendarSheetModel(date: $0, day: $0.day) }
-        let firstWeekday = calendar.component(.weekday, from: days.first?.date ?? .init())
-        for _ in 0..<firstWeekday - 1 {
-            days.insert(CalendarSheetModel(date: Date(), day: -1), at: 0)
+        .setBackButton(title: "캘린더") {
+            dismiss()
         }
-        return days
+        .onAppear(perform: viewModel.onAppear)
+        .sheet(isPresented: .constant(true)) {
+            DiaryView(currentDate: viewModel.selectedDate ?? Date(), diaryDetail: viewModel.sheetDetail)
+                .presentationDetents([.height(sheetHeight), .large])
+                .presentationCornerRadius(32)
+                .interactiveDismissDisabled()
+                .presentationBackgroundInteraction(.enabled)
+        }
     }
-}
-
-#Preview {
-    CalendarView()
 }
