@@ -171,6 +171,22 @@
 		90BCBFFB2AA02E170067A284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90BCC0142AA03E660067A284 /* OnuiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiAPI.swift; sourceTree = "<group>"; };
 		90BCC0162AA03E6D0067A284 /* domainFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domainFile.swift; sourceTree = "<group>"; };
+		90D3AC632AF1D7B300D77CE5 /* TimelineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineAPI.swift; sourceTree = "<group>"; };
+		90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekType.swift; sourceTree = "<group>"; };
+		90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineError.swift; sourceTree = "<group>"; };
+		90D3AC692AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTimelineDataSource.swift; sourceTree = "<group>"; };
+		90D3AC6B2AF1E73100D77CE5 /* FetchTimelineResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineResponseDTO.swift; sourceTree = "<group>"; };
+		90D3AC6D2AF1E74400D77CE5 /* TimelineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEntity.swift; sourceTree = "<group>"; };
+		90D3AC6F2AF1ED0700D77CE5 /* TimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepository.swift; sourceTree = "<group>"; };
+		90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepositoryImpl.swift; sourceTree = "<group>"; };
+		90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelinesUseCase.swift; sourceTree = "<group>"; };
+		90D3AC762AF1EDBD00D77CE5 /* PostTimelineUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTimelineUseCase.swift; sourceTree = "<group>"; };
+		90D3AC822AF1FBF100D77CE5 /* JwtDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtDI.swift; sourceTree = "<group>"; };
+		90D3AC852AF1FC3000D77CE5 /* DataSourceDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceDI.swift; sourceTree = "<group>"; };
+		90D3AC872AF1FCC100D77CE5 /* RepositoryDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDI.swift; sourceTree = "<group>"; };
+		90D3AC892AF1FD9100D77CE5 /* UseCaseDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDI.swift; sourceTree = "<group>"; };
+		90D3AC8C2AF1FF0700D77CE5 /* PresentationDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDI.swift; sourceTree = "<group>"; };
+		90D3AC902AF20AAA00D77CE5 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		90E975E12AD3D4AF008F8448 /* Primary.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Primary.xcassets; sourceTree = "<group>"; };
 		90E975E62AD3D95C008F8448 /* GrayScale.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GrayScale.xcassets; sourceTree = "<group>"; };
 		90E975EA2AD3D9E9008F8448 /* ErrorVariant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ErrorVariant.xcassets; sourceTree = "<group>"; };
@@ -502,6 +518,33 @@
 				90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */,
 			);
 			path = Signin;
+			sourceTree = "<group>";
+		};
+		90D3AC732AF1ED5600D77CE5 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */,
+				90D3AC762AF1EDBD00D77CE5 /* PostTimelineUseCase.swift */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		90D3AC842AF1FC2B00D77CE5 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				90D3AC852AF1FC3000D77CE5 /* DataSourceDI.swift */,
+				90D3AC872AF1FCC100D77CE5 /* RepositoryDI.swift */,
+				90D3AC892AF1FD9100D77CE5 /* UseCaseDI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		90D3AC8B2AF1FEFE00D77CE5 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				90D3AC8C2AF1FF0700D77CE5 /* PresentationDI.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		90E975DE2AD3D426008F8448 /* DesignSystem */ = {
@@ -935,6 +978,8 @@
 				90E975F02AD3DD51008F8448 /* PrimaryColor.swift in Sources */,
 				90ECEFE72AF0D07B00FD0147 /* CalendarView.swift in Sources */,
 				90ECF0222AF1185600FD0147 /* AuthRepository.swift in Sources */,
+				90D3AC772AF1EDBD00D77CE5 /* PostTimelineUseCase.swift in Sources */,
+				902212B42AFB33920054326E /* DiaryView.swift in Sources */,
 				90ECF05C2AF1CC9200FD0147 /* FetchMoodOfMonthRequestQuery.swift in Sources */,
 				9098ED502AFB017F000CE966 /* PagingBanner.swift in Sources */,
 				90ECF0472AF1C81400FD0147 /* RemoteImageDataSource.swift in Sources */,
@@ -1026,7 +1071,11 @@
 				90ECF0292AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift in Sources */,
 				90E975F22AD3E157008F8448 /* GrayColor.swift in Sources */,
 				90ECF06E2AF1D4EA00FD0147 /* DiaryRepositoryImpl.swift in Sources */,
+				902212B22AFB31CC0054326E /* View+NavigationBarColor.swift in Sources */,
+				90D3AC682AF1E5A900D77CE5 /* TimelineError.swift in Sources */,
 				90BCB9AC2AD79D800076459C /* MainView.swift in Sources */,
+				90D3AC882AF1FCC100D77CE5 /* RepositoryDI.swift in Sources */,
+				90D3AC702AF1ED0700D77CE5 /* TimelineRepository.swift in Sources */,
 				90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */,
 				90ECF0712AF1D58100FD0147 /* WriteDiaryUseCase.swift in Sources */,
 				90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */,
