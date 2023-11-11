@@ -5,6 +5,7 @@ protocol RemoteDiaryDataSource {
     func fetchMoodOfMonth(year: Int, month: Int) -> AnyPublisher<[ShortDiaryEntity], Error>
     func fetchDiaryDetail(id: String) -> AnyPublisher<DiaryDetailEntity, Error>
     func putDiary(req: PutDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error>
+    func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error>
 }
 
 final class RemoteDiaryDataSourceImpl: BaseRemoteDataSource<DiaryAPI>, RemoteDiaryDataSource {
@@ -28,6 +29,12 @@ final class RemoteDiaryDataSourceImpl: BaseRemoteDataSource<DiaryAPI>, RemoteDia
 
     func putDiary(req: PutDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error> {
         request(.putDiary(req), dto: DiaryResponseDTO.self)
+            .map { $0.toDomain() }
+            .eraseToAnyPublisher()
+    }
+
+    func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error> {
+        request(.fetchMoodOfWeek, dto: FetchMoodOfMonthResponseDTO.self)
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }

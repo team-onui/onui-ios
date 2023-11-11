@@ -5,6 +5,7 @@ enum DiaryAPI {
     case fetchMoodOfMonth(year: Int, month: Int)
     case fetchDiaryDetail(id: String)
     case putDiary(PutDiaryRequestQuery)
+    case fetchMoodOfWeek
 }
 
 extension DiaryAPI: OnuiAPI {
@@ -21,6 +22,9 @@ extension DiaryAPI: OnuiAPI {
 
         case .fetchDiaryDetail:
             return "/detail"
+
+        case .fetchMoodOfWeek:
+            return "/ago"
         }
     }
 
@@ -29,8 +33,8 @@ extension DiaryAPI: OnuiAPI {
         case .writeDiary:
             return .post
 
-        case .fetchMoodOfMonth, .fetchDiaryDetail:
-            return .post
+        case .fetchMoodOfMonth, .fetchDiaryDetail, .fetchMoodOfWeek:
+            return .get
 
         case .putDiary:
             return .put
@@ -55,6 +59,9 @@ extension DiaryAPI: OnuiAPI {
 
         case let .putDiary(req):
             return .requestJSONEncodable(req)
+
+        case .fetchMoodOfWeek:
+            return .requestPlain
         }
     }
 

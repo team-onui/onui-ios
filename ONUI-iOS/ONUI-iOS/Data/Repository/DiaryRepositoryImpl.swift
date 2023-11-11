@@ -23,4 +23,8 @@ struct DiaryRepositoryImpl: DiaryRepository {
     func putDiary(req: PutDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error> {
         remoteDiaryDataSource.putDiary(req: req)
     }
+
+    func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error> {
+        remoteDiaryDataSource.fetchMoodOfWeek()
+    }
 }

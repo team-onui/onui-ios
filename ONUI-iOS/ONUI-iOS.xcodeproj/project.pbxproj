@@ -89,13 +89,11 @@
 		90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF00C2AF1112500FD0147 /* AuthError.swift */; };
 		90ECF0112AF1122000FD0147 /* RefreshTokenRequestQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */; };
 		90ECF0142AF113C600FD0147 /* RemoteAuthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */; };
-		90ECF0172AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0162AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift */; };
-		90ECF01A2AF1148600FD0147 /* GoogleSigninUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0192AF1148600FD0147 /* GoogleSigninUrlEntity.swift */; };
 		90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */; };
 		90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */; };
 		90ECF0222AF1185600FD0147 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0212AF1185600FD0147 /* AuthRepository.swift */; };
 		90ECF0252AF118ED00FD0147 /* LocalAuthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0242AF118ED00FD0147 /* LocalAuthDataSource.swift */; };
-		90ECF0292AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0282AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift */; };
+		90ECF0292AF119CF00FD0147 /* AppleSigninUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0282AF119CF00FD0147 /* AppleSigninUseCase.swift */; };
 		90ECF02B2AF11A3D00FD0147 /* GoogleSigninUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF02A2AF11A3D00FD0147 /* GoogleSigninUseCase.swift */; };
 		90ECF02D2AF11A5200FD0147 /* RefreshTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF02C2AF11A5200FD0147 /* RefreshTokenUseCase.swift */; };
 		90ECF02F2AF11A8000FD0147 /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF02E2AF11A8000FD0147 /* LogoutUseCase.swift */; };
@@ -136,6 +134,7 @@
 		90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */; };
 		90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */; };
 		90F3671F2AC3C6E800BE5A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90BCBFFB2AA02E170067A284 /* Assets.xcassets */; };
+		90FA835B2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA835A2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -216,13 +215,11 @@
 		90ECF00C2AF1112500FD0147 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequestQuery.swift; sourceTree = "<group>"; };
 		90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthDataSource.swift; sourceTree = "<group>"; };
-		90ECF0162AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGoogleSigninUrlResponseDTO.swift; sourceTree = "<group>"; };
-		90ECF0192AF1148600FD0147 /* GoogleSigninUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninUrlEntity.swift; sourceTree = "<group>"; };
 		90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBaseDataSource.swift; sourceTree = "<group>"; };
 		90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
 		90ECF0212AF1185600FD0147 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		90ECF0242AF118ED00FD0147 /* LocalAuthDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthDataSource.swift; sourceTree = "<group>"; };
-		90ECF0282AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGoogleSigninUrlUseCase.swift; sourceTree = "<group>"; };
+		90ECF0282AF119CF00FD0147 /* AppleSigninUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSigninUseCase.swift; sourceTree = "<group>"; };
 		90ECF02A2AF11A3D00FD0147 /* GoogleSigninUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninUseCase.swift; sourceTree = "<group>"; };
 		90ECF02C2AF11A5200FD0147 /* RefreshTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenUseCase.swift; sourceTree = "<group>"; };
 		90ECF02E2AF11A8000FD0147 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
@@ -262,6 +259,7 @@
 		90F3670E2AC3C56200BE5A5F /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		90FA835A2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMoodOfWeekUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -738,7 +736,6 @@
 		90ECF0152AF1141400FD0147 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				90ECF0162AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift */,
 				90ECF0392AF1C33600FD0147 /* RenameResponseDTO.swift */,
 				90ECF0482AF1C8DC00FD0147 /* UploadImageResponseDTO.swift */,
 				90ECF05D2AF1CE2000FD0147 /* DiaryResponseDTO.swift */,
@@ -752,7 +749,6 @@
 		90ECF0182AF1147000FD0147 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				90ECF0192AF1148600FD0147 /* GoogleSigninUrlEntity.swift */,
 				90ECF0612AF1D02E00FD0147 /* DiaryEntity.swift */,
 				90ECF0632AF1D08900FD0147 /* ShortDiaryEntity.swift */,
 				90ECF0672AF1D28D00FD0147 /* DiaryDetailEntity.swift */,
@@ -808,7 +804,7 @@
 		90ECF0272AF119C200FD0147 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				90ECF0282AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift */,
+				90ECF0282AF119CF00FD0147 /* AppleSigninUseCase.swift */,
 				90ECF02A2AF11A3D00FD0147 /* GoogleSigninUseCase.swift */,
 				90ECF02C2AF11A5200FD0147 /* RefreshTokenUseCase.swift */,
 				90ECF02E2AF11A8000FD0147 /* LogoutUseCase.swift */,
@@ -865,6 +861,7 @@
 				90ECF0742AF1D59800FD0147 /* FetchDiaryDetailUseCase.swift */,
 				90ECF0722AF1D59000FD0147 /* FetchMoodOfMonthUseCase.swift */,
 				90ECF0762AF1D5A200FD0147 /* PutDiaryUseCase.swift */,
+				90FA835A2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -1031,6 +1028,7 @@
 				9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */,
 				90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */,
 				902212C62AFBE2AD0054326E /* TimelineCellView.swift in Sources */,
+				90FA835B2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift in Sources */,
 				90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */,
 				907549A02AE8B9A8009F5BBF /* View+navigate.swift in Sources */,
 				90E976062AD40EAE008F8448 /* OnuiFontStyle.swift in Sources */,
@@ -1051,13 +1049,11 @@
 				907549942AE8B6AC009F5BBF /* MoodImage.swift in Sources */,
 				90ECF0552AF1CB2100FD0147 /* MoodType.swift in Sources */,
 				90E976042AD40EA7008F8448 /* OnuiFont.swift in Sources */,
-				90ECF01A2AF1148600FD0147 /* GoogleSigninUrlEntity.swift in Sources */,
 				907549A62AED06DA009F5BBF /* RecordView.swift in Sources */,
 				90ECF0312AF11BED00FD0147 /* UserAPI.swift in Sources */,
 				902212BC2AFBCED30054326E /* TimelineView.swift in Sources */,
 				90ECF0772AF1D5A200FD0147 /* PutDiaryUseCase.swift in Sources */,
 				9098ED522AFB300E000CE966 /* View+setBackButton.swift in Sources */,
-				90ECF0172AF1142200FD0147 /* FetchGoogleSigninUrlResponseDTO.swift in Sources */,
 				90E975F42AD3E1B9008F8448 /* ErrorVariantColor.swift in Sources */,
 				90ECF0602AF1CF9D00FD0147 /* FetchMoodOfMonthResponseDTO.swift in Sources */,
 				90ECF00A2AF1107C00FD0147 /* AuthAPI.swift in Sources */,
@@ -1068,7 +1064,7 @@
 				90D3AC662AF1E4C200D77CE5 /* DayOfWeekType.swift in Sources */,
 				90ECF0362AF11C9B00FD0147 /* UserError.swift in Sources */,
 				90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */,
-				90ECF0292AF119CF00FD0147 /* FetchGoogleSigninUrlUseCase.swift in Sources */,
+				90ECF0292AF119CF00FD0147 /* AppleSigninUseCase.swift in Sources */,
 				90E975F22AD3E157008F8448 /* GrayColor.swift in Sources */,
 				90ECF06E2AF1D4EA00FD0147 /* DiaryRepositoryImpl.swift in Sources */,
 				902212B22AFB31CC0054326E /* View+NavigationBarColor.swift in Sources */,

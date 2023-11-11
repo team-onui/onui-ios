@@ -16,7 +16,7 @@ public final class PresentationDI: Assembly {
         }
 
         container.register(MainViewModel.self) { resolver in
-            MainViewModel()
+            MainViewModel(fetchMoodOfWeekUseCase: resolver.resolve(FetchMoodOfWeekUseCase.self)!)
         }
         container.register(MainView.self) { resolver in
             MainView(viewModel: resolver.resolve(MainViewModel.self)!)

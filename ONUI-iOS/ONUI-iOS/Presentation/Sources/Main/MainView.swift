@@ -10,16 +10,7 @@ struct MainView: View {
     private let calendarView = DI.container.resolve(CalendarView.self)!
     private let recordView = DI.container.resolve(RecordView.self)!
     private let timelineView = DI.container.resolve(TimelineView.self)!
-    private let moodDummy: [MoodImage.Image] = [
-        .veryBad,
-        .bad,
-        .normal,
-        .good,
-        .veryGood,
-        .good,
-        .veryBad
-    ]
-    
+
     init(viewModel: MainViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -135,8 +126,34 @@ struct MainView: View {
                                 HStack(spacing: 0) {
                                     Spacer()
 
-                                    ForEach(moodDummy, id: \.self) { mood in
-                                        MoodImage(mood, isOn: true)
+                                    ForEach(viewModel.moodOfWeekList, id: \.id) { mood in
+                                        var moodType: Mood {
+                                            let mood = mood.mood
+                                            switch mood {
+                                            case .worst:
+                                                return .veryBad
+                                            case .bad:
+                                                return .bad
+                                            case .notBad:
+                                                return .normal
+                                            case .fine:
+                                                return .good
+                                            case .good:
+                                                return .veryGood
+                                            }
+                                        }
+                                        MoodImage(
+                                            moodType.moodImage(),
+                                            isOn: true
+                                        )
+                                        .frame(width: 40, height: 40)
+
+                                        Spacer()
+                                    }
+
+                                    ForEach(0..<7 - viewModel.moodOfWeekList.count, id: \.self) { _ in
+                                        MoodImage(.normal, isOn: true, renderingMode: .template)
+                                            .foregroundColor(Color.GrayScale.gray3)
                                             .frame(width: 40, height: 40)
 
                                         Spacer()
@@ -182,6 +199,7 @@ struct MainView: View {
                 .background(Color.GrayScale.Surface.surface)
             }
             .navigate(to: calendarView, when: $viewModel.isNavigatedToCalendar)
+            .onAppear(perform: viewModel.onAppear)
         }
     }
     
@@ -222,8 +240,4 @@ struct MainView: View {
         .background(Color.GrayScale.Surface.surface)
         .cornerRadius(32)
     }
-}
-
-#Preview {
-    MainView(viewModel: .init())
 }
