@@ -6,7 +6,10 @@ public final class PresentationDI: Assembly {
 
     public func assemble(container: Container) {
         container.register(SigninViewModel.self) { resolver in
-            SigninViewModel(googleSigninUseCase: resolver.resolve(GoogleSigninUseCase.self)!)
+            SigninViewModel(
+                googleSigninUseCase: resolver.resolve(GoogleSigninUseCase.self)!,
+                appleSigninUseCase: resolver.resolve(AppleSigninUseCase.self)!
+            )
         }
         container.register(SigninView.self) { resolver in
             SigninView(viewModel: resolver.resolve(SigninViewModel.self)!)

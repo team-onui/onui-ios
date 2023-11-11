@@ -123,17 +123,9 @@ struct SigninView: View {
         } onCompletion: { result in
             switch result {
             case .success(let authResults):
-                guard let appleIDCredential = authResults.credential as? ASAuthorizationAppleIDCredential else { return }
-                let UserIdentifier = appleIDCredential.user
-                let fullName = appleIDCredential.fullName
-                let name =  (fullName?.familyName ?? "") + (fullName?.givenName ?? "")
-                let email = appleIDCredential.email
-                let IdentityToken = String(data: appleIDCredential.identityToken!, encoding: .utf8)
-                let AuthorizationCode = String(data: appleIDCredential.authorizationCode!, encoding: .utf8)
-                print("ID Token:", IdentityToken)
-                print("authorizationCode:", AuthorizationCode)
-                print("name:", name, fullName)
-                print("email:", email)
+                guard let appleIDCredential = authResults.credential as? ASAuthorizationAppleIDCredential,
+                      let identityToken = String(data: appleIDCredential.identityToken!, encoding: .utf8) else { return }
+                viewModel.appleSignin(accessToken: identityToken)
             case .failure(let error):
                 print(error.localizedDescription)
                 print("error")

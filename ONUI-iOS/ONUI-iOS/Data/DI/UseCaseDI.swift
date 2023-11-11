@@ -6,13 +6,13 @@ public final class UseCaseDI: Assembly {
 
     public func assemble(container: Container) {
         // Auth
-        container.register(FetchGoogleSigninUrlUseCase.self) { resolver in
-            FetchGoogleSigninUrlUseCase(
+        container.register(GoogleSigninUseCase.self) { resolver in
+            GoogleSigninUseCase(
                 authRepository: resolver.resolve(AuthRepository.self)!
             )
         }
-        container.register(GoogleSigninUseCase.self) { resolver in
-            GoogleSigninUseCase(
+        container.register(AppleSigninUseCase.self) { resolver in
+            AppleSigninUseCase(
                 authRepository: resolver.resolve(AuthRepository.self)!
             )
         }
@@ -59,6 +59,11 @@ public final class UseCaseDI: Assembly {
         }
         container.register(PutDiaryUseCase.self) { resolver in
             PutDiaryUseCase(
+                diaryRepository: resolver.resolve(DiaryRepository.self)!
+            )
+        }
+        container.register(FetchMoodOfWeekUseCase.self) { resolver in
+            FetchMoodOfWeekUseCase(
                 diaryRepository: resolver.resolve(DiaryRepository.self)!
             )
         }

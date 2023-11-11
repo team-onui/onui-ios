@@ -1,8 +1,8 @@
 import Moya
 
 enum AuthAPI {
-    case fetchGoogleSigninUrl
     case googleSignin(token: String)
+    case appleSignin(token: String)
     case refreshToken(RefreshTokenRequestQuery)
 }
 
@@ -15,11 +15,11 @@ extension AuthAPI: OnuiAPI {
 
     var urlPath: String {
         switch self {
-        case .fetchGoogleSigninUrl:
-            return "/google/link"
-
         case .googleSignin:
-            return "/oauth/google/token"
+            return "/google"
+
+        case .appleSignin:
+            return "/apple"
 
         case .refreshToken:
             return "/token"
@@ -28,7 +28,7 @@ extension AuthAPI: OnuiAPI {
 
     var method: Method {
         switch self {
-        case .fetchGoogleSigninUrl, .googleSignin:
+        case .googleSignin, .appleSignin:
             return .get
 
         case .refreshToken:
@@ -38,10 +38,12 @@ extension AuthAPI: OnuiAPI {
 
     var task: Task {
         switch self {
-        case .fetchGoogleSigninUrl:
-            return .requestPlain
-
         case let .googleSignin(token):
+            return .requestParameters(parameters: [
+                "token": token
+            ], encoding: URLEncoding.queryString)
+
+        case let .appleSignin(token):
             return .requestParameters(parameters: [
                 "token": token
             ], encoding: URLEncoding.queryString)

@@ -1,13 +1,13 @@
 import Combine
 
-struct FetchGoogleSigninUrlUseCase {
+struct AppleSigninUseCase {
     init(authRepository: AuthRepository) {
         self.authRepository = authRepository
     }
 
     private let authRepository: AuthRepository
 
-    func execute() -> AnyPublisher<GoogleSigninUrlEntity, Error> {
-        authRepository.fetchGoogleSigninUrl()
+    func execute(token: String) -> AnyPublisher<Void, Error> {
+        authRepository.appleSignin(token: token)
     }
 }

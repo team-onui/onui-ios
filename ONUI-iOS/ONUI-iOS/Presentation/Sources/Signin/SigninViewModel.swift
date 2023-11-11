@@ -5,9 +5,11 @@ final class SigninViewModel: BaseViewModel {
     @Published var isNavigatedToMain: Bool = false
 
     private let googleSigninUseCase: GoogleSigninUseCase
+    private let appleSigninUseCase: AppleSigninUseCase
 
-    init(googleSigninUseCase: GoogleSigninUseCase) {
+    init(googleSigninUseCase: GoogleSigninUseCase, appleSigninUseCase: AppleSigninUseCase) {
         self.googleSigninUseCase = googleSigninUseCase
+        self.appleSigninUseCase = appleSigninUseCase
     }
 
     func googleSigninButtonDidTap() {
@@ -21,6 +23,12 @@ final class SigninViewModel: BaseViewModel {
 
     private func googleSignin(accessToken: String) {
         addCancellable(googleSigninUseCase.execute(token: accessToken)) { [weak self] _ in
+            self?.isNavigatedToMain.toggle()
+        }
+    }
+
+    func appleSignin(accessToken: String) {
+        addCancellable(appleSigninUseCase.execute(token: accessToken)) { [weak self] _ in
             self?.isNavigatedToMain.toggle()
         }
     }

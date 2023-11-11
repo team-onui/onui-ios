@@ -11,13 +11,12 @@ final class AuthRepositoryImpl: AuthRepository {
         self.remoteAuthDataSource = remoteAuthDataSource
         self.localAuthDataSource = localAuthDataSource
     }
-
-    func fetchGoogleSigninUrl() -> AnyPublisher<GoogleSigninUrlEntity, Error> {
-        remoteAuthDataSource.fetchGoogleSigninUrl()
-    }
-
     func googleSignin(token: String) -> AnyPublisher<Void, Error> {
         remoteAuthDataSource.googleSignin(token: token)
+    }
+
+    func appleSignin(token: String) -> AnyPublisher<Void, Error> {
+        remoteAuthDataSource.appleSignin(token: token)
     }
 
     func refreshToken(req: RefreshTokenRequestQuery) -> AnyPublisher<Void, Error> {
