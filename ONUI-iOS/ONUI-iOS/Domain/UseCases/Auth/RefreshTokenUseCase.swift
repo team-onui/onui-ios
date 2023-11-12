@@ -7,7 +7,7 @@ struct RefreshTokenUseCase {
 
     private let authRepository: AuthRepository
 
-    func execute(req: RefreshTokenRequestQuery) -> AnyPublisher<Void, Error> {
-        authRepository.refreshToken(req: req)
+    func execute(token: String) -> AnyPublisher<Void, Error> {
+        authRepository.refreshToken(token: token)
     }
 }

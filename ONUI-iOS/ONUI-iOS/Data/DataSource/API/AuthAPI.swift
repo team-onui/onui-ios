@@ -3,7 +3,7 @@ import Moya
 enum AuthAPI {
     case googleSignin(token: String)
     case appleSignin(token: String)
-    case refreshToken(RefreshTokenRequestQuery)
+    case refreshToken(token: String)
 }
 
 extension AuthAPI: OnuiAPI {
@@ -22,14 +22,14 @@ extension AuthAPI: OnuiAPI {
             return "/apple"
 
         case .refreshToken:
-            return "/token"
+            return "/re-issue"
         }
     }
 
     var method: Method {
         switch self {
         case .googleSignin, .appleSignin:
-            return .get
+            return .post
 
         case .refreshToken:
             return .put
@@ -48,8 +48,10 @@ extension AuthAPI: OnuiAPI {
                 "token": token
             ], encoding: URLEncoding.queryString)
 
-        case let .refreshToken(req):
-            return .requestJSONEncodable(req)
+        case let .refreshToken(token):
+            return .requestParameters(parameters: [
+                    "token": token
+                ], encoding: URLEncoding.queryString)
         }
     }
 

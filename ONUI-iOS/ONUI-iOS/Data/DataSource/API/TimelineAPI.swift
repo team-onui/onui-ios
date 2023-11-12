@@ -2,7 +2,7 @@ import Moya
 
 enum TimelineAPI {
     case postTimeline(id: String)
-    case fetchTimelines(index: Int, size: Int, dayOfWeek: DayOfWeekType)
+    case fetchTimelines(index: Int, size: Int, date: String)
 }
 
 extension TimelineAPI: OnuiAPI {
@@ -33,11 +33,11 @@ extension TimelineAPI: OnuiAPI {
                 "id": id
             ], encoding: URLEncoding.queryString)
 
-        case let .fetchTimelines(index, size, dayOfWeek):
+        case let .fetchTimelines(index, size, date):
             return .requestParameters(parameters: [
                 "idx": index,
                 "size": size,
-                "day_of_week": dayOfWeek
+                "date": date
             ], encoding: URLEncoding.queryString)
         }
     }

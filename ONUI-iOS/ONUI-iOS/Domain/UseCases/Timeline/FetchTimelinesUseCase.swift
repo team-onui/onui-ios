@@ -7,7 +7,7 @@ struct FetchTimelinesUseCase {
         self.timelineRepository = timelineRepository
     }
 
-    func execute(index: Int, size: Int, dayOfWeek: DayOfWeekType) -> AnyPublisher<[TimelineEntity], Error> {
-        timelineRepository.fetchTimelines(index: index, size: size, dayOfWeek: dayOfWeek)
+    func execute(index: Int, size: Int, date: String) -> AnyPublisher<TimelineListEntity, Error> {
+        timelineRepository.fetchTimelines(index: index, size: size, date: date)
     }
 }

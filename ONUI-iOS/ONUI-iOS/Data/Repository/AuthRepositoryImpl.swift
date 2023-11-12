@@ -19,8 +19,8 @@ final class AuthRepositoryImpl: AuthRepository {
         remoteAuthDataSource.appleSignin(token: token)
     }
 
-    func refreshToken(req: RefreshTokenRequestQuery) -> AnyPublisher<Void, Error> {
-        remoteAuthDataSource.refreshToken(req: req)
+    func refreshToken(token: String) -> AnyPublisher<Void, Error> {
+        remoteAuthDataSource.refreshToken(token: token)
     }
 
     func logout() {

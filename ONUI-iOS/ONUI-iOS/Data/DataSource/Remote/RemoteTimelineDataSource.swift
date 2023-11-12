@@ -2,7 +2,7 @@ import Combine
 
 protocol RemoteTimelineDataSource {
     func postTimeline(id: String) -> AnyPublisher<TimelineEntity, Error>
-    func fetchTimelines(index: Int, size: Int, dayOfWeek: DayOfWeekType) -> AnyPublisher<[TimelineEntity], Error>
+    func fetchTimelines(index: Int, size: Int, date: String) -> AnyPublisher<TimelineListEntity, Error>
 }
 
 final class RemoteTimelineDataSourceImpl: BaseRemoteDataSource<TimelineAPI>, RemoteTimelineDataSource {
@@ -12,12 +12,12 @@ final class RemoteTimelineDataSourceImpl: BaseRemoteDataSource<TimelineAPI>, Rem
             .eraseToAnyPublisher()
     }
     
-    func fetchTimelines(index: Int, size: Int, dayOfWeek: DayOfWeekType) -> AnyPublisher<[TimelineEntity], Error> {
+    func fetchTimelines(index: Int, size: Int, date: String) -> AnyPublisher<TimelineListEntity, Error> {
         request(
-            .fetchTimelines(index: index, size: size, dayOfWeek: dayOfWeek),
+            .fetchTimelines(index: index, size: size, date: date),
             dto: FetchTimelinesResponseDTO.self
         )
-        .map { $0.content.map { $0.toDomain() } }
+        .map { $0.toDomain() }
         .eraseToAnyPublisher()
     }
 }

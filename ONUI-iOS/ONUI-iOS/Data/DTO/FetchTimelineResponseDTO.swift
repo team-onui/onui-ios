@@ -2,55 +2,55 @@ import Foundation
 
 struct FetchTimelinesResponseDTO: Decodable {
     let content: [TimelineResponseDTO]
+    let last: Bool
 
-    init(content: [TimelineResponseDTO]) {
+    init(content: [TimelineResponseDTO], last: Bool) {
         self.content = content
+        self.last = last
     }
 }
 
 struct TimelineResponseDTO: Decodable {
     let id: String
-    let title: String
     let content: String
     let mood: MoodType
     let tagList: [String]
     let image: String?
-    let dayOfWeek: DayOfWeekType
-    let createdAt: String
-    let isUpdated: Bool
+    let writer: String
+    let commentCount: Int
 
     init(
         id: String,
-        title: String,
         content: String,
         mood: MoodType,
         tagList: [String],
         image: String?,
-        dayOfWeek: DayOfWeekType,
-        createdAt: String,
-        isUpdated: Bool
+        writer: String,
+        commentCount: Int
     ) {
         self.id = id
-        self.title = title
         self.content = content
         self.mood = mood
         self.tagList = tagList
         self.image = image
-        self.dayOfWeek = dayOfWeek
-        self.createdAt = createdAt
-        self.isUpdated = isUpdated
+        self.writer = writer
+        self.commentCount = commentCount
     }
 
     enum CodingKeys: String, CodingKey {
         case id
-        case title
         case content
         case mood
         case tagList = "tag_list"
         case image
-        case dayOfWeek = "day_of_week"
-        case createdAt = "created_at"
-        case isUpdated = "is_updated"
+        case writer
+        case commentCount = "comment_count"
+    }
+}
+
+extension FetchTimelinesResponseDTO {
+    func toDomain() -> TimelineListEntity {
+        TimelineListEntity(content: content.map { $0.toDomain() }, last: last)
     }
 }
 
@@ -58,14 +58,12 @@ extension TimelineResponseDTO {
     func toDomain() -> TimelineEntity {
         TimelineEntity(
             id: id,
-            title: title,
             content: content,
             mood: mood,
             tagList: tagList,
             image: image,
-            dayOfWeek: dayOfWeek,
-            createdAt: createdAt,
-            isUpdated: isUpdated
+            writer: writer,
+            commentCount: commentCount
         )
     }
 }

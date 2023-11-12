@@ -73,7 +73,7 @@ private extension BaseRemoteDataSource {
         let provider: MoyaProvider<AuthAPI>
         provider = MoyaProvider(plugins: [JwtPlugin(keychain: keychain), MoyaLogginPlugin()])
         let refreshToken = keychain.load(type: .refreshToken)
-        let requestPublisher = provider.requestPublisher(.refreshToken(.init(refreshToken: refreshToken)))
+        let requestPublisher = provider.requestPublisher(.refreshToken(token: refreshToken))
             .map { _ in }
             .mapError { $0 as Error }
             .eraseToAnyPublisher()

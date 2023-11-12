@@ -12,7 +12,7 @@ struct TimelineRepositoryImpl: TimelineRepository {
         remoteTimelineDataSource.postTimeline(id: id)
     }
 
-    func fetchTimelines(index: Int, size: Int, dayOfWeek: DayOfWeekType) -> AnyPublisher<[TimelineEntity], Error> {
-        remoteTimelineDataSource.fetchTimelines(index: index, size: size, dayOfWeek: dayOfWeek)
+    func fetchTimelines(index: Int, size: Int, date: String) -> AnyPublisher<TimelineListEntity, Error> {
+        remoteTimelineDataSource.fetchTimelines(index: index, size: size, date: date)
     }
 }

@@ -47,7 +47,7 @@
 		90D3AC682AF1E5A900D77CE5 /* TimelineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */; };
 		90D3AC6A2AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC692AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift */; };
 		90D3AC6C2AF1E73100D77CE5 /* FetchTimelineResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC6B2AF1E73100D77CE5 /* FetchTimelineResponseDTO.swift */; };
-		90D3AC6E2AF1E74400D77CE5 /* TimelineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC6D2AF1E74400D77CE5 /* TimelineEntity.swift */; };
+		90D3AC6E2AF1E74400D77CE5 /* TimelineListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC6D2AF1E74400D77CE5 /* TimelineListEntity.swift */; };
 		90D3AC702AF1ED0700D77CE5 /* TimelineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC6F2AF1ED0700D77CE5 /* TimelineRepository.swift */; };
 		90D3AC722AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */; };
 		90D3AC752AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */; };
@@ -87,7 +87,6 @@
 		90ECEFFD2AF0E6F200FD0147 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECEFFC2AF0E6F200FD0147 /* TokenDTO.swift */; };
 		90ECF00A2AF1107C00FD0147 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0092AF1107C00FD0147 /* AuthAPI.swift */; };
 		90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF00C2AF1112500FD0147 /* AuthError.swift */; };
-		90ECF0112AF1122000FD0147 /* RefreshTokenRequestQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */; };
 		90ECF0142AF113C600FD0147 /* RemoteAuthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */; };
 		90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */; };
 		90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */; };
@@ -175,7 +174,7 @@
 		90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineError.swift; sourceTree = "<group>"; };
 		90D3AC692AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTimelineDataSource.swift; sourceTree = "<group>"; };
 		90D3AC6B2AF1E73100D77CE5 /* FetchTimelineResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineResponseDTO.swift; sourceTree = "<group>"; };
-		90D3AC6D2AF1E74400D77CE5 /* TimelineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEntity.swift; sourceTree = "<group>"; };
+		90D3AC6D2AF1E74400D77CE5 /* TimelineListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListEntity.swift; sourceTree = "<group>"; };
 		90D3AC6F2AF1ED0700D77CE5 /* TimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepository.swift; sourceTree = "<group>"; };
 		90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepositoryImpl.swift; sourceTree = "<group>"; };
 		90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelinesUseCase.swift; sourceTree = "<group>"; };
@@ -213,7 +212,6 @@
 		90ECEFFE2AF0E71200FD0147 /* ONUI-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ONUI-iOS.entitlements"; sourceTree = "<group>"; };
 		90ECF0092AF1107C00FD0147 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		90ECF00C2AF1112500FD0147 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
-		90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequestQuery.swift; sourceTree = "<group>"; };
 		90ECF0132AF113C600FD0147 /* RemoteAuthDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthDataSource.swift; sourceTree = "<group>"; };
 		90ECF01B2AF114FB00FD0147 /* RemoteBaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBaseDataSource.swift; sourceTree = "<group>"; };
 		90ECF01E2AF1184100FD0147 /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -707,17 +705,8 @@
 			children = (
 				90ECF0582AF1CC3100FD0147 /* Diary */,
 				90ECF0322AF11C2F00FD0147 /* User */,
-				90ECF00F2AF1120700FD0147 /* Auth */,
 			);
 			path = Parameters;
-			sourceTree = "<group>";
-		};
-		90ECF00F2AF1120700FD0147 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				90ECF0102AF1122000FD0147 /* RefreshTokenRequestQuery.swift */,
-			);
-			path = Auth;
 			sourceTree = "<group>";
 		};
 		90ECF0122AF113B500FD0147 /* Remote */ = {
@@ -752,7 +741,7 @@
 				90ECF0612AF1D02E00FD0147 /* DiaryEntity.swift */,
 				90ECF0632AF1D08900FD0147 /* ShortDiaryEntity.swift */,
 				90ECF0672AF1D28D00FD0147 /* DiaryDetailEntity.swift */,
-				90D3AC6D2AF1E74400D77CE5 /* TimelineEntity.swift */,
+				90D3AC6D2AF1E74400D77CE5 /* TimelineListEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -991,7 +980,6 @@
 				907549992AE8B941009F5BBF /* UIStateModel.swift in Sources */,
 				906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */,
 				90ECF04B2AF1C96A00FD0147 /* ImageRepository.swift in Sources */,
-				90ECF0112AF1122000FD0147 /* RefreshTokenRequestQuery.swift in Sources */,
 				90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */,
 				90ECF02F2AF11A8000FD0147 /* LogoutUseCase.swift in Sources */,
 				907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */,
@@ -1024,7 +1012,7 @@
 				90D3AC8D2AF1FF0700D77CE5 /* PresentationDI.swift in Sources */,
 				90ECF03A2AF1C33600FD0147 /* RenameResponseDTO.swift in Sources */,
 				90ECF0502AF1C9D600FD0147 /* UploadImageUseCase.swift in Sources */,
-				90D3AC6E2AF1E74400D77CE5 /* TimelineEntity.swift in Sources */,
+				90D3AC6E2AF1E74400D77CE5 /* TimelineListEntity.swift in Sources */,
 				9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */,
 				90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */,
 				902212C62AFBE2AD0054326E /* TimelineCellView.swift in Sources */,
