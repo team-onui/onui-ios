@@ -44,7 +44,7 @@ public final class PresentationDI: Assembly {
         }
 
         container.register(TimelineViewModel.self) { resolver in
-            TimelineViewModel()
+            TimelineViewModel(fetchTimelinesUseCase: resolver.resolve(FetchTimelinesUseCase.self)!)
         }
         container.register(TimelineView.self) { resolver in
             TimelineView(viewModel: resolver.resolve(TimelineViewModel.self)!)
