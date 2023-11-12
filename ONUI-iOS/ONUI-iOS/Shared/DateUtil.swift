@@ -17,6 +17,15 @@ public extension String {
 }
 
 public extension Date {
+    func toString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "ko_kr")
+        return formatter.string(from: self)
+    }
+}
+
+public extension Date {
     func isSameDay(_ target: Date) -> Bool {
         let calendar = Calendar.current
         return calendar.isDate(self, inSameDayAs: target)
