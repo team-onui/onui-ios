@@ -149,6 +149,9 @@ struct RecordView: View {
         .setBackButton(title: "기록하기") {
             dismiss()
         }
+        .onChange(of: viewModel.isSuccessToPost) { _ in
+            dismiss()
+        }
     }
 
     @ViewBuilder

@@ -35,6 +35,7 @@ final class RecordViewModel: BaseViewModel {
         case skip
         case share
     }
+    @Published var isSuccessToPost: Bool = false
     @Published var isLoadingChat: Bool = false
     @Published var selectedMood: Mood?
     @Published var selectedMoodDetail: [String] = []
@@ -120,6 +121,8 @@ final class RecordViewModel: BaseViewModel {
             if type == .share {
                 self?.postTimeline(id: res.id)
             }
+
+            self?.isSuccessToPost.toggle()
         }
     }
 }
