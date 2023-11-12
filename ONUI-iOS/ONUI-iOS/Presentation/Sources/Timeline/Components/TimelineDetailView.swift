@@ -7,7 +7,6 @@ struct TimelineDetailView: View {
     var title: String {
         "\(currentDate.month)월 \(currentDate.day)일"
     }
-    
     private let chatDummy: [String] = [
         "ㅇㅈ 고양이 귀여움 ;;",
         "근데 강아지가 더 귀엽다는데",
@@ -16,6 +15,12 @@ struct TimelineDetailView: View {
         "ㄴ ㅋㅋㅋ 발뺌하지 마셈"
     ]
     
+    private let timeline: TimelineEntity
+
+    init(timeline: TimelineEntity) {
+        self.timeline = timeline
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
@@ -23,7 +28,7 @@ struct TimelineDetailView: View {
                     Text("\(title)")
                         .onuiFont(.title(.medium), color: .black)
                     
-                    TimelineCellView(lineLimit: false)
+                    TimelineCellView(timeline: timeline, lineLimit: false)
                         .padding(.horizontal, 16)
                     
                     ForEach(chatDummy, id: \.self) { chat in
@@ -53,7 +58,7 @@ struct TimelineDetailView: View {
             .background(Color.GrayScale.Surface.surface)
         }
         .background(Color.GrayScale.Background.background)
-        .setBackButton(title: "<UserName>") {
+        .setBackButton(title: timeline.writer) {
             dismiss()
         }
     }
