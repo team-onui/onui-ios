@@ -79,5 +79,17 @@ public final class UseCaseDI: Assembly {
                 timelineRepository: resolver.resolve(TimelineRepository.self)!
             )
         }
+
+        // Comment
+        container.register(FetchCommentUseCase.self) { resolver in
+            FetchCommentUseCase(
+                commentRepository: resolver.resolve(CommentRepository.self)!
+            )
+        }
+        container.register(PostCommentUseCase.self) { resolver in
+            PostCommentUseCase(
+                commentRepository: resolver.resolve(CommentRepository.self)!
+            )
+        }
     }
 }

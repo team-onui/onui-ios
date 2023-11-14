@@ -17,7 +17,7 @@ struct TimelineEntity: Equatable, Hashable {
     let tagList: [String]
     let image: String?
     let writer: String
-    let commentCount: Int
+    var commentCount: Int
 
     init(
         id: String,

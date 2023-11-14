@@ -27,5 +27,9 @@ public final class RepositoryDI: Assembly {
         container.register(DiaryRepository.self) { resolver in
             DiaryRepositoryImpl(remoteDiaryDataSource: resolver.resolve(RemoteDiaryDataSource.self)!)
         }
+
+        container.register(CommentRepository.self) { resolver in
+            CommentRepositoryImpl(remoteCommentDataSource: resolver.resolve(RemoteCommentDataSource.self)!)
+        }
     }
 }
