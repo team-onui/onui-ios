@@ -19,6 +19,17 @@
 		902212CB2AFC67F60054326E /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 902212CA2AFC67F60054326E /* SwiftKeychainWrapper */; };
 		906361242AD7AC8C0046D2B7 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */; };
 		906361282AD7AD880046D2B7 /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906361272AD7AD880046D2B7 /* View+cornerRadius.swift */; };
+		9067F4042B0364A8003D1E62 /* CommentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4032B0364A8003D1E62 /* CommentAPI.swift */; };
+		9067F4062B0364D6003D1E62 /* CommentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4052B0364D6003D1E62 /* CommentError.swift */; };
+		9067F4082B03657F003D1E62 /* RemoteCommentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4072B03657F003D1E62 /* RemoteCommentDataSource.swift */; };
+		9067F40D2B036774003D1E62 /* FetchCommentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F40C2B036774003D1E62 /* FetchCommentResponseDTO.swift */; };
+		9067F40F2B0367BB003D1E62 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F40E2B0367BB003D1E62 /* CommentEntity.swift */; };
+		9067F4112B037A3A003D1E62 /* CommentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4102B037A3A003D1E62 /* CommentRepository.swift */; };
+		9067F4132B037A58003D1E62 /* CommentRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4122B037A58003D1E62 /* CommentRepositoryImpl.swift */; };
+		9067F4162B037A9D003D1E62 /* PostCommentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4152B037A9D003D1E62 /* PostCommentUseCase.swift */; };
+		9067F4182B037AE8003D1E62 /* FetchCommentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4172B037AE8003D1E62 /* FetchCommentUseCase.swift */; };
+		9067F41A2B037E7C003D1E62 /* TimelineDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F4192B037E7C003D1E62 /* TimelineDetailViewModel.swift */; };
+		9067F41D2B0386D1003D1E62 /* PostCommentRequestQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F41C2B0386D1003D1E62 /* PostCommentRequestQuery.swift */; };
 		907549942AE8B6AC009F5BBF /* MoodImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549932AE8B6AC009F5BBF /* MoodImage.swift */; };
 		907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549962AE8B932009F5BBF /* CarouselCanvas.swift */; };
 		907549992AE8B941009F5BBF /* UIStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907549982AE8B941009F5BBF /* UIStateModel.swift */; };
@@ -41,7 +52,6 @@
 		90BCB9AE2AD79D840076459C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9AD2AD79D840076459C /* MainViewModel.swift */; };
 		90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */; };
 		90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0142AA03E660067A284 /* OnuiAPI.swift */; };
-		90BCC0172AA03E6D0067A284 /* domainFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0162AA03E6D0067A284 /* domainFile.swift */; };
 		90D3AC642AF1D7B300D77CE5 /* TimelineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC632AF1D7B300D77CE5 /* TimelineAPI.swift */; };
 		90D3AC662AF1E4C200D77CE5 /* DayOfWeekType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */; };
 		90D3AC682AF1E5A900D77CE5 /* TimelineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */; };
@@ -145,6 +155,17 @@
 		902212C72AFBE5C60054326E /* TimelineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDetailView.swift; sourceTree = "<group>"; };
 		906361232AD7AC8C0046D2B7 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		906361272AD7AD880046D2B7 /* View+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+cornerRadius.swift"; sourceTree = "<group>"; };
+		9067F4032B0364A8003D1E62 /* CommentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAPI.swift; sourceTree = "<group>"; };
+		9067F4052B0364D6003D1E62 /* CommentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentError.swift; sourceTree = "<group>"; };
+		9067F4072B03657F003D1E62 /* RemoteCommentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCommentDataSource.swift; sourceTree = "<group>"; };
+		9067F40C2B036774003D1E62 /* FetchCommentResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCommentResponseDTO.swift; sourceTree = "<group>"; };
+		9067F40E2B0367BB003D1E62 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		9067F4102B037A3A003D1E62 /* CommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepository.swift; sourceTree = "<group>"; };
+		9067F4122B037A58003D1E62 /* CommentRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepositoryImpl.swift; sourceTree = "<group>"; };
+		9067F4152B037A9D003D1E62 /* PostCommentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentUseCase.swift; sourceTree = "<group>"; };
+		9067F4172B037AE8003D1E62 /* FetchCommentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCommentUseCase.swift; sourceTree = "<group>"; };
+		9067F4192B037E7C003D1E62 /* TimelineDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDetailViewModel.swift; sourceTree = "<group>"; };
+		9067F41C2B0386D1003D1E62 /* PostCommentRequestQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentRequestQuery.swift; sourceTree = "<group>"; };
 		907549932AE8B6AC009F5BBF /* MoodImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodImage.swift; sourceTree = "<group>"; };
 		907549962AE8B932009F5BBF /* CarouselCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCanvas.swift; sourceTree = "<group>"; };
 		907549982AE8B941009F5BBF /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
@@ -168,7 +189,6 @@
 		90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONUI_iOSApp.swift; sourceTree = "<group>"; };
 		90BCBFFB2AA02E170067A284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90BCC0142AA03E660067A284 /* OnuiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiAPI.swift; sourceTree = "<group>"; };
-		90BCC0162AA03E6D0067A284 /* domainFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domainFile.swift; sourceTree = "<group>"; };
 		90D3AC632AF1D7B300D77CE5 /* TimelineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineAPI.swift; sourceTree = "<group>"; };
 		90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekType.swift; sourceTree = "<group>"; };
 		90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineError.swift; sourceTree = "<group>"; };
@@ -295,6 +315,7 @@
 			children = (
 				902212C52AFBE2AD0054326E /* TimelineCellView.swift */,
 				902212C72AFBE5C60054326E /* TimelineDetailView.swift */,
+				9067F4192B037E7C003D1E62 /* TimelineDetailViewModel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -324,6 +345,23 @@
 				906361272AD7AD880046D2B7 /* View+cornerRadius.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9067F4142B037A95003D1E62 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				9067F4152B037A9D003D1E62 /* PostCommentUseCase.swift */,
+				9067F4172B037AE8003D1E62 /* FetchCommentUseCase.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		9067F41B2B0386C1003D1E62 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				9067F41C2B0386D1003D1E62 /* PostCommentRequestQuery.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		907549952AE8B921009F5BBF /* Carousel */ = {
@@ -480,7 +518,6 @@
 				90ECF0182AF1147000FD0147 /* Entities */,
 				90ECF00E2AF111FC00FD0147 /* Parameters */,
 				90ECF00B2AF1111B00FD0147 /* Error */,
-				90BCC0162AA03E6D0067A284 /* domainFile.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -684,6 +721,7 @@
 				90D3AC632AF1D7B300D77CE5 /* TimelineAPI.swift */,
 				90ECF0422AF1C4EA00FD0147 /* ImageAPI.swift */,
 				90ECF0512AF1CA8800FD0147 /* DiaryAPI.swift */,
+				9067F4032B0364A8003D1E62 /* CommentAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -696,6 +734,7 @@
 				90ECF0352AF11C9B00FD0147 /* UserError.swift */,
 				90ECF0562AF1CB6800FD0147 /* DiaryError.swift */,
 				90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */,
+				9067F4052B0364D6003D1E62 /* CommentError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -703,6 +742,7 @@
 		90ECF00E2AF111FC00FD0147 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
+				9067F41B2B0386C1003D1E62 /* Comment */,
 				90ECF0582AF1CC3100FD0147 /* Diary */,
 				90ECF0322AF11C2F00FD0147 /* User */,
 			);
@@ -718,6 +758,7 @@
 				90ECF0692AF1D35700FD0147 /* RemoteDiaryDataSource.swift */,
 				90ECF0462AF1C81400FD0147 /* RemoteImageDataSource.swift */,
 				90D3AC692AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift */,
+				9067F4072B03657F003D1E62 /* RemoteCommentDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -731,6 +772,7 @@
 				90ECF0652AF1D13800FD0147 /* FetchDiaryDetailResponseDTO.swift */,
 				90ECF05F2AF1CF9D00FD0147 /* FetchMoodOfMonthResponseDTO.swift */,
 				90D3AC6B2AF1E73100D77CE5 /* FetchTimelineResponseDTO.swift */,
+				9067F40C2B036774003D1E62 /* FetchCommentResponseDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -742,6 +784,7 @@
 				90ECF0632AF1D08900FD0147 /* ShortDiaryEntity.swift */,
 				90ECF0672AF1D28D00FD0147 /* DiaryDetailEntity.swift */,
 				90D3AC6D2AF1E74400D77CE5 /* TimelineListEntity.swift */,
+				9067F40E2B0367BB003D1E62 /* CommentEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -754,6 +797,7 @@
 				90ECF04C2AF1C98700FD0147 /* ImageRepositoryImpl.swift */,
 				90ECF06D2AF1D4EA00FD0147 /* DiaryRepositoryImpl.swift */,
 				90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */,
+				9067F4122B037A58003D1E62 /* CommentRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -766,6 +810,7 @@
 				90ECF04A2AF1C96A00FD0147 /* ImageRepository.swift */,
 				90ECF06B2AF1D4D800FD0147 /* DiaryRepository.swift */,
 				90D3AC6F2AF1ED0700D77CE5 /* TimelineRepository.swift */,
+				9067F4102B037A3A003D1E62 /* CommentRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -781,6 +826,7 @@
 		90ECF0262AF119B300FD0147 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				9067F4142B037A95003D1E62 /* Comment */,
 				90D3AC732AF1ED5600D77CE5 /* Timeline */,
 				90ECF06F2AF1D57300FD0147 /* Diary */,
 				90ECF04E2AF1C9CF00FD0147 /* Image */,
@@ -972,6 +1018,7 @@
 				90ECEFF32AF0E66E00FD0147 /* JwtImpl.swift in Sources */,
 				90ECF05A2AF1CC3900FD0147 /* WriteDiaryRequestQuery.swift in Sources */,
 				90ECF0142AF113C600FD0147 /* RemoteAuthDataSource.swift in Sources */,
+				9067F41A2B037E7C003D1E62 /* TimelineDetailViewModel.swift in Sources */,
 				90ECF0642AF1D08900FD0147 /* ShortDiaryEntity.swift in Sources */,
 				90ECF0572AF1CB6800FD0147 /* DiaryError.swift in Sources */,
 				90ECEFFD2AF0E6F200FD0147 /* TokenDTO.swift in Sources */,
@@ -984,14 +1031,15 @@
 				90ECF02F2AF11A8000FD0147 /* LogoutUseCase.swift in Sources */,
 				907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */,
 				90ECF0342AF11C3800FD0147 /* RenameRequestQuery.swift in Sources */,
-				90BCC0172AA03E6D0067A284 /* domainFile.swift in Sources */,
 				90ECF03E2AF1C3C800FD0147 /* UserRepository.swift in Sources */,
+				9067F4132B037A58003D1E62 /* CommentRepositoryImpl.swift in Sources */,
 				907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */,
 				90ECF0452AF1C4FF00FD0147 /* ImageError.swift in Sources */,
 				90D3AC832AF1FBF100D77CE5 /* JwtDI.swift in Sources */,
 				90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */,
 				90ECEFE92AF0D08400FD0147 /* CalendarViewModel.swift in Sources */,
 				90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */,
+				9067F4112B037A3A003D1E62 /* CommentRepository.swift in Sources */,
 				90ECF0752AF1D59800FD0147 /* FetchDiaryDetailUseCase.swift in Sources */,
 				90ECF0492AF1C8DC00FD0147 /* UploadImageResponseDTO.swift in Sources */,
 				90D3AC722AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift in Sources */,
@@ -1000,7 +1048,9 @@
 				90ECF0682AF1D28D00FD0147 /* DiaryDetailEntity.swift in Sources */,
 				90ECF0522AF1CA8800FD0147 /* DiaryAPI.swift in Sources */,
 				90D3AC642AF1D7B300D77CE5 /* TimelineAPI.swift in Sources */,
+				9067F4062B0364D6003D1E62 /* CommentError.swift in Sources */,
 				90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */,
+				9067F4162B037A9D003D1E62 /* PostCommentUseCase.swift in Sources */,
 				90D3AC752AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift in Sources */,
 				90BCB9A22AD791EE0076459C /* RootView.swift in Sources */,
 				90D3AC8A2AF1FD9100D77CE5 /* UseCaseDI.swift in Sources */,
@@ -1023,7 +1073,10 @@
 				90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */,
 				90ECF06A2AF1D35700FD0147 /* RemoteDiaryDataSource.swift in Sources */,
 				90E976012AD40D25008F8448 /* Roboto.swift in Sources */,
+				9067F40F2B0367BB003D1E62 /* CommentEntity.swift in Sources */,
 				90E975EE2AD3DB99008F8448 /* Color+init.swift in Sources */,
+				9067F4082B03657F003D1E62 /* RemoteCommentDataSource.swift in Sources */,
+				9067F41D2B0386D1003D1E62 /* PostCommentRequestQuery.swift in Sources */,
 				907549B72AEF3569009F5BBF /* RecordViewModel.swift in Sources */,
 				907549B02AED3AF9009F5BBF /* ImagePicker.swift in Sources */,
 				90ECF0432AF1C4EA00FD0147 /* ImageAPI.swift in Sources */,
@@ -1038,11 +1091,14 @@
 				90ECF0552AF1CB2100FD0147 /* MoodType.swift in Sources */,
 				90E976042AD40EA7008F8448 /* OnuiFont.swift in Sources */,
 				907549A62AED06DA009F5BBF /* RecordView.swift in Sources */,
+				9067F4042B0364A8003D1E62 /* CommentAPI.swift in Sources */,
 				90ECF0312AF11BED00FD0147 /* UserAPI.swift in Sources */,
 				902212BC2AFBCED30054326E /* TimelineView.swift in Sources */,
 				90ECF0772AF1D5A200FD0147 /* PutDiaryUseCase.swift in Sources */,
 				9098ED522AFB300E000CE966 /* View+setBackButton.swift in Sources */,
 				90E975F42AD3E1B9008F8448 /* ErrorVariantColor.swift in Sources */,
+				9067F4182B037AE8003D1E62 /* FetchCommentUseCase.swift in Sources */,
+				9067F40D2B036774003D1E62 /* FetchCommentResponseDTO.swift in Sources */,
 				90ECF0602AF1CF9D00FD0147 /* FetchMoodOfMonthResponseDTO.swift in Sources */,
 				90ECF00A2AF1107C00FD0147 /* AuthAPI.swift in Sources */,
 				90ECF0252AF118ED00FD0147 /* LocalAuthDataSource.swift in Sources */,
