@@ -10,11 +10,19 @@ class TimelineViewModel: BaseViewModel {
         "\(date.month)월 \(date.day)일"
     }
 
-    private let fetchTimelinesUseCase: FetchTimelinesUseCase
+    let fetchTimelinesUseCase: FetchTimelinesUseCase
+    let fetchCommentUseCase: FetchCommentUseCase
+    let postCommentUseCase: PostCommentUseCase
 
-    init(fetchTimelinesUseCase: FetchTimelinesUseCase) {
+    init(
+        fetchTimelinesUseCase: FetchTimelinesUseCase,
+        fetchCommentUseCase: FetchCommentUseCase,
+        postCommentUseCase: PostCommentUseCase
+    ) {
         self.page = startPage
         self.fetchTimelinesUseCase = fetchTimelinesUseCase
+        self.fetchCommentUseCase = fetchCommentUseCase
+        self.postCommentUseCase = postCommentUseCase
     }
 
     func onAppear() {

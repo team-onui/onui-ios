@@ -5,7 +5,7 @@ import Kingfisher
 struct TimelineCellView: View {
     let textLineLimit: Int?
     let screenWidthSize: CGFloat = UIScreen.main.bounds.size.width
-    let timeline: TimelineEntity
+    var timeline: TimelineEntity
 
     init(timeline: TimelineEntity, lineLimit: Bool = true) {
         self.timeline = timeline
@@ -44,7 +44,7 @@ struct TimelineCellView: View {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.Primary.primary, lineWidth: 1)
                     }
-                    .padding(.horizontal, 4)
+                    .padding(4)
             }
             
             Text(timeline.content)
@@ -60,5 +60,8 @@ struct TimelineCellView: View {
         .padding(.horizontal, 16)
         .background(Color.GrayScale.Surface.surface)
         .cornerRadius(24)
+    }
+    mutating func up() {
+        timeline.commentCount += 1
     }
 }

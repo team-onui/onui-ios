@@ -1,46 +1,54 @@
 import SwiftUI
+import Combine
 
 struct TimelineDetailView: View {
-    @State private var text: String = ""
     @Environment(\.dismiss) var dismiss
-    private let currentDate = Date()
-    var title: String {
-        "\(currentDate.month)월 \(currentDate.day)일"
-    }
-    private let chatDummy: [String] = [
-        "ㅇㅈ 고양이 귀여움 ;;",
-        "근데 강아지가 더 귀엽다는데",
-        "ㄴ 너 흰둥이지?",
-        "ㄴ ㄴㄴ 아닌데?",
-        "ㄴ ㅋㅋㅋ 발뺌하지 마셈"
-    ]
-    
-    private let timeline: TimelineEntity
+    @StateObject var viewModel: TimelineDetailViewModel
+    var timeline: TimelineEntity
+    private let onComment: () -> Void
 
-    init(timeline: TimelineEntity) {
+    init(
+        timeline: TimelineEntity,
+        viewModel: TimelineDetailViewModel,
+        onComment: @escaping () -> Void
+    ) {
         self.timeline = timeline
+        _viewModel = StateObject(wrappedValue: viewModel)
+        self.onComment = onComment
     }
     
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
-                VStack(spacing: 12) {
-                    Text("\(title)")
-                        .onuiFont(.title(.medium), color: .black)
-                    
-                    TimelineCellView(timeline: timeline, lineLimit: false)
-                        .padding(.horizontal, 16)
-                    
-                    ForEach(chatDummy, id: \.self) { chat in
-                        questionChat(chat)
-                    }
+            ScrollViewReader { proxy in
+                ScrollView {
+                    VStack(spacing: 12) {
+                        Text("\(viewModel.title)")
+                            .onuiFont(.title(.medium), color: .black)
+                        
+                        TimelineCellView(timeline: timeline, lineLimit: false)
+                            .padding(.horizontal, 16)
+                        
+                        ForEach(viewModel.commentList, id: \.id) { chat in
+                            questionChat(chat.content)
+                                .tag(chat.id)
+                        }
 
+                    }
+                    .padding(.vertical, 12)
                 }
-                .padding(.vertical, 12)
+                .onChange(of: viewModel.commentList) { value in
+                    delayAfter(0.5){
+                        deferDelayAfter {
+                            withAnimation {
+                                proxy.scrollTo(value.last?.id, anchor: .bottom)
+                            }
+                        }
+                    }
+                }
             }
 
             HStack(spacing: 10) {
-                TextField("", text: $text, axis: .vertical)
+                TextField("", text: $viewModel.myComment, axis: .vertical)
                     .onuiFont(.body(.medium), color: .black)
                     .accentColor(.black)
                     .lineLimit(...4)
@@ -49,9 +57,14 @@ struct TimelineDetailView: View {
                     .background(Color.GrayScale.Outline.outlineVariant)
                     .cornerRadius(16)
 
-                Image(.paperPlain)
-                    .resizable()
-                    .frame(24)
+                Button {
+                    viewModel.postComment(id: timeline.id)
+                    onComment()
+                } label: {
+                    Image(.paperPlain)
+                        .resizable()
+                        .frame(24)
+                }
             }
             .padding(.vertical, 12)
             .padding(.horizontal, 16)
@@ -61,6 +74,7 @@ struct TimelineDetailView: View {
         .setBackButton(title: timeline.writer) {
             dismiss()
         }
+        .onAppear(perform: { viewModel.onAppear(id: timeline.id) })
     }
     
     @ViewBuilder
