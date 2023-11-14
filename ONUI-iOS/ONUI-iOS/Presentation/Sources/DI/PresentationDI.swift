@@ -44,10 +44,18 @@ public final class PresentationDI: Assembly {
         }
 
         container.register(TimelineViewModel.self) { resolver in
-            TimelineViewModel(fetchTimelinesUseCase: resolver.resolve(FetchTimelinesUseCase.self)!)
+            TimelineViewModel(
+                fetchTimelinesUseCase: resolver.resolve(FetchTimelinesUseCase.self)!,
+                fetchCommentUseCase: resolver.resolve(FetchCommentUseCase.self)!,
+                postCommentUseCase: resolver.resolve(PostCommentUseCase.self)!
+            )
         }
         container.register(TimelineView.self) { resolver in
-            TimelineView(viewModel: resolver.resolve(TimelineViewModel.self)!)
+            TimelineView(
+                viewModel: resolver.resolve(TimelineViewModel.self)!,
+                postCommentUseCase: resolver.resolve(PostCommentUseCase.self)!,
+                fetchCommentUseCase: resolver.resolve(FetchCommentUseCase.self)!
+            )
         }
     }
 }
