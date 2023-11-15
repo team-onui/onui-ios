@@ -3,7 +3,7 @@ import Foundation
 
 final class CalendarViewModel: BaseViewModel {
     @Published var shortDiaryList: [ShortDiaryEntity] = []
-    @Published var selectedDate: Date? = nil
+    @Published var selectedDate: Date = .init()
     @Published var appearedDate: Date = .init()
     @Published var allDates: [CalendarSheetModel] = []
     @Published var sheetDetail: DiaryDetailEntity?
@@ -19,6 +19,7 @@ final class CalendarViewModel: BaseViewModel {
     }
     func onAppear() {
         fetchMoodOfMonth()
+        fetchDiaryDetail(date: selectedDate)
     }
 
     func moveToNextMonth() {
@@ -31,8 +32,8 @@ final class CalendarViewModel: BaseViewModel {
         fetchMoodOfMonth()
     }
 
-    func fetchDiaryDetail(id: String) {
-        addCancellable(fetchDiaryDetailUseCase.execute(id: id)) { detail in
+    func fetchDiaryDetail(date: Date) {
+        addCancellable(fetchDiaryDetailUseCase.execute(date: date)) { detail in
             self.sheetDetail = detail
         } onReceiveError: { _ in
             self.sheetDetail = nil
@@ -57,11 +58,7 @@ final class CalendarViewModel: BaseViewModel {
                     }
                 }
                 if let diary {
-                    if monthDay.isSameDay(self!.appearedDate) {
-                        self?.fetchDiaryDetail(id: diary.id)
-                    }
-
-                    let isToDay: Bool = diary.createdDay == monthDay.day
+                    let isToDay: Bool = diary.createdAt.day == monthDay.day
 
                     var id: String {
                         if isToDay {

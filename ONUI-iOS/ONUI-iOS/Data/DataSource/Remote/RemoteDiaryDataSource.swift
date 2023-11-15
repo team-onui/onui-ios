@@ -1,9 +1,10 @@
 import Combine
+import Foundation
 
 protocol RemoteDiaryDataSource {
     func writeDiary(req: WriteDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error>
     func fetchMoodOfMonth(year: Int, month: Int) -> AnyPublisher<[ShortDiaryEntity], Error>
-    func fetchDiaryDetail(id: String) -> AnyPublisher<DiaryDetailEntity, Error>
+    func fetchDiaryDetail(date: Date) -> AnyPublisher<DiaryDetailEntity, Error>
     func putDiary(req: PutDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error>
     func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error>
 }
@@ -21,8 +22,8 @@ final class RemoteDiaryDataSourceImpl: BaseRemoteDataSource<DiaryAPI>, RemoteDia
             .eraseToAnyPublisher()
     }
 
-    func fetchDiaryDetail(id: String) -> AnyPublisher<DiaryDetailEntity, Error> {
-        request(.fetchDiaryDetail(id: id), dto: FetchDiaryDetailResponseDTO.self)
+    func fetchDiaryDetail(date: Date) -> AnyPublisher<DiaryDetailEntity, Error> {
+        request(.fetchDiaryDetail(date: date), dto: FetchDiaryDetailResponseDTO.self)
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }

@@ -7,7 +7,19 @@ struct UserRepositoryImpl: UserRepository {
         self.remoteUserDataSource = remoteUserDataSource
     }
 
-    func rename(req: RenameRequestQuery) -> AnyPublisher<String, Error> {
-        remoteUserDataSource.rename(req: req)
+    func rename(name: String) -> AnyPublisher<ProfileEntity, Error> {
+        remoteUserDataSource.rename(name: name)
+    }
+    
+    func fetchProfile() -> AnyPublisher<ProfileEntity, Error> {
+        remoteUserDataSource.fetchProfile()
+    }
+    
+    func changeTheme(theme: String) -> AnyPublisher<ProfileEntity, Error> {
+        remoteUserDataSource.changeTheme(theme: theme)
+    }
+    
+    func changeFiltering(isFiltering: Bool) -> AnyPublisher<ProfileEntity, Error> {
+        remoteUserDataSource.changeFiltering(isFiltering: isFiltering)
     }
 }

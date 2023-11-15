@@ -4,7 +4,7 @@ import Foundation
 import Moya
 
 class BaseRemoteDataSource<API: OnuiAPI> {
-    private let keychain: any Keychain
+    let keychain: any Keychain
     private let provider: MoyaProvider<API>
     private let decoder = JSONDecoder()
     private let maxRetryCount = 2

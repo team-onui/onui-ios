@@ -45,11 +45,9 @@ struct CalendarView: View {
                             .frame(36)
                             .overlay {
                                 VStack {
-                                    if let selectedDate = viewModel.selectedDate {
-                                        if selectedDate.isSameDay(model.date) {
-                                            OnuiImage(.moodBorder)
-                                                .frame(36)
-                                        }
+                                    if viewModel.selectedDate.isSameDay(model.date) {
+                                        OnuiImage(.moodBorder)
+                                            .frame(36)
                                     }
                                 }
                             }
@@ -64,10 +62,9 @@ struct CalendarView: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.white)
                     .onTapGesture {
                         viewModel.selectedDate = model.date
-                        viewModel.fetchDiaryDetail(id: model.id)
+                        viewModel.fetchDiaryDetail(date: model.date)
                     }
                 }
             }

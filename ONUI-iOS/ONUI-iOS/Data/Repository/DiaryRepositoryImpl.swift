@@ -16,8 +16,8 @@ struct DiaryRepositoryImpl: DiaryRepository {
         remoteDiaryDataSource.fetchMoodOfMonth(year: year, month: month)
     }
     
-    func fetchDiaryDetail(id: String) -> AnyPublisher<DiaryDetailEntity, Error> {
-        remoteDiaryDataSource.fetchDiaryDetail(id: id)
+    func fetchDiaryDetail(date: Date) -> AnyPublisher<DiaryDetailEntity, Error> {
+        remoteDiaryDataSource.fetchDiaryDetail(date: date)
     }
     
     func putDiary(req: PutDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error> {

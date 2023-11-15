@@ -8,7 +8,7 @@ struct FetchDiaryDetailUseCase {
         self.diaryRepository = diaryRepository
     }
 
-    func execute(id: String) -> AnyPublisher<DiaryDetailEntity, Error> {
-        diaryRepository.fetchDiaryDetail(id: id)
+    func execute(date: Date) -> AnyPublisher<DiaryDetailEntity, Error> {
+        diaryRepository.fetchDiaryDetail(date: date)
     }
 }

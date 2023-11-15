@@ -1,13 +1,13 @@
 import Combine
 
-struct RenameUseCase {
+struct ChangeThemeUseCase {
     private let userRepository: any UserRepository
 
     init(userRepository: any UserRepository) {
         self.userRepository = userRepository
     }
 
-    func execute(name: String) -> AnyPublisher<ProfileEntity, Error> {
-        userRepository.rename(name: name)
+    func execute(theme: String) -> AnyPublisher<ProfileEntity, Error> {
+        userRepository.changeTheme(theme: theme)
     }
 }

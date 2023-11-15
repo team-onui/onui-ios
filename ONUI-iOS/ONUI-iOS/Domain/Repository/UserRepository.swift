@@ -1,5 +1,8 @@
 import Combine
 
 protocol UserRepository {
-    func rename(req: RenameRequestQuery) -> AnyPublisher<String, Error>
+    func rename(name: String) -> AnyPublisher<ProfileEntity, Error>
+    func fetchProfile() -> AnyPublisher<ProfileEntity, Error>
+    func changeTheme(theme: String) -> AnyPublisher<ProfileEntity, Error>
+    func changeFiltering(isFiltering: Bool) -> AnyPublisher<ProfileEntity, Error>
 }

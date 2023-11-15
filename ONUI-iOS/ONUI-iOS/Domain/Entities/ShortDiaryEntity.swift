@@ -3,11 +3,11 @@ import Foundation
 struct ShortDiaryEntity: Equatable {
     let id: String
     let mood: MoodType
-    let createdDay: Int
+    let createdAt: Date
 
-    init(id: String, mood: MoodType, createdDay: Int) {
+    init(id: String, mood: MoodType, createdAt: Date) {
         self.id = id
         self.mood = mood
-        self.createdDay = createdDay
+        self.createdAt = createdAt
     }
 }

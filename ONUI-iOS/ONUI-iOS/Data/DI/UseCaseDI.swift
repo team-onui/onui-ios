@@ -26,10 +26,30 @@ public final class UseCaseDI: Assembly {
                 authRepository: resolver.resolve(AuthRepository.self)!
             )
         }
+        container.register(WithdrawUseCase.self) { resolver in
+            WithdrawUseCase(
+                authRepository: resolver.resolve(AuthRepository.self)!
+            )
+        }
 
         // User
         container.register(RenameUseCase.self) { resolver in
             RenameUseCase(
+                userRepository: resolver.resolve(UserRepository.self)!
+            )
+        }
+        container.register(FetchProfileUseCase.self) { resolver in
+            FetchProfileUseCase(
+                userRepository: resolver.resolve(UserRepository.self)!
+            )
+        }
+        container.register(ChangeThemeUseCase.self) { resolver in
+            ChangeThemeUseCase(
+                userRepository: resolver.resolve(UserRepository.self)!
+            )
+        }
+        container.register(ChangeFilteringUseCase.self) { resolver in
+            ChangeFilteringUseCase(
                 userRepository: resolver.resolve(UserRepository.self)!
             )
         }

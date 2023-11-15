@@ -1,13 +1,13 @@
 import Combine
 
-struct RenameUseCase {
+struct FetchProfileUseCase {
     private let userRepository: any UserRepository
 
     init(userRepository: any UserRepository) {
         self.userRepository = userRepository
     }
 
-    func execute(name: String) -> AnyPublisher<ProfileEntity, Error> {
-        userRepository.rename(name: name)
+    func execute() -> AnyPublisher<ProfileEntity, Error> {
+        userRepository.fetchProfile()
     }
 }

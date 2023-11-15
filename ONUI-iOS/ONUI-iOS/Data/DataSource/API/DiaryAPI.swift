@@ -1,9 +1,10 @@
 import Moya
+import Foundation
 
 enum DiaryAPI {
     case writeDiary(WriteDiaryRequestQuery)
     case fetchMoodOfMonth(year: Int, month: Int)
-    case fetchDiaryDetail(id: String)
+    case fetchDiaryDetail(date: Date)
     case putDiary(PutDiaryRequestQuery)
     case fetchMoodOfWeek
 }
@@ -28,7 +29,7 @@ extension DiaryAPI: OnuiAPI {
         }
     }
 
-    var method: Method {
+    var method: Moya.Method {
         switch self {
         case .writeDiary:
             return .post
@@ -41,7 +42,7 @@ extension DiaryAPI: OnuiAPI {
         }
     }
 
-    var task: Task {
+    var task: Moya.Task {
         switch self {
         case let .writeDiary(req):
             return .requestJSONEncodable(req)
@@ -52,9 +53,9 @@ extension DiaryAPI: OnuiAPI {
                 "month": month
             ], encoding: URLEncoding.queryString)
 
-        case let .fetchDiaryDetail(id):
+        case let .fetchDiaryDetail(date):
             return .requestParameters(parameters: [
-                "id": id
+                "date": date.toString()
             ], encoding: URLEncoding.queryString)
 
         case let .putDiary(req):

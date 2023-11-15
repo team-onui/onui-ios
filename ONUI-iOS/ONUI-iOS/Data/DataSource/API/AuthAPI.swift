@@ -4,6 +4,7 @@ enum AuthAPI {
     case googleSignin(token: String)
     case appleSignin(token: String)
     case refreshToken(token: String)
+    case withdraw
 }
 
 extension AuthAPI: OnuiAPI {
@@ -23,6 +24,9 @@ extension AuthAPI: OnuiAPI {
 
         case .refreshToken:
             return "/re-issue"
+
+        case .withdraw:
+            return ""
         }
     }
 
@@ -33,6 +37,9 @@ extension AuthAPI: OnuiAPI {
 
         case .refreshToken:
             return .put
+
+        case .withdraw:
+            return .delete
         }
     }
 
@@ -50,13 +57,21 @@ extension AuthAPI: OnuiAPI {
 
         case let .refreshToken(token):
             return .requestParameters(parameters: [
-                    "token": token
-                ], encoding: URLEncoding.queryString)
+                "token": token
+            ], encoding: URLEncoding.queryString)
+
+        case .withdraw:
+            return .requestPlain
         }
     }
 
     var jwtTokenType: JwtTokenType {
-        return .none
+        switch self {
+        case .withdraw:
+            return .accessToken
+        default:
+            return .none
+        }
     }
 
     var errorMap: [Int: ErrorType] {

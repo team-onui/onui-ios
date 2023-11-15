@@ -1,6 +1,6 @@
 import Combine
 
-struct RefreshTokenUseCase {
+struct WithdrawUseCase {
     init(authRepository: AuthRepository) {
         self.authRepository = authRepository
     }
@@ -8,6 +8,6 @@ struct RefreshTokenUseCase {
     private let authRepository: AuthRepository
 
     func execute() -> AnyPublisher<Void, Error> {
-        authRepository.refreshToken()
+        authRepository.withdraw()
     }
 }

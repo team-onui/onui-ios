@@ -1,9 +1,9 @@
 import Foundation
 
 struct FetchMoodOfMonthResponseDTO: Decodable {
-    let diaries: [ShortDiaryResponseDTO]
+    let diaries: [ShortDiaryResponseDTO]?
 
-    init(diaries: [ShortDiaryResponseDTO]) {
+    init(diaries: [ShortDiaryResponseDTO]?) {
         self.diaries = diaries
     }
 }
@@ -28,8 +28,10 @@ struct ShortDiaryResponseDTO: Decodable {
 
 extension FetchMoodOfMonthResponseDTO {
     func toDomain() -> [ShortDiaryEntity] {
-        diaries.map {
-            ShortDiaryEntity(id: $0.id, mood: $0.mood, createdDay: $0.createdAt.toDate().day)
+        guard let diaries else { return [] }
+
+        return diaries.map {
+            ShortDiaryEntity(id: $0.id, mood: $0.mood, createdAt: $0.createdAt.toDate())
         }
     }
 }

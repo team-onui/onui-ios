@@ -5,6 +5,15 @@ public final class PresentationDI: Assembly {
     public init() {}
 
     public func assemble(container: Container) {
+        container.register(RootViewModel.self) { resolver in
+            RootViewModel(
+                refreshTokenUseCase: resolver.resolve(RefreshTokenUseCase.self)!
+            )
+        }
+        container.register(RootView.self) { resolver in
+            RootView(viewModel: resolver.resolve(RootViewModel.self)!)
+        }
+
         container.register(SigninViewModel.self) { resolver in
             SigninViewModel(
                 googleSigninUseCase: resolver.resolve(GoogleSigninUseCase.self)!,
@@ -55,6 +64,20 @@ public final class PresentationDI: Assembly {
                 viewModel: resolver.resolve(TimelineViewModel.self)!,
                 postCommentUseCase: resolver.resolve(PostCommentUseCase.self)!,
                 fetchCommentUseCase: resolver.resolve(FetchCommentUseCase.self)!
+            )
+        }
+
+        container.register(SettingViewModel.self) { resolver in
+            SettingViewModel(
+                changeFilteringUseCase: resolver.resolve(ChangeFilteringUseCase.self)!,
+                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!,
+                withdrawUseCase: resolver.resolve(WithdrawUseCase.self)!,
+                logoutUseCase: resolver.resolve(LogoutUseCase.self)!
+            )
+        }
+        container.register(SettingView.self) { resolver in
+            SettingView(
+                viewModel: resolver.resolve(SettingViewModel.self)!
             )
         }
     }
