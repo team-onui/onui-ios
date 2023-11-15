@@ -24,8 +24,18 @@ class TimelineViewModel: BaseViewModel {
         self.fetchCommentUseCase = fetchCommentUseCase
         self.postCommentUseCase = postCommentUseCase
     }
+    
+    func moveToNextMonth() {
+        date = date.adding(by: .day, value: 1)
+        onAppear()
+    }
+    func moveToPreviousMonth() {
+        date = date.adding(by: .day, value: -1)
+        onAppear()
+    }
 
     func onAppear() {
+        last = false
         self.page = startPage
         fetchTimelines()
     }

@@ -21,8 +21,18 @@ struct TimelineView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
-                Text("< \(viewModel.title) >")
-                    .onuiFont(.title(.medium), color: .black)
+                HStack(spacing: 8) {
+                    OnuiImage(.chevronLeft)
+                        .frame(24)
+                        .onTapGesture(perform: viewModel.moveToPreviousMonth)
+
+                    Text(viewModel.title)
+                        .onuiFont(.title(.medium), color: .black)
+
+                    OnuiImage(.chevronRight)
+                        .frame(24)
+                        .onTapGesture(perform: viewModel.moveToNextMonth)
+                }
                 
                 LazyVStack {
                     ForEach(0..<viewModel.timelineList.count, id: \.self) { index in
