@@ -6,6 +6,7 @@ import Swinject
 struct ONUI_iOSApp: App {
     private let startView: any View
     private var assembler: Assembler!
+    @StateObject var appState = AppState(page: .splash)
     
     init() {
         Roboto.registerFonts()
@@ -18,7 +19,7 @@ struct ONUI_iOSApp: App {
             PresentationDI()
         ], container: DI.container)
 
-        startView = DI.container.resolve(SigninView.self)!
+        startView = DI.container.resolve(RootView.self)!
         let config = GIDConfiguration(clientID: "797489065606-app51ou4l1ngvs2d9j0ikkom79fuateb.apps.googleusercontent.com")
                 
         GIDSignIn.sharedInstance.configuration = config
@@ -28,6 +29,7 @@ struct ONUI_iOSApp: App {
         WindowGroup {
             NavigationView {
                 AnyView(startView)
+                    .environmentObject(appState)
             }
         }
     }

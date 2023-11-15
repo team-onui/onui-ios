@@ -2,6 +2,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct SigninView: View {
+    @EnvironmentObject var appState: AppState
     @State private var buttonHeight: CGFloat = 100
     @StateObject var viewModel: SigninViewModel
     @StateObject var uiState = UIStateModel()
@@ -78,14 +79,13 @@ struct SigninView: View {
 
                     appleButton()
                         .frame(maxHeight: buttonHeight)
-//                    functionButton(title: "서비스", subTitle: "소개", image: .Link)
                 }
             }
             .padding(16)
         }
         .background(Color.GrayScale.Background.background)
-        .fullScreenCover(isPresented: $viewModel.isNavigatedToMain) {
-            mainView
+        .onChange(of: viewModel.isNavigatedToMain) { _ in
+            appState.page = .main
         }
     }
 
@@ -125,6 +125,9 @@ struct SigninView: View {
             case .success(let authResults):
                 guard let appleIDCredential = authResults.credential as? ASAuthorizationAppleIDCredential,
                       let identityToken = String(data: appleIDCredential.identityToken!, encoding: .utf8) else { return }
+                print("===========Apple Email!!!!===========")
+                print(appleIDCredential.email ?? "밝힐 수 없음")
+                print("===========Apple Email!!!!===========")
                 viewModel.appleSignin(accessToken: identityToken)
             case .failure(let error):
                 print(error.localizedDescription)
