@@ -10,6 +10,7 @@ struct MainView: View {
     private let calendarView = DI.container.resolve(CalendarView.self)!
     private let recordView = DI.container.resolve(RecordView.self)!
     private let timelineView = DI.container.resolve(TimelineView.self)!
+    private let settingView = DI.container.resolve(SettingView.self)!
 
     init(viewModel: MainViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -91,7 +92,9 @@ struct MainView: View {
                                 HStack(spacing: spacing) {
                                     functionButton(image: ImageResource.chartDonut)
                                     
-                                    functionButton(image: ImageResource.setting)
+                                    NavigationLink(destination: settingView,label: {
+                                        functionButton(image: ImageResource.setting)
+                                    })
                                 }
                                 
                                 NavigationLink {
@@ -125,6 +128,14 @@ struct MainView: View {
                                 
                                 HStack(spacing: 0) {
                                     Spacer()
+                                    
+                                    ForEach(0..<viewModel.shiftCount(), id: \.self) { _ in
+                                        MoodImage(.normal, isOn: true, renderingMode: .template)
+                                            .foregroundColor(Color.GrayScale.gray3)
+                                            .frame(width: 40, height: 40)
+
+                                        Spacer()
+                                    }
 
                                     ForEach(viewModel.moodOfWeekList, id: \.id) { mood in
                                         var moodType: Mood {
@@ -151,7 +162,7 @@ struct MainView: View {
                                         Spacer()
                                     }
 
-                                    ForEach(0..<7 - viewModel.moodOfWeekList.count, id: \.self) { _ in
+                                    ForEach(0..<7 - viewModel.moodOfWeekList.count - viewModel.shiftCount(), id: \.self) { _ in
                                         MoodImage(.normal, isOn: true, renderingMode: .template)
                                             .foregroundColor(Color.GrayScale.gray3)
                                             .frame(width: 40, height: 40)
@@ -163,7 +174,7 @@ struct MainView: View {
                                 .padding(.horizontal, 16)
                             }
                             .padding(.vertical, 12)
-                            .background(.white)
+                            .background(Color.GrayScale.Surface.surface)
                             .cornerRadius(24)
                             .padding(8)
                             .overlay {
