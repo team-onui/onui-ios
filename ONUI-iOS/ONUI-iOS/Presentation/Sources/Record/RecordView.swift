@@ -117,7 +117,6 @@ struct RecordView: View {
                     }
                 }
             }
-            .padding(.vertical, 12)
             .onChange(of: selectedImage) { image in
                 guard let image else { return }
                 viewModel.fetchImageUrl(image: image)
@@ -272,7 +271,7 @@ struct RecordView: View {
             ) { moodDetail in
                 var foregroundColor: Color {
                     viewModel.selectedMoodDetail.contains(moodDetail) ?
-                        .Primary.primary :
+                        .Primary.onPrimary :
                         .GrayScale.Outline.outline
                 }
 
@@ -294,9 +293,12 @@ struct RecordView: View {
                         .onuiFont(.label, color: foregroundColor)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 2)
+                        .background(viewModel.selectedMoodDetail.contains(moodDetail) ? Color.Primary.primary: .white)
+                        .cornerRadius(8)
                         .overlay {
                             RoundedRectangle(cornerRadius: 8)
                                 .stroke(foregroundColor, lineWidth: 1)
+                                .opacity(viewModel.selectedMoodDetail.contains(moodDetail) ? 0: 1)
                         }
                 }
                 .buttonStyle(.plain)
