@@ -5,6 +5,7 @@ enum UserAPI {
     case fetchProfile
     case changeTheme(String)
     case changeFiltering(Bool)
+    case changeUserColor(String)
 }
 
 extension UserAPI: OnuiAPI {
@@ -18,7 +19,7 @@ extension UserAPI: OnuiAPI {
         switch self {
         case .rename:
             return "/rename"
-        case .fetchProfile:
+        case .fetchProfile, .changeUserColor:
             return "/profile"
         case .changeTheme:
             return "/theme"
@@ -31,7 +32,7 @@ extension UserAPI: OnuiAPI {
         switch self {
         case .fetchProfile:
             return .get
-        case .rename, .changeTheme, .changeFiltering:
+        case .rename, .changeTheme, .changeFiltering, .changeUserColor:
             return .patch
         }
     }
@@ -50,7 +51,12 @@ extension UserAPI: OnuiAPI {
             return .requestParameters(parameters: [
                 "on_filtering": isFiltering
             ], encoding: JSONEncoding.default)
+        case let .changeUserColor(hex):
+            return .requestParameters(parameters: [
+                "profile_theme": hex
+            ], encoding: JSONEncoding.default)
         }
+        
     }
 
     var jwtTokenType: JwtTokenType {

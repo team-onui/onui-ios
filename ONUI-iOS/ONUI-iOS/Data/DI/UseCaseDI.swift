@@ -53,6 +53,11 @@ public final class UseCaseDI: Assembly {
                 userRepository: resolver.resolve(UserRepository.self)!
             )
         }
+        container.register(ChangeUserColorUseCase.self) { resolver in
+            ChangeUserColorUseCase(
+                userRepository: resolver.resolve(UserRepository.self)!
+            )
+        }
 
         // Image
         container.register(UploadImageUseCase.self) { resolver in

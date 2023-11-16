@@ -5,6 +5,7 @@ protocol RemoteUserDataSource {
     func fetchProfile() -> AnyPublisher<ProfileEntity, Error>
     func changeTheme(theme: String) -> AnyPublisher<ProfileEntity, Error>
     func changeFiltering(isFiltering: Bool) -> AnyPublisher<ProfileEntity, Error>
+    func changeUserColor(hex: String) -> AnyPublisher<ProfileEntity, Error>
 }
 
 final class RemoteUserDataSourceImpl: BaseRemoteDataSource<UserAPI>, RemoteUserDataSource {
@@ -28,6 +29,12 @@ final class RemoteUserDataSourceImpl: BaseRemoteDataSource<UserAPI>, RemoteUserD
     
     func changeFiltering(isFiltering: Bool) -> AnyPublisher<ProfileEntity, Error> {
         request(.changeFiltering(isFiltering), dto: ProfileResponseDTO.self)
+            .map { $0.toDomain() }
+            .eraseToAnyPublisher()
+    }
+
+    func changeUserColor(hex: String) -> AnyPublisher<ProfileEntity, Error> {
+        request(.changeUserColor(hex), dto: ProfileResponseDTO.self)
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }

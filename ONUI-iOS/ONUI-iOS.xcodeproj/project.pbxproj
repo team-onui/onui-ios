@@ -20,6 +20,13 @@
 		90125A9C2B04D87600A61CC3 /* FetchProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125A9B2B04D87600A61CC3 /* FetchProfileUseCase.swift */; };
 		90125A9E2B04D88900A61CC3 /* ChangeFilteringUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125A9D2B04D88900A61CC3 /* ChangeFilteringUseCase.swift */; };
 		90125AA02B04D8B200A61CC3 /* ChangeThemeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125A9F2B04D8B200A61CC3 /* ChangeThemeUseCase.swift */; };
+		90125AA72B05AE6C00A61CC3 /* MoodImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90125AA62B05AE6C00A61CC3 /* MoodImage.xcassets */; };
+		90125AAA2B05B20700A61CC3 /* SunStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125AA92B05B20700A61CC3 /* SunStoreView.swift */; };
+		90125AAC2B05B20C00A61CC3 /* SunStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125AAB2B05B20C00A61CC3 /* SunStoreViewModel.swift */; };
+		90125AAE2B05E18100A61CC3 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125AAD2B05E18100A61CC3 /* ThemeType.swift */; };
+		90125AB02B05FEB100A61CC3 /* Onui.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125AAF2B05FEB100A61CC3 /* Onui.swift */; };
+		90125AB22B05FEEB00A61CC3 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125AB12B05FEEB00A61CC3 /* Color+Hex.swift */; };
+		90125AB42B0605EB00A61CC3 /* ChangeUserColorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90125AB32B0605EB00A61CC3 /* ChangeUserColorUseCase.swift */; };
 		902212B22AFB31CC0054326E /* View+NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212B12AFB31CC0054326E /* View+NavigationBarColor.swift */; };
 		902212B42AFB33920054326E /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902212B32AFB33920054326E /* DiaryView.swift */; };
 		902212B72AFB37D00054326E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 902212B62AFB37D00054326E /* Kingfisher */; };
@@ -171,6 +178,13 @@
 		90125A9B2B04D87600A61CC3 /* FetchProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProfileUseCase.swift; sourceTree = "<group>"; };
 		90125A9D2B04D88900A61CC3 /* ChangeFilteringUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFilteringUseCase.swift; sourceTree = "<group>"; };
 		90125A9F2B04D8B200A61CC3 /* ChangeThemeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeUseCase.swift; sourceTree = "<group>"; };
+		90125AA62B05AE6C00A61CC3 /* MoodImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MoodImage.xcassets; sourceTree = "<group>"; };
+		90125AA92B05B20700A61CC3 /* SunStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunStoreView.swift; sourceTree = "<group>"; };
+		90125AAB2B05B20C00A61CC3 /* SunStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunStoreViewModel.swift; sourceTree = "<group>"; };
+		90125AAD2B05E18100A61CC3 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
+		90125AAF2B05FEB100A61CC3 /* Onui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onui.swift; sourceTree = "<group>"; };
+		90125AB12B05FEEB00A61CC3 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		90125AB32B0605EB00A61CC3 /* ChangeUserColorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserColorUseCase.swift; sourceTree = "<group>"; };
 		902212B12AFB31CC0054326E /* View+NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+NavigationBarColor.swift"; sourceTree = "<group>"; };
 		902212B32AFB33920054326E /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		902212BB2AFBCED30054326E /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
@@ -339,6 +353,15 @@
 			path = Switch;
 			sourceTree = "<group>";
 		};
+		90125AA82B05B1FB00A61CC3 /* SunStore */ = {
+			isa = PBXGroup;
+			children = (
+				90125AA92B05B20700A61CC3 /* SunStoreView.swift */,
+				90125AAB2B05B20C00A61CC3 /* SunStoreViewModel.swift */,
+			);
+			path = SunStore;
+			sourceTree = "<group>";
+		};
 		902212BA2AFBCEC40054326E /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				907803652ADEA0BA00B4A95D /* Image.xcassets */,
+				90125AA62B05AE6C00A61CC3 /* MoodImage.xcassets */,
 			);
 			path = Imags;
 			sourceTree = "<group>";
@@ -464,6 +488,7 @@
 			children = (
 				907803682ADEA0DC00B4A95D /* OnuiImage.swift */,
 				907549932AE8B6AC009F5BBF /* MoodImage.swift */,
+				90125AAF2B05FEB100A61CC3 /* Onui.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -532,6 +557,7 @@
 		90BCC0072AA030270067A284 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				90125AA82B05B1FB00A61CC3 /* SunStore */,
 				90125A852B04841800A61CC3 /* Setting */,
 				902212BA2AFBCEC40054326E /* Timeline */,
 				90D3AC8B2AF1FEFE00D77CE5 /* DI */,
@@ -665,6 +691,7 @@
 				90E975EF2AD3DD51008F8448 /* PrimaryColor.swift */,
 				90E975F12AD3E157008F8448 /* GrayColor.swift */,
 				90E975F32AD3E1B9008F8448 /* ErrorVariantColor.swift */,
+				90125AB12B05FEEB00A61CC3 /* Color+Hex.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -900,6 +927,7 @@
 				90125A9B2B04D87600A61CC3 /* FetchProfileUseCase.swift */,
 				90125A9D2B04D88900A61CC3 /* ChangeFilteringUseCase.swift */,
 				90125A9F2B04D8B200A61CC3 /* ChangeThemeUseCase.swift */,
+				90125AB32B0605EB00A61CC3 /* ChangeUserColorUseCase.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -917,6 +945,7 @@
 			children = (
 				90ECF0542AF1CB2100FD0147 /* MoodType.swift */,
 				90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */,
+				90125AAD2B05E18100A61CC3 /* ThemeType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -1029,6 +1058,7 @@
 			files = (
 				90E975EB2AD3D9E9008F8448 /* ErrorVariant.xcassets in Resources */,
 				90E975FE2AD40CE8008F8448 /* Roboto-Regular.ttf in Resources */,
+				90125AA72B05AE6C00A61CC3 /* MoodImage.xcassets in Resources */,
 				90F3671F2AC3C6E800BE5A5F /* Assets.xcassets in Resources */,
 				90E975FD2AD40CE8008F8448 /* Roboto-Medium.ttf in Resources */,
 				90E975FC2AD40CE8008F8448 /* Roboto-Bold.ttf in Resources */,
@@ -1055,6 +1085,7 @@
 				902212B42AFB33920054326E /* DiaryView.swift in Sources */,
 				90ECF05C2AF1CC9200FD0147 /* FetchMoodOfMonthRequestQuery.swift in Sources */,
 				9098ED502AFB017F000CE966 /* PagingBanner.swift in Sources */,
+				90125AB42B0605EB00A61CC3 /* ChangeUserColorUseCase.swift in Sources */,
 				90ECF0472AF1C81400FD0147 /* RemoteImageDataSource.swift in Sources */,
 				90ECEFF32AF0E66E00FD0147 /* JwtImpl.swift in Sources */,
 				90ECF05A2AF1CC3900FD0147 /* WriteDiaryRequestQuery.swift in Sources */,
@@ -1074,12 +1105,15 @@
 				907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */,
 				90125A942B04B79A00A61CC3 /* RootViewModel.swift in Sources */,
 				90125A8E2B04AF9D00A61CC3 /* WithdrawUseCase.swift in Sources */,
+				90125AAE2B05E18100A61CC3 /* ThemeType.swift in Sources */,
 				90125A9A2B04D75100A61CC3 /* ProfileEntity.swift in Sources */,
+				90125AB02B05FEB100A61CC3 /* Onui.swift in Sources */,
 				90ECF0342AF11C3800FD0147 /* RenameRequestQuery.swift in Sources */,
 				90ECF03E2AF1C3C800FD0147 /* UserRepository.swift in Sources */,
 				9067F4132B037A58003D1E62 /* CommentRepositoryImpl.swift in Sources */,
 				907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */,
 				90125A922B04B79600A61CC3 /* RootView.swift in Sources */,
+				90125AB22B05FEEB00A61CC3 /* Color+Hex.swift in Sources */,
 				90ECF0452AF1C4FF00FD0147 /* ImageError.swift in Sources */,
 				90D3AC832AF1FBF100D77CE5 /* JwtDI.swift in Sources */,
 				90ECEFEF2AF0D4D800FD0147 /* DateUtil.swift in Sources */,
@@ -1120,8 +1154,10 @@
 				90E976012AD40D25008F8448 /* Roboto.swift in Sources */,
 				9067F40F2B0367BB003D1E62 /* CommentEntity.swift in Sources */,
 				90E975EE2AD3DB99008F8448 /* Color+init.swift in Sources */,
+				90125AAA2B05B20700A61CC3 /* SunStoreView.swift in Sources */,
 				9067F4082B03657F003D1E62 /* RemoteCommentDataSource.swift in Sources */,
 				9067F41D2B0386D1003D1E62 /* PostCommentRequestQuery.swift in Sources */,
+				90125AAC2B05B20C00A61CC3 /* SunStoreViewModel.swift in Sources */,
 				907549B72AEF3569009F5BBF /* RecordViewModel.swift in Sources */,
 				907549B02AED3AF9009F5BBF /* ImagePicker.swift in Sources */,
 				90ECF0432AF1C4EA00FD0147 /* ImageAPI.swift in Sources */,

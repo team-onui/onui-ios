@@ -1,13 +1,13 @@
 import Combine
 
-struct ChangeThemeUseCase {
+struct ChangeUserColorUseCase{
     private let userRepository: any UserRepository
 
     init(userRepository: any UserRepository) {
         self.userRepository = userRepository
     }
 
-    func execute(theme: ThemeType) -> AnyPublisher<ProfileEntity, Error> {
-        userRepository.changeTheme(theme: theme.rawValue)
+    func execute(hex: String) -> AnyPublisher<ProfileEntity, Error> {
+        userRepository.changeUserColor(hex: hex)
     }
 }

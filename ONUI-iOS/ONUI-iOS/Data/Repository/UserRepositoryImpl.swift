@@ -22,4 +22,8 @@ struct UserRepositoryImpl: UserRepository {
     func changeFiltering(isFiltering: Bool) -> AnyPublisher<ProfileEntity, Error> {
         remoteUserDataSource.changeFiltering(isFiltering: isFiltering)
     }
+    
+    func changeUserColor(hex: String) -> AnyPublisher<ProfileEntity, Error> {
+        remoteUserDataSource.changeUserColor(hex: hex)
+    }
 }
