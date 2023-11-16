@@ -1,5 +1,63 @@
 import SwiftUI
 
+public enum Theme: Hashable, CaseIterable {
+    case standard
+    case hong
+    case ssac
+    case nya
+    
+    func toKorean() -> String {
+        switch self {
+        case .standard:
+            return "기본"
+        case .hong:
+            return "홍조쓰"
+        case .ssac:
+            return "새싹쓰"
+        case .nya:
+            return "애옹쓰"
+        }
+    }
+
+    func toImages() -> [MoodImage] {
+        switch self {
+        case .standard:
+            return MoodImage.Image.Mood.allCases.map { mood in
+                return MoodImage(.standard(mood), isOn: true)
+            }
+        case .hong:
+            return MoodImage.Image.Mood.allCases.map { mood in
+                return MoodImage(.hong(mood), isOn: true)
+            }
+        case .ssac:
+            return MoodImage.Image.Mood.allCases.map { mood in
+                return MoodImage(.ssac(mood), isOn: true)
+            }
+        case .nya:
+            return MoodImage.Image.Mood.allCases.map { mood in
+                return MoodImage(.nya(mood), isOn: true)
+            }
+        }
+    }
+
+    func toNormalImage() -> some View {
+        var image: MoodImage.Image {
+            switch self {
+            case .standard:
+                return .standard(.normal)
+            case .hong:
+                return .hong(.normal)
+            case .ssac:
+                return .ssac(.normal)
+            case .nya:
+                return .nya(.normal)
+            }
+        }
+        return MoodImage(image, isOn: true, renderingMode: .template)
+            .foregroundColor(Color.GrayScale.gray3)
+    }
+}
+
 enum Mood: CaseIterable {
     case veryGood
     case good
@@ -7,7 +65,7 @@ enum Mood: CaseIterable {
     case bad
     case veryBad
 
-    func moodImage() -> MoodImage.Image {
+    func moodImage() -> MoodImage.Image.Mood {
         switch self {
         case .good:
             .good
@@ -27,13 +85,21 @@ enum Mood: CaseIterable {
     }
 }
 
-public struct MoodImage: View {
+public struct MoodImage: View, Hashable {
     public enum Image: Hashable {
-        case bad
-        case good
-        case normal
-        case veryBad
-        case veryGood
+        case stroke(Theme)
+        case standard(Mood)
+        case hong(Mood)
+        case ssac(Mood)
+        case nya(Mood)
+        
+        public enum Mood: Hashable, CaseIterable {
+            case bad
+            case good
+            case normal
+            case veryBad
+            case veryGood
+        }
     }
 
     private var image: Image
@@ -58,16 +124,69 @@ public struct MoodImage: View {
 
     private func oriToImage() -> SwiftUI.Image {
         switch image {
-        case .bad:
-            SwiftUI.Image(isOn ? ImageResource.bad : ImageResource.badOff)
-        case .good:
-            SwiftUI.Image(isOn ? ImageResource.good : ImageResource.goodOff)
-        case .normal:
-            SwiftUI.Image(isOn ? ImageResource.normal : ImageResource.normalOff)
-        case .veryBad:
-            SwiftUI.Image(isOn ? ImageResource.veryBad : ImageResource.veryBadOff)
-        case .veryGood:
-            SwiftUI.Image(isOn ? ImageResource.veryGood : ImageResource.veryGoodOff)
+        case let .stroke(theme):
+            switch theme {
+            case .standard:
+                SwiftUI.Image(.standardStroke)
+            case .hong:
+                SwiftUI.Image(.hongStroke)
+            case .ssac:
+                SwiftUI.Image(.ssacStroke)
+            case .nya:
+                SwiftUI.Image(.nyaStroke)
+            }
+        case let .standard(mood):
+            switch mood {
+            case .bad:
+                SwiftUI.Image(isOn ? ImageResource.standardBad : ImageResource.standardBadOff)
+            case .good:
+                SwiftUI.Image(isOn ? ImageResource.standardGood : ImageResource.standardGoodOff)
+            case .normal:
+                SwiftUI.Image(isOn ? ImageResource.standardNormal : ImageResource.standardNormalOff)
+            case .veryBad:
+                SwiftUI.Image(isOn ? ImageResource.standardVeryBad : ImageResource.standardVeryBadOff)
+            case .veryGood:
+                SwiftUI.Image(isOn ? ImageResource.standardVeryGood : ImageResource.standardVeryGoodOff)
+            }
+        case let .hong(mood):
+            switch mood {
+            case .bad:
+                SwiftUI.Image(isOn ? ImageResource.hongBad : ImageResource.hongBadOff)
+            case .good:
+                SwiftUI.Image(isOn ? ImageResource.hongGood : ImageResource.hongGoodOff)
+            case .normal:
+                SwiftUI.Image(isOn ? ImageResource.hongNormal : ImageResource.hongNormalOff)
+            case .veryBad:
+                SwiftUI.Image(isOn ? ImageResource.hongVeryBad : ImageResource.hongVeryBadOff)
+            case .veryGood:
+                SwiftUI.Image(isOn ? ImageResource.hongVeryGood : ImageResource.hongVeryGoodOff)
+            }
+        case let .ssac(mood):
+            switch mood {
+            case .bad:
+                SwiftUI.Image(isOn ? ImageResource.ssacBad : ImageResource.ssacBadOff)
+            case .good:
+                SwiftUI.Image(isOn ? ImageResource.ssacGood : ImageResource.ssacGoodOff)
+            case .normal:
+                SwiftUI.Image(isOn ? ImageResource.ssacNormal : ImageResource.ssacNormalOff)
+            case .veryBad:
+                SwiftUI.Image(isOn ? ImageResource.ssacVeryBad : ImageResource.ssacVeryBadOff)
+            case .veryGood:
+                SwiftUI.Image(isOn ? ImageResource.ssacVeryGood : ImageResource.ssacVeryGoodOff)
+            }
+        case let .nya(mood):
+            switch mood {
+            case .bad:
+                SwiftUI.Image(isOn ? ImageResource.nyaBad : ImageResource.nyaBadOff)
+            case .good:
+                SwiftUI.Image(isOn ? ImageResource.nyaGood : ImageResource.nyaGoodOff)
+            case .normal:
+                SwiftUI.Image(isOn ? ImageResource.nyaNormal : ImageResource.nyaNormalOff)
+            case .veryBad:
+                SwiftUI.Image(isOn ? ImageResource.nyaVeryBad : ImageResource.nyaVeryBadOff)
+            case .veryGood:
+                SwiftUI.Image(isOn ? ImageResource.nyaVeryGood : ImageResource.nyaVeryGoodOff)
+            }
         }
     }
 }

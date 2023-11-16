@@ -8,7 +8,6 @@ public struct OnuiImage: View {
         case chatProfile
         case chevronLeft
         case chevronRight
-        case moodBorder
     }
 
     private var image: Image
@@ -47,9 +46,6 @@ public struct OnuiImage: View {
 
         case .chevronRight:
             return SwiftUI.Image(.chevronRight)
-
-        case .moodBorder:
-            return SwiftUI.Image(.moodBorder)
         }
     }
 }
