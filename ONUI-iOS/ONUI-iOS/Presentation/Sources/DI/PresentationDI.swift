@@ -7,7 +7,8 @@ public final class PresentationDI: Assembly {
     public func assemble(container: Container) {
         container.register(RootViewModel.self) { resolver in
             RootViewModel(
-                refreshTokenUseCase: resolver.resolve(RefreshTokenUseCase.self)!
+                refreshTokenUseCase: resolver.resolve(RefreshTokenUseCase.self)!,
+                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!
             )
         }
         container.register(RootView.self) { resolver in
@@ -17,7 +18,8 @@ public final class PresentationDI: Assembly {
         container.register(SigninViewModel.self) { resolver in
             SigninViewModel(
                 googleSigninUseCase: resolver.resolve(GoogleSigninUseCase.self)!,
-                appleSigninUseCase: resolver.resolve(AppleSigninUseCase.self)!
+                appleSigninUseCase: resolver.resolve(AppleSigninUseCase.self)!,
+                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!
             )
         }
         container.register(SigninView.self) { resolver in
@@ -72,12 +74,25 @@ public final class PresentationDI: Assembly {
                 changeFilteringUseCase: resolver.resolve(ChangeFilteringUseCase.self)!,
                 fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!,
                 withdrawUseCase: resolver.resolve(WithdrawUseCase.self)!,
-                logoutUseCase: resolver.resolve(LogoutUseCase.self)!
+                logoutUseCase: resolver.resolve(LogoutUseCase.self)!,
+                changeUseColorUseCase: resolver.resolve(ChangeUserColorUseCase.self)!,
+                renameUseCase: resolver.resolve(RenameUseCase.self)!
             )
         }
         container.register(SettingView.self) { resolver in
             SettingView(
                 viewModel: resolver.resolve(SettingViewModel.self)!
+            )
+        }
+
+        container.register(SunStoreViewModel.self) { resolver in
+            SunStoreViewModel(
+                changeThemeUseCase: resolver.resolve(ChangeThemeUseCase.self)!
+            )
+        }
+        container.register(SunStoreView.self) { resolver in
+            SunStoreView(
+                viewModel: resolver.resolve(SunStoreViewModel.self)!
             )
         }
     }

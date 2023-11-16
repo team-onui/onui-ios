@@ -48,7 +48,11 @@ struct TimelineView: View {
                             }
                         } label: {
                             TimelineCellView(timeline: viewModel.timelineList[index])
-                                .onAppear(perform: viewModel.fetchTimelines)
+                                .onAppear {
+                                    if index == viewModel.timelineList.count - 1 {
+                                        viewModel.fetchTimelines()
+                                    }
+                                }
                         }
                     }
                 }

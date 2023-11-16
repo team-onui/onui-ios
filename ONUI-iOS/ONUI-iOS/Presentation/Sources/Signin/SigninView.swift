@@ -86,6 +86,7 @@ struct SigninView: View {
         .background(Color.GrayScale.Background.background)
         .onChange(of: viewModel.isNavigatedToMain) { _ in
             appState.page = .main
+            appState.theme = viewModel.myTheme.toDomain()
         }
     }
 

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var appState: AppState
     @State private var isOpen = false
     @State private var topPadding: CGFloat = 300
     @State private var last7DayHeight: CGFloat = 0
@@ -11,12 +12,14 @@ struct MainView: View {
     private let recordView = DI.container.resolve(RecordView.self)!
     private let timelineView = DI.container.resolve(TimelineView.self)!
     private let settingView = DI.container.resolve(SettingView.self)!
+    private let sunStoreView = DI.container.resolve(SunStoreView.self)!
 
     init(viewModel: MainViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
+        let emptyView = appState.theme.toNormalImage()
         NavigationView {
             VStack {
                 ZStack {
@@ -38,28 +41,30 @@ struct MainView: View {
                                 functionButton(title: "하나씩", subTitle: "과제", image:ImageResource.check)
                             }
                             
-                            ZStack(alignment: .topLeading) {
-                                VStack(alignment: .leading, spacing: 0) {
-                                    Text("떡 꾸미기")
-                                        .onuiFont(.title(.medium), color: .GrayScale.Surface.surfaceVariant)
+                            NavigationLink(destination: sunStoreView) {
+                                ZStack(alignment: .topLeading) {
+                                    VStack(alignment: .leading, spacing: 0) {
+                                        Text("떡 꾸미기")
+                                            .onuiFont(.title(.medium), color: .GrayScale.Surface.surfaceVariant)
+                                        
+                                        Text("햇님 방앗간")
+                                            .onuiFont(.headline(.medium), color: .GrayScale.Surface.onSurface)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .zIndex(1)
                                     
-                                    Text("햇님 방앗간")
-                                        .onuiFont(.headline(.medium), color: .GrayScale.Surface.onSurface)
+                                    Image(.sun)
+                                        .resizable()
+                                        .frame(width: 162, height: 162)
+                                        .padding([.top, .leading], 6)
+                                        .offset(x: 50, y: 54)
+                                        .zIndex(0)
                                 }
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .zIndex(1)
-                                
-                                Image(.sun)
-                                    .resizable()
-                                    .frame(width: 162, height: 162)
-                                    .padding([.top, .leading], 6)
-                                    .offset(x: 50, y: 54)
-                                    .zIndex(0)
+                                .padding(.top, 12)
+                                .padding(.leading, 16)
+                                .background(Color.GrayScale.Surface.surface)
+                                .cornerRadius(32)
                             }
-                            .padding(.top, 12)
-                            .padding(.leading, 16)
-                            .background(Color.GrayScale.Surface.surface)
-                            .cornerRadius(32)
                         }
                         .padding(.horizontal, 16)
                         
@@ -130,31 +135,43 @@ struct MainView: View {
                                     Spacer()
                                     
                                     ForEach(0..<viewModel.shiftCount(), id: \.self) { _ in
-                                        MoodImage(.normal, isOn: true, renderingMode: .template)
-                                            .foregroundColor(Color.GrayScale.gray3)
-                                            .frame(width: 40, height: 40)
+                                        emptyView
+                                            .frame(40)
 
                                         Spacer()
                                     }
 
                                     ForEach(viewModel.moodOfWeekList, id: \.id) { mood in
-                                        var moodType: Mood {
-                                            let mood = mood.mood
-                                            switch mood {
-                                            case .worst:
-                                                return .veryBad
-                                            case .bad:
-                                                return .bad
-                                            case .notBad:
-                                                return .normal
-                                            case .fine:
-                                                return .good
-                                            case .good:
-                                                return .veryGood
+                                        var moodImage: MoodImage.Image {
+                                            let moodType = mood.mood
+                                            var mood: MoodImage.Image.Mood {
+                                                switch moodType {
+                                                case .worst:
+                                                    return .veryBad
+                                                case .bad:
+                                                    return .bad
+                                                case .notBad:
+                                                    return .normal
+                                                case .fine:
+                                                    return .good
+                                                case .good:
+                                                    return .veryGood
+                                                }
+                                            }
+
+                                            switch appState.theme {
+                                            case .standard:
+                                                return .standard(mood)
+                                            case .hong:
+                                                return .hong(mood)
+                                            case .ssac:
+                                                return .ssac(mood)
+                                            case .nya:
+                                                return .nya(mood)
                                             }
                                         }
                                         MoodImage(
-                                            moodType.moodImage(),
+                                            moodImage,
                                             isOn: true
                                         )
                                         .frame(width: 40, height: 40)
@@ -163,9 +180,8 @@ struct MainView: View {
                                     }
 
                                     ForEach(0..<7 - viewModel.moodOfWeekList.count - viewModel.shiftCount(), id: \.self) { _ in
-                                        MoodImage(.normal, isOn: true, renderingMode: .template)
-                                            .foregroundColor(Color.GrayScale.gray3)
-                                            .frame(width: 40, height: 40)
+                                        emptyView
+                                            .frame(40)
 
                                         Spacer()
                                     }

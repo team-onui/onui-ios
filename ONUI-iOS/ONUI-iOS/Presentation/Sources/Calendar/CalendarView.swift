@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) var dismiss
     @State private var sheetHeight: CGFloat = 300
 
@@ -36,17 +37,30 @@ struct CalendarView: View {
                 ForEach(viewModel.allDates, id: \.id) { model in
                     VStack(spacing: 0) {
                         if model.day != -1 {
-                            MoodImage(
-                                model.mood?.moodImage() ?? .normal,
-                                isOn: true,
-                                renderingMode: model.mood == nil ? .template: .original
-                            )
-                            .foregroundColor(.GrayScale.gray3)
+                            Group {
+                                if let mood = model.mood {
+                                    var moodImage: MoodImage.Image {
+                                        switch appState.theme {
+                                        case .standard:
+                                            return .standard(mood.moodImage())
+                                        case .hong:
+                                            return .hong(mood.moodImage())
+                                        case .ssac:
+                                            return .ssac(mood.moodImage())
+                                        case .nya:
+                                            return .nya(mood.moodImage())
+                                        }
+                                    }
+                                    MoodImage(moodImage, isOn: true)
+                                } else {
+                                    appState.theme.toNormalImage()
+                                }
+                            }
                             .frame(36)
                             .overlay {
                                 VStack {
                                     if viewModel.selectedDate.isSameDay(model.date) {
-                                        OnuiImage(.moodBorder)
+                                        MoodImage(.stroke(appState.theme), isOn: true)
                                             .frame(36)
                                     }
                                 }
@@ -89,7 +103,7 @@ struct CalendarView: View {
         }
         .onAppear(perform: viewModel.onAppear)
         .sheet(isPresented: .constant(true)) {
-            DiaryView(currentDate: viewModel.selectedDate ?? Date(), diaryDetail: viewModel.sheetDetail)
+            DiaryView(currentDate: viewModel.selectedDate, diaryDetail: viewModel.sheetDetail)
                 .presentationDetents([.height(sheetHeight), .large])
                 .presentationCornerRadius(32)
                 .interactiveDismissDisabled()

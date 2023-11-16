@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftUIFlowLayout
 
 struct RecordView: View {
+    @EnvironmentObject var appState: AppState
     @State private var selectedImage: UIImage?
     @StateObject var viewModel: RecordViewModel
     @Environment(\.dismiss) var dismiss
@@ -230,14 +231,26 @@ struct RecordView: View {
                 ForEach(Mood.allCases, id: \.self) { mood in
                     Button {
                         viewModel.selectedMood = mood
-                        if viewModel.answerStep == .mood && viewModel.answerStep == viewModel.answerStep {
+                        if viewModel.answerStep == .mood && viewModel.answerStep == viewModel.questionStep {
                             withAnimation {
                                 viewModel.questionStep.nextStep()
                             }
                         }
                     } label: {
+                        var moodImage: MoodImage.Image {
+                            switch appState.theme {
+                            case .standard:
+                                return .standard(mood.moodImage())
+                            case .hong:
+                                return .hong(mood.moodImage())
+                            case .ssac:
+                                return .ssac(mood.moodImage())
+                            case .nya:
+                                return .nya(mood.moodImage())
+                            }
+                        }
                         MoodImage(
-                            mood.moodImage(),
+                            moodImage,
                             isOn: viewModel.selectedMood == mood
                         )
                         .frame(48)

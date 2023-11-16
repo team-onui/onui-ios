@@ -29,7 +29,7 @@ struct TimelineDetailView: View {
                             .padding(.horizontal, 16)
                         
                         ForEach(viewModel.commentList, id: \.id) { chat in
-                            questionChat(chat.content)
+                            questionChat(hex: chat.userTheme, text: chat.content)
                                 .tag(chat.id)
                         }
 
@@ -78,12 +78,11 @@ struct TimelineDetailView: View {
     }
     
     @ViewBuilder
-    func questionChat(_ chatString: String) -> some View {
+    func questionChat(hex: String, text: String) -> some View {
         HStack(spacing: 8) {
-            OnuiImage(.chatProfile)
-                .frame(48)
+            Onui(.chat, colorHex: hex, frame: 48)
             
-            Text(chatString)
+            Text(text)
                 .onuiFont(.body(.medium), color: .GrayScale.Surface.onSurface)
                 .padding(.vertical, 4)
                 .padding(.horizontal, 8)
