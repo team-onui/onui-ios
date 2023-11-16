@@ -7,9 +7,11 @@ enum Page {
 }
 
 final class AppState: ObservableObject {
-    init(page: Page) {
+    init(page: Page, theme: Theme) {
         self.page = page
+        self.theme = theme
     }
 
     @Published public var page: Page
+    @Published public var theme: Theme
 }

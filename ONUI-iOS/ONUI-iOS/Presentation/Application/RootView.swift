@@ -31,6 +31,7 @@ struct RootView: View {
                     .onAppear {
                         viewModel.onAppear {
                             appState.page = .main
+                            appState.theme = viewModel.theme.toDomain()
                         } onError: { _ in
                             appState.page = .signin
                         }
