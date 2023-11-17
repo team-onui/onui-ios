@@ -35,6 +35,7 @@ enum JobisDomain: String {
     case diary
     case timeline = "tl"
     case comment
+    case shop
 }
 
 extension JobisDomain {

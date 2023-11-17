@@ -6,6 +6,8 @@ enum UserAPI {
     case changeTheme(String)
     case changeFiltering(Bool)
     case changeUserColor(String)
+    case fetchMyTheme
+    case fetchMyRice
 }
 
 extension UserAPI: OnuiAPI {
@@ -25,12 +27,16 @@ extension UserAPI: OnuiAPI {
             return "/theme"
         case .changeFiltering:
             return "/filter"
+        case .fetchMyTheme:
+            return "/bought/theme"
+        case .fetchMyRice:
+            return "/rice"
         }
     }
 
     var method: Method {
         switch self {
-        case .fetchProfile:
+        case .fetchProfile, .fetchMyRice, .fetchMyTheme:
             return .get
         case .rename, .changeTheme, .changeFiltering, .changeUserColor:
             return .patch
@@ -41,7 +47,7 @@ extension UserAPI: OnuiAPI {
         switch self {
         case let .rename(req):
             return .requestJSONEncodable(req)
-        case .fetchProfile:
+        case .fetchProfile, .fetchMyRice, .fetchMyTheme:
             return .requestPlain
         case let .changeTheme(theme):
             return .requestParameters(parameters: [

@@ -33,6 +33,16 @@ public final class UseCaseDI: Assembly {
         }
 
         // User
+        container.register(ChangeFilteringUseCase.self) { resolver in
+            ChangeFilteringUseCase(
+                userRepository: resolver.resolve(UserRepository.self)!
+            )
+        }
+        container.register(ChangeUserColorUseCase.self) { resolver in
+            ChangeUserColorUseCase(
+                userRepository: resolver.resolve(UserRepository.self)!
+            )
+        }
         container.register(RenameUseCase.self) { resolver in
             RenameUseCase(
                 userRepository: resolver.resolve(UserRepository.self)!
@@ -48,13 +58,13 @@ public final class UseCaseDI: Assembly {
                 userRepository: resolver.resolve(UserRepository.self)!
             )
         }
-        container.register(ChangeFilteringUseCase.self) { resolver in
-            ChangeFilteringUseCase(
+        container.register(FetchMyRiceUseCase.self) { resolver in
+            FetchMyRiceUseCase(
                 userRepository: resolver.resolve(UserRepository.self)!
             )
         }
-        container.register(ChangeUserColorUseCase.self) { resolver in
-            ChangeUserColorUseCase(
+        container.register(FetchMyThemeUseCase.self) { resolver in
+            FetchMyThemeUseCase(
                 userRepository: resolver.resolve(UserRepository.self)!
             )
         }
@@ -114,6 +124,18 @@ public final class UseCaseDI: Assembly {
         container.register(PostCommentUseCase.self) { resolver in
             PostCommentUseCase(
                 commentRepository: resolver.resolve(CommentRepository.self)!
+            )
+        }
+
+        // Shop
+        container.register(FetchThemeListUseCase.self) { resolver in
+            FetchThemeListUseCase(
+                shopRepository: resolver.resolve(ShopRepository.self)!
+            )
+        }
+        container.register(BuyThemeUseCase.self) { resolver in
+            BuyThemeUseCase(
+                shopRepository: resolver.resolve(ShopRepository.self)!
             )
         }
     }

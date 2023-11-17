@@ -31,5 +31,9 @@ public final class RepositoryDI: Assembly {
         container.register(CommentRepository.self) { resolver in
             CommentRepositoryImpl(remoteCommentDataSource: resolver.resolve(RemoteCommentDataSource.self)!)
         }
+
+        container.register(ShopRepository.self) { resolver in
+            ShopRepositoryImpl(remoteShopDataSource: resolver.resolve(RemoteShopDataSource.self)!)
+        }
     }
 }

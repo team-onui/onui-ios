@@ -26,4 +26,12 @@ struct UserRepositoryImpl: UserRepository {
     func changeUserColor(hex: String) -> AnyPublisher<ProfileEntity, Error> {
         remoteUserDataSource.changeUserColor(hex: hex)
     }
+
+    func fetchMyRice() -> AnyPublisher<Int, Error> {
+        remoteUserDataSource.fetchMyRice()
+    }
+
+    func fetchMyTheme() -> AnyPublisher<[Theme], Error> {
+        remoteUserDataSource.fetchMyTheme()
+    }
 }
