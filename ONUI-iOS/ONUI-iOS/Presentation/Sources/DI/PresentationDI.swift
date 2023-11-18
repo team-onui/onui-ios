@@ -87,12 +87,28 @@ public final class PresentationDI: Assembly {
 
         container.register(SunStoreViewModel.self) { resolver in
             SunStoreViewModel(
-                changeThemeUseCase: resolver.resolve(ChangeThemeUseCase.self)!
+                changeThemeUseCase: resolver.resolve(ChangeThemeUseCase.self)!,
+                buyThemeUseCase: resolver.resolve(BuyThemeUseCase.self)!,
+                fetchMyRiceUseCase: resolver.resolve(FetchMyRiceUseCase.self)!,
+                fetchThemeListUseCase: resolver.resolve(FetchThemeListUseCase.self)!
             )
         }
         container.register(SunStoreView.self) { resolver in
             SunStoreView(
                 viewModel: resolver.resolve(SunStoreViewModel.self)!
+            )
+        }
+        container.register(ChangeThemeViewModel.self) { resolver in
+            ChangeThemeViewModel(
+                changeThemeUseCase: resolver.resolve(ChangeThemeUseCase.self)!,
+                fetchMyThemeUseCase: resolver.resolve(FetchMyThemeUseCase.self)!,
+                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!
+                
+            )
+        }
+        container.register(ChangeThemeView.self) { resolver in
+            ChangeThemeView(
+                viewModel: resolver.resolve(ChangeThemeViewModel.self)!
             )
         }
     }
