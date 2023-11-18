@@ -5,6 +5,8 @@ struct SettingView: View {
     @StateObject var viewModel: SettingViewModel
     @EnvironmentObject var appState: AppState
     
+    private let changeThemeView = DI.container.resolve(ChangeThemeView.self)!
+    
     init(viewModel: SettingViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -51,6 +53,53 @@ struct SettingView: View {
             .background(Color.GrayScale.Surface.surface)
             .cornerRadius(24)
 
+            VStack(alignment: .trailing, spacing: 8) {
+                HStack {
+                    ForEach(Mood.allCases, id: \.self) { mood in
+                        var moodImage: MoodImage.Image {
+                            switch appState.theme {
+                            case .standard:
+                                return .standard(mood.moodImage())
+                            case .hong:
+                                return .hong(mood.moodImage())
+                            case .ssac:
+                                return .ssac(mood.moodImage())
+                            case .nya:
+                                return .nya(mood.moodImage())
+                            }
+                        }
+                        MoodImage(
+                            moodImage,
+                            isOn: true
+                        )
+                        .frame(48)
+                        
+                        if mood != .veryBad {
+                            Spacer()
+                        }
+                    }
+                }
+
+                NavigationLink(destination: changeThemeView) {
+                    HStack(spacing: 5) {
+                        Text("변경")
+                            .onuiFont(.body(.medium), color: .Primary.onPrimaryContainer)
+
+                        OnuiImage(.chevronRight, renderingMode: .template)
+                            .frame(24)
+                            .foregroundColor(.Primary.onPrimaryContainer)
+                    }
+                    .padding(.vertical, 4)
+                    .padding(.leading, 8)
+                    .background(Color.Primary.primaryContainer)
+                    .cornerRadius(12)
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 12)
+            .background(Color.GrayScale.Surface.surface)
+            .cornerRadius(24)
+
             settingCell(text: "비속어 필터", view: {
                 OnuiSwitch(isOn: $viewModel.isFiltering)
             })
@@ -65,27 +114,24 @@ struct SettingView: View {
 
             Spacer()
         }
-        .alert(isPresented: $viewModel.showAlert) {
-            if viewModel.logout {
-                Alert(
-                    title: Text("로그아웃"),
-                    message: Text("정말로 로그아웃 하시겠습니까?"),
-                    primaryButton: .destructive(Text("예")) {
-                        viewModel.logoutFunc()
-                        viewModel.goToOnboarding = true
-                    },
-                    secondaryButton: .cancel(Text("취소"))
-                )
-            } else {
-                Alert(
-                    title: Text("회원탈퇴"),
-                    message: Text("정말로 회원탈퇴 하시겠습니까?\n되돌릴 수 없습니다."),
-                    primaryButton: .destructive(Text("예")) {
-                        viewModel.withdrawFunc()
-                        viewModel.goToOnboarding = true
-                    },
-                    secondaryButton: .cancel(Text("취소"))
-                )
+        .onuiAlert(
+            isPresented: $viewModel.isShowLogout,
+            title: "로그아웃",
+            content: "정말로 로그아웃 하시겠습니까?"
+        ) {
+            viewModel.logoutFunc {
+                dismiss()
+                appState.page = .signin
+            }
+        }
+        .onuiAlert(
+            isPresented: $viewModel.isShowWithdraw,
+            title: "회원탈퇴",
+            content: "정말로 회원탈퇴 하시겠습니까?\n되돌릴 수 없습니다."
+        ) {
+            viewModel.withdrawFunc {
+                dismiss()
+                appState.page = .signin
             }
         }
         .padding(.vertical, 12)
@@ -94,10 +140,6 @@ struct SettingView: View {
         .onAppear(perform: viewModel.onAppear)
         .setBackButton(title: "설정") {
             dismiss()
-        }
-        .onChange(of: viewModel.goToOnboarding) { _ in
-            dismiss()
-            appState.page = .signin
         }
     }
 

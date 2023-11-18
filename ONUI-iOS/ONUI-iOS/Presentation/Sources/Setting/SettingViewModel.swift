@@ -11,17 +11,8 @@ final class SettingViewModel: BaseViewModel {
         }
     }
     @Published var profile: ProfileEntity = .init(sub: "", name: "", profileTheme: "FFFFFF", theme: .standard, onFiltering: false)
-    @Published var goToOnboarding = false
-    @Published var logout = false
-    @Published var withdraw = false
-    @Published var showAlert = false {
-        didSet {
-            if !showAlert {
-                logout = false
-                withdraw = false
-            }
-        }
-    }
+    @Published var isShowLogout = false
+    @Published var isShowWithdraw = false
     @Published var selectedColor: Color = .white
 
     private let changeFilteringUseCase: ChangeFilteringUseCase
@@ -86,19 +77,19 @@ final class SettingViewModel: BaseViewModel {
     }
 
     func logoutButtonDidTap() {
-        showAlert = true
-        logout = true
+        isShowLogout = true
     }
     
-    func logoutFunc() {
+    func logoutFunc(move: () -> Void) {
         logoutUseCase.execute()
+        move()
     }
 
     func withdrawButtonDidTap() {
-        showAlert = true
-        withdraw = true
+        isShowWithdraw = true
     }
-    func withdrawFunc() {
+    func withdrawFunc(move: () -> Void) {
         addCancellable(withdrawUseCase.execute()) { _ in }
+        move()
     }
 }
