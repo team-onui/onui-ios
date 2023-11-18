@@ -5,13 +5,12 @@ import Swinject
 @main
 struct ONUI_iOSApp: App {
     private let startView: any View
-    private var assembler: Assembler!
     @StateObject var appState = AppState(page: .splash, theme: .standard)
     
     init() {
         Roboto.registerFonts()
 
-        assembler = Assembler([
+        _ = Assembler([
             KeychainDI(),
             DataSourceDI(),
             RepositoryDI(),
