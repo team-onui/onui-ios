@@ -46,20 +46,6 @@ final class RecordViewModel: BaseViewModel {
     @Published var questionStep: RecordStep = .appear
     @Published var answerStep: RecordStep = .appear
 
-    private let writeDiaryUseCase: WriteDiaryUseCase
-    private let uploadImageUseCase: UploadImageUseCase
-    private let postTimelineUseCase: PostTimelineUseCase
-
-    init(
-        writeDiaryUseCase: WriteDiaryUseCase,
-        uploadImageUseCase: UploadImageUseCase,
-        postTimelineUseCase: PostTimelineUseCase
-    ) {
-        self.writeDiaryUseCase = writeDiaryUseCase
-        self.uploadImageUseCase = uploadImageUseCase
-        self.postTimelineUseCase = postTimelineUseCase
-    }
-
     let loadingTime = 0.5
     let moodDetailList: [String] = [
         "행복해요",
@@ -79,6 +65,20 @@ final class RecordViewModel: BaseViewModel {
         "짜증나요",
         "피곤해요"
     ]
+
+    private let writeDiaryUseCase: WriteDiaryUseCase
+    private let uploadImageUseCase: UploadImageUseCase
+    private let postTimelineUseCase: PostTimelineUseCase
+
+    init(
+        writeDiaryUseCase: WriteDiaryUseCase,
+        uploadImageUseCase: UploadImageUseCase,
+        postTimelineUseCase: PostTimelineUseCase
+    ) {
+        self.writeDiaryUseCase = writeDiaryUseCase
+        self.uploadImageUseCase = uploadImageUseCase
+        self.postTimelineUseCase = postTimelineUseCase
+    }
 
     func fetchImageUrl(image: UIImage) {
         guard let data = image.pngData() else { return }
@@ -124,5 +124,18 @@ final class RecordViewModel: BaseViewModel {
 
             self?.isSuccessToPost.toggle()
         }
+    }
+
+    func redraw() {
+        isSuccessToPost = false
+        isLoadingChat = false
+        selectedMood = nil
+        selectedMoodDetail = []
+        whatisHappening = ""
+        isShowImagePicker = false
+        selectedImageUrl = nil
+
+        questionStep = .appear
+        answerStep = .appear
     }
 }

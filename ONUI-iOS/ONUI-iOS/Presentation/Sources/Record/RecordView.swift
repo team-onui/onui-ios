@@ -117,6 +117,7 @@ struct RecordView: View {
                         }
                     }
                 }
+                .padding(.vertical, 12)
             }
             .onChange(of: selectedImage) { image in
                 guard let image else { return }
@@ -140,6 +141,7 @@ struct RecordView: View {
         .onAppear {
             viewModel.questionStep.nextStep()
         }
+        .onDisappear(perform: viewModel.redraw)
         .hideKeyboardWhenTap()
         .background(Color.GrayScale.Background.background)
         .imagePicker(
