@@ -23,19 +23,19 @@ public enum Theme: Hashable, CaseIterable {
         switch self {
         case .standard:
             return MoodImage.Image.Mood.allCases.map { mood in
-                return MoodImage(.standard(mood), isOn: true)
+                MoodImage(.standard(mood), isOn: true)
             }
         case .hong:
             return MoodImage.Image.Mood.allCases.map { mood in
-                return MoodImage(.hong(mood), isOn: true)
+                MoodImage(.hong(mood), isOn: true)
             }
         case .ssac:
             return MoodImage.Image.Mood.allCases.map { mood in
-                return MoodImage(.ssac(mood), isOn: true)
+                MoodImage(.ssac(mood), isOn: true)
             }
         case .nya:
             return MoodImage.Image.Mood.allCases.map { mood in
-                return MoodImage(.nya(mood), isOn: true)
+                MoodImage(.nya(mood), isOn: true)
             }
         }
     }
