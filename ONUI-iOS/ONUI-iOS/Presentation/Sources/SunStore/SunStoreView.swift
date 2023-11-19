@@ -10,23 +10,10 @@ struct SunStoreView: View {
     }
     var body: some View {
         ScrollView {
-            HStack(spacing: 8) {
-                OnuiImage(.chatProfile)
-                    .frame(48)
-
-                Text("남은 쌀은 \(viewModel.rice)개에요..!!")
-                    .onuiFont(.body(.medium), color: .GrayScale.Surface.onSurface)
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, 8)
-                    .background(Color.GrayScale.Surface.surface)
-                    .cornerRadius(16)
-
-                Spacer()
-            }
-            .padding(.horizontal, 8)
-            .padding(.top, 12)
-
             VStack {
+                Rice(viewModel.rice)
+                    .padding(.top, 12)
+
                 ForEach(viewModel.themeList, id: \.theme) { theme in
                     themeCell(theme: theme)
                 }
@@ -64,7 +51,7 @@ struct SunStoreView: View {
             Button {
                 viewModel.buyTheme(theme: theme)
             } label: {
-                Text(theme.isBought ? "구매완료": "\(theme.price)쌀")
+                Text(theme.isBought ? "구매완료": "\(theme.price)톨")
                     .onuiFont(.body(.medium), color: theme.isBought ? .Primary.primary :.Primary.onPrimaryContainer)
                     .padding(.vertical, 4)
                     .padding(.horizontal, 8)
