@@ -13,6 +13,7 @@ struct MainView: View {
     private let timelineView = DI.container.resolve(TimelineView.self)!
     private let settingView = DI.container.resolve(SettingView.self)!
     private let sunStoreView = DI.container.resolve(SunStoreView.self)!
+    private let missionView = DI.container.resolve(MissionView.self)!
 
     init(viewModel: MainViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -38,7 +39,9 @@ struct MainView: View {
                                     functionButton(title: "한눈에", subTitle: "달력", image: ImageResource.calendar)
                                 }
                                 
-                                functionButton(title: "하나씩", subTitle: "과제", image:ImageResource.check)
+                                NavigationLink(destination: missionView) {
+                                    functionButton(title: "하나씩", subTitle: "과제", image:ImageResource.check)
+                                }
                             }
                             
                             NavigationLink(destination: sunStoreView) {
@@ -69,29 +72,31 @@ struct MainView: View {
                         .padding(.horizontal, 16)
                         
                         HStack(alignment: .top, spacing: spacing) {
-                            ZStack(alignment: .topLeading) {
-                                VStack(alignment: .leading, spacing: 0) {
-                                    Text("앱 꾸미기")
-                                        .onuiFont(.title(.medium), color: .GrayScale.Surface.surfaceVariant)
+                            NavigationLink(destination: MoonStoreView.init()) {
+                                ZStack(alignment: .topLeading) {
+                                    VStack(alignment: .leading, spacing: 0) {
+                                        Text("앱 꾸미기")
+                                            .onuiFont(.title(.medium), color: .GrayScale.Surface.surfaceVariant)
+                                        
+                                        Text("달님 만물상")
+                                            .onuiFont(.headline(.medium), color: .GrayScale.Surface.onSurface)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 3)
+                                    .zIndex(1)
                                     
-                                    Text("달님 만물상")
-                                        .onuiFont(.headline(.medium), color: .GrayScale.Surface.onSurface)
+                                    Image(.moon)
+                                        .resizable()
+                                        .frame(width: 173, height: 135.36)
+                                        .padding(.top, 33)
+                                        .offset(x: 59, y: 23.36)
+                                        .zIndex(0)
                                 }
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, 3)
-                                .zIndex(1)
-                                
-                                Image(.moon)
-                                    .resizable()
-                                    .frame(width: 173, height: 135.36)
-                                    .padding(.top, 33)
-                                    .offset(x: 59, y: 23.36)
-                                    .zIndex(0)
+                                .padding(.top, 12)
+                                .padding(.leading, 13)
+                                .background(Color.GrayScale.Surface.surface)
+                                .cornerRadius(32)
                             }
-                            .padding(.top, 12)
-                            .padding(.leading, 13)
-                            .background(Color.GrayScale.Surface.surface)
-                            .cornerRadius(32)
                             
                             VStack(spacing: spacing) {
                                 HStack(spacing: spacing) {
@@ -121,85 +126,113 @@ struct MainView: View {
                             minHeight: last7DayHeight
                         ) {
                             VStack(spacing: 8) {
-                                HStack {
-                                    Text("지난 7일")
-                                        .onuiFont(.title(.large), color: .GrayScale.Surface.onSurface)
-                                    
-                                    Spacer()
-                                    
-                                    Image(systemName: "chevron.right")
-                                }
-                                .padding(.horizontal, 16)
-                                
-                                HStack(spacing: 0) {
-                                    Spacer()
-                                    
-                                    ForEach(0..<viewModel.shiftCount(), id: \.self) { _ in
-                                        emptyView
-                                            .frame(40)
-
+                                VStack(spacing: 8) {
+                                    HStack {
+                                        Text("지난 7일")
+                                            .onuiFont(.title(.large), color: .GrayScale.Surface.onSurface)
+                                        
                                         Spacer()
+                                        
+                                        Image(systemName: "chevron.right")
                                     }
-
-                                    ForEach(viewModel.moodOfWeekList, id: \.id) { mood in
-                                        var moodImage: MoodImage.Image {
-                                            let moodType = mood.mood
-                                            var mood: MoodImage.Image.Mood {
-                                                switch moodType {
-                                                case .worst:
-                                                    return .veryBad
-                                                case .bad:
-                                                    return .bad
-                                                case .notBad:
-                                                    return .normal
-                                                case .fine:
-                                                    return .good
-                                                case .good:
-                                                    return .veryGood
+                                    .padding(.horizontal, 16)
+                                    
+                                    HStack(spacing: 0) {
+                                        Spacer()
+                                        
+                                        ForEach(0..<viewModel.shiftCount(), id: \.self) { _ in
+                                            emptyView
+                                                .frame(40)
+                                            
+                                            Spacer()
+                                        }
+                                        
+                                        ForEach(viewModel.moodOfWeekList, id: \.id) { mood in
+                                            var moodImage: MoodImage.Image {
+                                                let moodType = mood.mood
+                                                var mood: MoodImage.Image.Mood {
+                                                    switch moodType {
+                                                    case .worst:
+                                                        return .veryBad
+                                                    case .bad:
+                                                        return .bad
+                                                    case .notBad:
+                                                        return .normal
+                                                    case .fine:
+                                                        return .good
+                                                    case .good:
+                                                        return .veryGood
+                                                    }
+                                                }
+                                                
+                                                switch appState.theme {
+                                                case .standard:
+                                                    return .standard(mood)
+                                                case .hong:
+                                                    return .hong(mood)
+                                                case .ssac:
+                                                    return .ssac(mood)
+                                                case .nya:
+                                                    return .nya(mood)
                                                 }
                                             }
-
-                                            switch appState.theme {
-                                            case .standard:
-                                                return .standard(mood)
-                                            case .hong:
-                                                return .hong(mood)
-                                            case .ssac:
-                                                return .ssac(mood)
-                                            case .nya:
-                                                return .nya(mood)
-                                            }
+                                            MoodImage(
+                                                moodImage,
+                                                isOn: true
+                                            )
+                                            .frame(width: 40, height: 40)
+                                            
+                                            Spacer()
                                         }
-                                        MoodImage(
-                                            moodImage,
-                                            isOn: true
-                                        )
-                                        .frame(width: 40, height: 40)
-
-                                        Spacer()
+                                        
+                                        ForEach(0..<7 - viewModel.moodOfWeekList.count - viewModel.shiftCount(), id: \.self) { _ in
+                                            emptyView
+                                                .frame(40)
+                                            
+                                            Spacer()
+                                        }
                                     }
-
-                                    ForEach(0..<7 - viewModel.moodOfWeekList.count - viewModel.shiftCount(), id: \.self) { _ in
-                                        emptyView
-                                            .frame(40)
-
-                                        Spacer()
-                                    }
+                                    .padding(.vertical, 12)
+                                    .padding(.horizontal, 16)
                                 }
                                 .padding(.vertical, 12)
-                                .padding(.horizontal, 16)
-                            }
-                            .padding(.vertical, 12)
-                            .background(Color.GrayScale.Surface.surface)
-                            .cornerRadius(24)
-                            .padding(8)
-                            .overlay {
-                                GeometryReader(content: { geometry in
-                                    Color.clear.onAppear {
-                                        last7DayHeight = geometry.size.height
+                                .background(Color.GrayScale.Surface.surface)
+                                .cornerRadius(24)
+                                .overlay {
+                                    GeometryReader(content: { geometry in
+                                        Color.clear.onAppear {
+                                            last7DayHeight = geometry.size.height + 16
+                                        }
+                                    })
+                                }
+
+                                VStack(alignment: .leading, spacing: 10) {
+                                    HStack(alignment: .top) {
+                                        Text("과제")
+                                            .onuiFont(.title(.large), color: .GrayScale.Surface.onSurface)
+
+                                        Spacer()
+                                        
+                                        Image(.missionIcon)
+                                            .resizable()
+                                            .frame(48)
                                     }
-                                })
+
+                                    ForEach(viewModel.missionList, id: \.id) { mission in
+                                        missionProgressCell(
+                                            title: mission.name,
+                                            content: mission.goal,
+                                            isCompleted: mission.isFinished
+                                        )
+                                    }
+                                }
+                                .padding(16)
+                                .background(Color.GrayScale.Surface.surface)
+                                .cornerRadius(24)
+
+                                Rice(viewModel.rice)
                             }
+                            .padding(8)
                         }
                         .padding(.horizontal, 8)
                     })
@@ -266,5 +299,27 @@ struct MainView: View {
         .padding(.horizontal, isNil ? 28.5 :16)
         .background(Color.GrayScale.Surface.surface)
         .cornerRadius(32)
+    }
+
+    @ViewBuilder
+    func missionProgressCell(title: String, content: String, isCompleted: Bool) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .top, spacing: 8) {
+                Text(title)
+                    .onuiFont(.body(.medium), color: .GrayScale.Surface.onSurface)
+
+                Text(title)
+                    .onuiFont(.label, color: .GrayScale.Surface.onSurfaceVariant)
+
+                if isCompleted {
+                    Text("완료!")
+                        .onuiFont(.label, color: .Primary.primary)
+                }
+            }
+
+            RoundedRectangle(cornerRadius: 8)
+                .fill(isCompleted ? Color.Primary.onPrimaryContainer: .Primary.primaryContainer)
+                .frame(maxWidth: .infinity, maxHeight: 8)
+        }
     }
 }
