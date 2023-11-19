@@ -64,6 +64,21 @@ enum Mood: CaseIterable {
     case normal
     case bad
     case veryBad
+    
+    var foregroundColor: Color {
+        switch self {
+        case .veryGood:
+            return .init(hexCode: "FA8BAC")
+        case .good:
+            return .init(hexCode: "FFCF71")
+        case .normal:
+            return .init(hexCode: "F4F1D7")
+        case .bad:
+            return .init(hexCode: "4F9568")
+        case .veryBad:
+            return .init(hexCode: "6B7773")
+        }
+    }
 
     func moodImage() -> MoodImage.Image.Mood {
         switch self {
@@ -81,6 +96,21 @@ enum Mood: CaseIterable {
 
         case .veryBad:
             .veryBad
+        }
+    }
+
+    func toKorean() -> String {
+        switch self {
+        case .veryGood:
+            return "매우 좋음"
+        case .good:
+            return "좋음"
+        case .normal:
+            return "보통"
+        case .bad:
+            return "나쁨"
+        case .veryBad:
+            return "매우 나쁨"
         }
     }
 }
