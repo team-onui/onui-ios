@@ -35,5 +35,9 @@ public final class RepositoryDI: Assembly {
         container.register(ShopRepository.self) { resolver in
             ShopRepositoryImpl(remoteShopDataSource: resolver.resolve(RemoteShopDataSource.self)!)
         }
+
+        container.register(MissionRepository.self) { resolver in
+            MissionRepositoryImpl(remoteMissionDataSource: resolver.resolve(RemoteMissionDataSource.self)!)
+        }
     }
 }

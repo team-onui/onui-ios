@@ -40,5 +40,9 @@ public final class DataSourceDI: Assembly {
         container.register(RemoteShopDataSource.self) { resolver in
             RemoteShopDataSourceImpl(keychain: self.keychain(resolver))
         }
+
+        container.register(RemoteMissionDataSource.self) { resolver in
+            RemoteMissionDataSourceImpl(keychain: self.keychain(resolver))
+        }
     }
 }

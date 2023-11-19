@@ -138,5 +138,17 @@ public final class UseCaseDI: Assembly {
                 shopRepository: resolver.resolve(ShopRepository.self)!
             )
         }
+
+        // Mission
+        container.register(CompleteMissionUseCase.self) { resolver in
+            CompleteMissionUseCase(
+                missionRepository: resolver.resolve(MissionRepository.self)!
+            )
+        }
+        container.register(FetchMissionListUseCase.self) { resolver in
+            FetchMissionListUseCase(
+                missionRepository: resolver.resolve(MissionRepository.self)!
+            )
+        }
     }
 }
