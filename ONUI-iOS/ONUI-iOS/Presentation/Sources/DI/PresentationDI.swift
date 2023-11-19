@@ -27,7 +27,11 @@ public final class PresentationDI: Assembly {
         }
 
         container.register(MainViewModel.self) { resolver in
-            MainViewModel(fetchMoodOfWeekUseCase: resolver.resolve(FetchMoodOfWeekUseCase.self)!)
+            MainViewModel(
+                fetchMoodOfWeekUseCase: resolver.resolve(FetchMoodOfWeekUseCase.self)!,
+                fetchMissionListUseCase: resolver.resolve(FetchMissionListUseCase.self)!,
+                fetchMyRiceUseCase: resolver.resolve(FetchMyRiceUseCase.self)!
+            )
         }
         container.register(MainView.self) { resolver in
             MainView(viewModel: resolver.resolve(MainViewModel.self)!)
@@ -110,6 +114,22 @@ public final class PresentationDI: Assembly {
             ChangeThemeView(
                 viewModel: resolver.resolve(ChangeThemeViewModel.self)!
             )
+        }
+        container.register(ChartViewModel.self) { resolver in
+            ChartViewModel(
+            )
+        }
+        container.register(ChartView.self) { resolver in
+            ChartView()
+        }
+        container.register(MissionViewModel.self) { resolver in
+            MissionViewModel(
+                fetchMissionListUseCase: resolver.resolve(FetchMissionListUseCase.self)!,
+                completeMissionUseCase: resolver.resolve(CompleteMissionUseCase.self)!
+            )
+        }
+        container.register(MissionView.self) { resolver in
+            MissionView(viewModel: resolver.resolve(MissionViewModel.self)!)
         }
     }
 }
