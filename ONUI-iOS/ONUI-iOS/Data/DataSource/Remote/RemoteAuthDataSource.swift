@@ -5,6 +5,7 @@ protocol RemoteAuthDataSource {
     func appleSignin(token: String) -> AnyPublisher<Void, Error>
     func refreshToken() -> AnyPublisher<Void, Error>
     func withdraw() -> AnyPublisher<Void, Error>
+    func sendDeviceToken(token: String) -> AnyPublisher<Void, Error>
 }
 
 final class RemoteAuthDataSourceImpl: BaseRemoteDataSource<AuthAPI>, RemoteAuthDataSource {
@@ -23,5 +24,9 @@ final class RemoteAuthDataSourceImpl: BaseRemoteDataSource<AuthAPI>, RemoteAuthD
 
     func withdraw() -> AnyPublisher<Void, Error> {
         request(.withdraw)
+    }
+
+    func sendDeviceToken(token: String) -> AnyPublisher<Void, Error> {
+        request(.sendDeviceToken(token: token))
     }
 }

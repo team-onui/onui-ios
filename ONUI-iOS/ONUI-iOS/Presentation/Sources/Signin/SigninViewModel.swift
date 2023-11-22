@@ -1,5 +1,6 @@
 import Combine
 import GoogleSignIn
+import FirebaseMessaging
 
 final class SigninViewModel: BaseViewModel {
     @Published var isNavigatedToMain: Bool = false
@@ -8,15 +9,18 @@ final class SigninViewModel: BaseViewModel {
     private let googleSigninUseCase: GoogleSigninUseCase
     private let appleSigninUseCase: AppleSigninUseCase
     private let fetchProfileUseCase: FetchProfileUseCase
+    private let sendDeviceTokenUseCase: SendDeviceTokenUseCase
 
     init(
         googleSigninUseCase: GoogleSigninUseCase,
         appleSigninUseCase: AppleSigninUseCase,
-        fetchProfileUseCase: FetchProfileUseCase
+        fetchProfileUseCase: FetchProfileUseCase,
+        sendDeviceTokenUseCase: SendDeviceTokenUseCase
     ) {
         self.googleSigninUseCase = googleSigninUseCase
         self.appleSigninUseCase = appleSigninUseCase
         self.fetchProfileUseCase = fetchProfileUseCase
+        self.sendDeviceTokenUseCase = sendDeviceTokenUseCase
     }
 
     func googleSigninButtonDidTap() {
@@ -32,6 +36,7 @@ final class SigninViewModel: BaseViewModel {
         addCancellable(googleSigninUseCase.execute(token: accessToken)) { [weak self] _ in
             self?.fetchProfile()
             self?.isNavigatedToMain.toggle()
+            self?.sendDeviceToken()
         }
     }
 
@@ -39,7 +44,12 @@ final class SigninViewModel: BaseViewModel {
         addCancellable(appleSigninUseCase.execute(token: accessToken)) { [weak self] _ in
             self?.fetchProfile()
             self?.isNavigatedToMain.toggle()
+            self?.sendDeviceToken()
         }
+    }
+
+    private func sendDeviceToken() {
+        addCancellable(sendDeviceTokenUseCase.execute(token: Messaging.messaging().fcmToken ?? "")) { _ in }
     }
 
     private func fetchProfile() {

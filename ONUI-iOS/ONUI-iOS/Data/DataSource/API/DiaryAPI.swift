@@ -7,6 +7,7 @@ enum DiaryAPI {
     case fetchDiaryDetail(date: Date)
     case putDiary(PutDiaryRequestQuery)
     case fetchMoodOfWeek
+    case chat([String])
 }
 
 extension DiaryAPI: OnuiAPI {
@@ -26,12 +27,15 @@ extension DiaryAPI: OnuiAPI {
 
         case .fetchMoodOfWeek:
             return "/ago"
+
+        case .chat:
+            return "/chat"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .writeDiary:
+        case .writeDiary, .chat:
             return .post
 
         case .fetchMoodOfMonth, .fetchDiaryDetail, .fetchMoodOfWeek:
@@ -63,6 +67,11 @@ extension DiaryAPI: OnuiAPI {
 
         case .fetchMoodOfWeek:
             return .requestPlain
+
+        case let .chat(moodDetail):
+            return .requestParameters(parameters: [
+                "tag_list": moodDetail
+            ], encoding: JSONEncoding.default)
         }
     }
 

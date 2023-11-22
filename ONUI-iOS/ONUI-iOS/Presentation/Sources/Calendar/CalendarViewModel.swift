@@ -70,19 +70,7 @@ final class CalendarViewModel: BaseViewModel {
 
                     var moodType: Mood? {
                         if isToDay {
-                            let mood = diary.mood
-                            switch mood {
-                            case .worst:
-                                return .veryBad
-                            case .bad:
-                                return .bad
-                            case .notBad:
-                                return .normal
-                            case .fine:
-                                return .good
-                            case .good:
-                                return .veryGood
-                            }
+                            return diary.mood
                         } else { return nil }
                     }
 //

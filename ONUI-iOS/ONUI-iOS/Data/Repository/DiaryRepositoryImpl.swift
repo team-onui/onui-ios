@@ -27,4 +27,8 @@ struct DiaryRepositoryImpl: DiaryRepository {
     func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error> {
         remoteDiaryDataSource.fetchMoodOfWeek()
     }
+
+    func chat(moodDetail: [String]) -> AnyPublisher<String, Error> {
+        remoteDiaryDataSource.chat(moodDetail: moodDetail)
+    }
 }

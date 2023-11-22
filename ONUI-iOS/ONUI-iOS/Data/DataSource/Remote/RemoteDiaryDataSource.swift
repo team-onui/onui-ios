@@ -7,6 +7,7 @@ protocol RemoteDiaryDataSource {
     func fetchDiaryDetail(date: Date) -> AnyPublisher<DiaryDetailEntity, Error>
     func putDiary(req: PutDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error>
     func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error>
+    func chat(moodDetail: [String]) -> AnyPublisher<String, Error>
 }
 
 final class RemoteDiaryDataSourceImpl: BaseRemoteDataSource<DiaryAPI>, RemoteDiaryDataSource {
@@ -36,7 +37,13 @@ final class RemoteDiaryDataSourceImpl: BaseRemoteDataSource<DiaryAPI>, RemoteDia
 
     func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error> {
         request(.fetchMoodOfWeek, dto: FetchMoodOfMonthResponseDTO.self)
-            .map { $0.toDomain() }
+            .map { $0.toDomain().reversed() }
+            .eraseToAnyPublisher()
+    }
+
+    func chat(moodDetail: [String]) -> AnyPublisher<String, Error> {
+        request(.chat(moodDetail), dto: ChatResponseDTO.self)
+            .map { $0.message }
             .eraseToAnyPublisher()
     }
 }

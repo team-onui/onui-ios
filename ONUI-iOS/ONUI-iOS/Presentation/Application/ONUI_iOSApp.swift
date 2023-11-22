@@ -1,11 +1,11 @@
 import SwiftUI
-import GoogleSignIn
 import Swinject
 
 @main
 struct ONUI_iOSApp: App {
-    private let startView: any View
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var appState = AppState(page: .splash, theme: .standard)
+    private let startView: any View
     
     init() {
         Roboto.registerFonts()
@@ -19,9 +19,6 @@ struct ONUI_iOSApp: App {
         ], container: DI.container)
 
         startView = DI.container.resolve(RootView.self)!
-        let config = GIDConfiguration(clientID: "797489065606-app51ou4l1ngvs2d9j0ikkom79fuateb.apps.googleusercontent.com")
-                
-        GIDSignIn.sharedInstance.configuration = config
     }
 
     var body: some Scene {

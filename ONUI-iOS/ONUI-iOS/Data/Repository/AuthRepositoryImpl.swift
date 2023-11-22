@@ -30,4 +30,8 @@ final class AuthRepositoryImpl: AuthRepository {
     func logout() {
         localAuthDataSource.clearTokens()
     }
+
+    func sendDeviceToken(token: String) -> AnyPublisher<Void, Error> {
+        remoteAuthDataSource.sendDeviceToken(token: token)
+    }
 }

@@ -10,7 +10,7 @@ struct MoonStoreView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.GrayScale.Background.background)
-        .setBackButton(title: "햇님 방앗간") {
+        .setBackButton(title: "달님 만물상") {
             dismiss()
         }
     }

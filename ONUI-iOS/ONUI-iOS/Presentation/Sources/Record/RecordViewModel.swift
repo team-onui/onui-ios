@@ -35,6 +35,7 @@ final class RecordViewModel: BaseViewModel {
         case skip
         case share
     }
+    @Published var message: String? = nil
     @Published var isSuccessToPost: Bool = false
     @Published var isLoadingChat: Bool = false
     @Published var selectedMood: Mood?
@@ -69,15 +70,29 @@ final class RecordViewModel: BaseViewModel {
     private let writeDiaryUseCase: WriteDiaryUseCase
     private let uploadImageUseCase: UploadImageUseCase
     private let postTimelineUseCase: PostTimelineUseCase
+    private let chatUseCase: ChatUseCase
 
     init(
         writeDiaryUseCase: WriteDiaryUseCase,
         uploadImageUseCase: UploadImageUseCase,
-        postTimelineUseCase: PostTimelineUseCase
+        postTimelineUseCase: PostTimelineUseCase,
+        chatUseCase: ChatUseCase
     ) {
         self.writeDiaryUseCase = writeDiaryUseCase
         self.uploadImageUseCase = uploadImageUseCase
         self.postTimelineUseCase = postTimelineUseCase
+        self.chatUseCase = chatUseCase
+    }
+
+    func selectMoodDetail() {
+        questionStep.nextStep()
+        chat()
+    }
+
+    private func chat() {
+        addCancellable(chatUseCase.execute(moodDetail: selectedMoodDetail)) { message in
+            self.message = message
+        }
     }
 
     func fetchImageUrl(image: UIImage) {
@@ -134,6 +149,7 @@ final class RecordViewModel: BaseViewModel {
         whatisHappening = ""
         isShowImagePicker = false
         selectedImageUrl = nil
+        message = nil
 
         questionStep = .appear
         answerStep = .appear

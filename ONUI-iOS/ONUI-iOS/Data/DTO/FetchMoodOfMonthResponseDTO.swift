@@ -31,7 +31,7 @@ extension FetchMoodOfMonthResponseDTO {
         guard let diaries else { return [] }
 
         return diaries.map {
-            ShortDiaryEntity(id: $0.id, mood: $0.mood, createdAt: $0.createdAt.toDate())
+            ShortDiaryEntity(id: $0.id, mood: $0.mood.toDomain(), createdAt: $0.createdAt.toDate())
         }
     }
 }

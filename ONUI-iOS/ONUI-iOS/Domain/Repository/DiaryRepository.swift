@@ -7,4 +7,5 @@ protocol DiaryRepository {
     func fetchDiaryDetail(date: Date) -> AnyPublisher<DiaryDetailEntity, Error>
     func putDiary(req: PutDiaryRequestQuery) -> AnyPublisher<DiaryEntity, Error>
     func fetchMoodOfWeek() -> AnyPublisher<[ShortDiaryEntity], Error>
+    func chat(moodDetail: [String]) -> AnyPublisher<String, Error>
 }

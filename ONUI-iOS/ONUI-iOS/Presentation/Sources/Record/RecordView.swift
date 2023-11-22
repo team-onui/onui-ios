@@ -37,18 +37,56 @@ struct RecordView: View {
                                      """, step: .moodDetail)
                         
                         if answerStepRawValue > 0 {
-                            selectMoodDetail()
-                                .id(1)
+                            let thisStep: RecordStep = .moodDetail
+                            VStack(spacing: 8) {
+                                selectMoodDetail()
+
+                                if viewModel.answerStep == thisStep {
+                                    nextButton(
+                                        isFill: !viewModel.selectedMoodDetail.isEmpty,
+                                        step: thisStep
+                                    ) {
+                                        viewModel.selectMoodDetail()
+                                    }
+                                    .padding(.horizontal, 16)
+                                }
+                            }
+                            .id(1)
                         }
                     }
                     
                     if questionStepRawValue > 1 {
-                        questionChat("""
-                                 (선택한 감정에 따른 메시지)
-                                 무슨 일이 있었는지 알려주세요.
-                                 """, step: .happening)
+                        HStack(spacing: 8) {
+                            OnuiImage(.chatProfile)
+                                .frame(48)
+
+                            if let message = viewModel.message {
+                                Text(message + "\n구체적으로 무슨 일이 있었는지 알려주세요.")
+                                    .onuiFont(.body(.medium), color: .GrayScale.Surface.onSurface)
+                                    .padding(.vertical, 4)
+                                    .padding(.horizontal, 8)
+                                    .background(Color.GrayScale.Surface.surface)
+                                    .cornerRadius(16)
+                            } else {
+                                HStack(spacing: 8) {
+                                    Circle().fill(Color.GrayScale.Surface.onSurfaceVariant)
+                                        .frame(8)
+                                    Circle().fill(Color.GrayScale.Surface.onSurface)
+                                        .frame(8)
+                                    Circle().fill(Color.GrayScale.Surface.onSurfaceVariant)
+                                        .frame(8)
+                                }
+                                .padding(.vertical, 4)
+                                .padding(.horizontal, 8)
+                                .background(Color.GrayScale.Surface.surface)
+                                .cornerRadius(16)
+                            }
+
+                            Spacer()
+                        }
+                        .padding(.horizontal, 8)
                         
-                        if answerStepRawValue > 1 {
+                        if answerStepRawValue > 1 && viewModel.message != nil {
                             let thisStep: RecordStep = .happening
                             VStack(spacing: 8) {
                                 inputWhatIsHappening()
@@ -85,6 +123,13 @@ struct RecordView: View {
                                 }
                             }
                             .id(3)
+                            .onAppear {
+                                deferDelayAfter(){
+                                    withAnimation {
+                                        value.scrollTo(3, anchor: .bottom)
+                                    }
+                                }
+                            }
                         }
                     }
                     
@@ -198,10 +243,9 @@ struct RecordView: View {
         }
 
         Button {
-            (action ?? { })()
-            
             hideKeyboard()
             withAnimation {
+                (action ?? { })()
                 if step == viewModel.questionStep && viewModel.answerStep == viewModel.questionStep {
                     viewModel.questionStep.nextStep()
                 }
@@ -295,13 +339,6 @@ struct RecordView: View {
                         viewModel.selectedMoodDetail.removeAll { $0 == moodDetail }
                     } else {
                         viewModel.selectedMoodDetail.append(moodDetail)
-                    }
-                    if viewModel.questionStep == viewModel.answerStep {
-                        if viewModel.answerStep == .moodDetail {
-                            withAnimation {
-                                viewModel.questionStep.nextStep()
-                            }
-                        }
                     }
                 } label: {
                     Text(moodDetail)

@@ -88,6 +88,38 @@
 		90BCB9AE2AD79D840076459C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCB9AD2AD79D840076459C /* MainViewModel.swift */; };
 		90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */; };
 		90BCC0152AA03E660067A284 /* OnuiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCC0142AA03E660067A284 /* OnuiAPI.swift */; };
+		90C7E95B2B09F98B004E10AC /* MoonStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E95A2B09F98B004E10AC /* MoonStoreView.swift */; };
+		90C7E95D2B0ADE16004E10AC /* ChatResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E95C2B0ADE16004E10AC /* ChatResponseDTO.swift */; };
+		90C7E9602B0ADEA9004E10AC /* ChatUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E95F2B0ADEA9004E10AC /* ChatUseCase.swift */; };
+		90C7E9622B0B3D8A004E10AC /* AnalysisAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9612B0B3D8A004E10AC /* AnalysisAPI.swift */; };
+		90C7E9642B0B3DAF004E10AC /* AnalysisError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9632B0B3DAF004E10AC /* AnalysisError.swift */; };
+		90C7E9662B0B40A7004E10AC /* RemoteAnalysisDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9652B0B40A7004E10AC /* RemoteAnalysisDataSource.swift */; };
+		90C7E9682B0B4105004E10AC /* FetchMoodAnalysisResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9672B0B4105004E10AC /* FetchMoodAnalysisResponseDTO.swift */; };
+		90C7E96A2B0B4175004E10AC /* MoodAnalysisEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9692B0B4175004E10AC /* MoodAnalysisEntity.swift */; };
+		90C7E96C2B0B41CF004E10AC /* FetchMonthlyAnalysisResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E96B2B0B41CF004E10AC /* FetchMonthlyAnalysisResponseDTO.swift */; };
+		90C7E96E2B0B4238004E10AC /* MonthlyAnalysisEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E96D2B0B4238004E10AC /* MonthlyAnalysisEntity.swift */; };
+		90C7E9702B0B44F7004E10AC /* AnalysisRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E96F2B0B44F7004E10AC /* AnalysisRepository.swift */; };
+		90C7E9722B0B4549004E10AC /* AnalysisRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9712B0B4549004E10AC /* AnalysisRepositoryImpl.swift */; };
+		90C7E9752B0B4594004E10AC /* FetchMoodAnalysisUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9742B0B4594004E10AC /* FetchMoodAnalysisUseCase.swift */; };
+		90C7E9772B0B45C8004E10AC /* FetchMonthlyAnalysisUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9762B0B45C8004E10AC /* FetchMonthlyAnalysisUseCase.swift */; };
+		90C7E9792B0C28A9004E10AC /* SendDeviceTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E9782B0C28A9004E10AC /* SendDeviceTokenUseCase.swift */; };
+		90C7E97B2B0C28FE004E10AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7E97A2B0C28FE004E10AC /* AppDelegate.swift */; };
+		90C7E9B62B0C413D004E10AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C7E9B52B0C413D004E10AC /* GoogleService-Info.plist */; };
+		90D1B5FD2B099C11002A6891 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B5FC2B099C11002A6891 /* ChartView.swift */; };
+		90D1B5FF2B099C16002A6891 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B5FE2B099C16002A6891 /* ChartViewModel.swift */; };
+		90D1B6012B09DE8C002A6891 /* MissionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6002B09DE8C002A6891 /* MissionAPI.swift */; };
+		90D1B6032B09DEB3002A6891 /* MissionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6022B09DEB3002A6891 /* MissionError.swift */; };
+		90D1B6052B09E0BC002A6891 /* RemoteMissionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6042B09E0BC002A6891 /* RemoteMissionDataSource.swift */; };
+		90D1B6072B09E0FA002A6891 /* FetchMissionListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6062B09E0FA002A6891 /* FetchMissionListResponseDTO.swift */; };
+		90D1B6092B09E179002A6891 /* MissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6082B09E179002A6891 /* MissionType.swift */; };
+		90D1B60B2B09E20B002A6891 /* MissionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B60A2B09E20B002A6891 /* MissionEntity.swift */; };
+		90D1B60D2B09E359002A6891 /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B60C2B09E359002A6891 /* MissionRepository.swift */; };
+		90D1B60F2B09E373002A6891 /* MissionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B60E2B09E373002A6891 /* MissionRepositoryImpl.swift */; };
+		90D1B6122B09E3A4002A6891 /* CompleteMissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6112B09E3A4002A6891 /* CompleteMissionUseCase.swift */; };
+		90D1B6142B09E3D9002A6891 /* FetchMissionListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6132B09E3D9002A6891 /* FetchMissionListUseCase.swift */; };
+		90D1B6172B09E8BA002A6891 /* Rice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6162B09E8BA002A6891 /* Rice.swift */; };
+		90D1B61A2B09F3ED002A6891 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B6192B09F3ED002A6891 /* MissionView.swift */; };
+		90D1B61C2B09F3F2002A6891 /* MissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1B61B2B09F3F2002A6891 /* MissionViewModel.swift */; };
 		90D3AC642AF1D7B300D77CE5 /* TimelineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC632AF1D7B300D77CE5 /* TimelineAPI.swift */; };
 		90D3AC662AF1E4C200D77CE5 /* DayOfWeekType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */; };
 		90D3AC682AF1E5A900D77CE5 /* TimelineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */; };
@@ -98,8 +130,6 @@
 		90D3AC722AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */; };
 		90D3AC752AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC742AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift */; };
 		90D3AC772AF1EDBD00D77CE5 /* PostTimelineUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC762AF1EDBD00D77CE5 /* PostTimelineUseCase.swift */; };
-		90D3AC7F2AF1FBAD00D77CE5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 90D3AC7E2AF1FBAD00D77CE5 /* Swinject */; };
-		90D3AC812AF1FBAD00D77CE5 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 90D3AC802AF1FBAD00D77CE5 /* Swinject-Dynamic */; };
 		90D3AC832AF1FBF100D77CE5 /* JwtDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC822AF1FBF100D77CE5 /* JwtDI.swift */; };
 		90D3AC862AF1FC3000D77CE5 /* DataSourceDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC852AF1FC3000D77CE5 /* DataSourceDI.swift */; };
 		90D3AC882AF1FCC100D77CE5 /* RepositoryDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D3AC872AF1FCC100D77CE5 /* RepositoryDI.swift */; };
@@ -174,12 +204,29 @@
 		90ECF0732AF1D59000FD0147 /* FetchMoodOfMonthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0722AF1D59000FD0147 /* FetchMoodOfMonthUseCase.swift */; };
 		90ECF0752AF1D59800FD0147 /* FetchDiaryDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0742AF1D59800FD0147 /* FetchDiaryDetailUseCase.swift */; };
 		90ECF0772AF1D5A200FD0147 /* PutDiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ECF0762AF1D5A200FD0147 /* PutDiaryUseCase.swift */; };
+		90ED26C62B0CDEE1003D2780 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 90ED26C52B0CDEE1003D2780 /* Swinject */; };
+		90ED27222B0CEF5C003D2780 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 90ED27212B0CEF5C003D2780 /* FirebaseInAppMessaging-Beta */; };
+		90ED27242B0CEF5C003D2780 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 90ED27232B0CEF5C003D2780 /* FirebaseInAppMessagingSwift-Beta */; };
+		90ED272A2B0CEF5C003D2780 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 90ED27292B0CEF5C003D2780 /* FirebaseMessaging */; };
 		90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670E2AC3C56200BE5A5F /* SigninView.swift */; };
 		90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3670F2AC3C56200BE5A5F /* SigninViewModel.swift */; };
 		90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F367142AC3C57F00BE5A5F /* BaseViewModel.swift */; };
 		90F3671F2AC3C6E800BE5A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90BCBFFB2AA02E170067A284 /* Assets.xcassets */; };
 		90FA835B2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA835A2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		901B8B5F2B0C5BA200D914C2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9007DE012B0753E70098FAD6 /* FetchMyThemeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyThemeResponseDTO.swift; sourceTree = "<group>"; };
@@ -260,6 +307,38 @@
 		90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONUI_iOSApp.swift; sourceTree = "<group>"; };
 		90BCBFFB2AA02E170067A284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90BCC0142AA03E660067A284 /* OnuiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnuiAPI.swift; sourceTree = "<group>"; };
+		90C7E95A2B09F98B004E10AC /* MoonStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonStoreView.swift; sourceTree = "<group>"; };
+		90C7E95C2B0ADE16004E10AC /* ChatResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseDTO.swift; sourceTree = "<group>"; };
+		90C7E95F2B0ADEA9004E10AC /* ChatUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUseCase.swift; sourceTree = "<group>"; };
+		90C7E9612B0B3D8A004E10AC /* AnalysisAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisAPI.swift; sourceTree = "<group>"; };
+		90C7E9632B0B3DAF004E10AC /* AnalysisError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisError.swift; sourceTree = "<group>"; };
+		90C7E9652B0B40A7004E10AC /* RemoteAnalysisDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAnalysisDataSource.swift; sourceTree = "<group>"; };
+		90C7E9672B0B4105004E10AC /* FetchMoodAnalysisResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMoodAnalysisResponseDTO.swift; sourceTree = "<group>"; };
+		90C7E9692B0B4175004E10AC /* MoodAnalysisEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodAnalysisEntity.swift; sourceTree = "<group>"; };
+		90C7E96B2B0B41CF004E10AC /* FetchMonthlyAnalysisResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMonthlyAnalysisResponseDTO.swift; sourceTree = "<group>"; };
+		90C7E96D2B0B4238004E10AC /* MonthlyAnalysisEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyAnalysisEntity.swift; sourceTree = "<group>"; };
+		90C7E96F2B0B44F7004E10AC /* AnalysisRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisRepository.swift; sourceTree = "<group>"; };
+		90C7E9712B0B4549004E10AC /* AnalysisRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisRepositoryImpl.swift; sourceTree = "<group>"; };
+		90C7E9742B0B4594004E10AC /* FetchMoodAnalysisUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMoodAnalysisUseCase.swift; sourceTree = "<group>"; };
+		90C7E9762B0B45C8004E10AC /* FetchMonthlyAnalysisUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMonthlyAnalysisUseCase.swift; sourceTree = "<group>"; };
+		90C7E9782B0C28A9004E10AC /* SendDeviceTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDeviceTokenUseCase.swift; sourceTree = "<group>"; };
+		90C7E97A2B0C28FE004E10AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		90C7E9B52B0C413D004E10AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90D1B5FC2B099C11002A6891 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		90D1B5FE2B099C16002A6891 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		90D1B6002B09DE8C002A6891 /* MissionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionAPI.swift; sourceTree = "<group>"; };
+		90D1B6022B09DEB3002A6891 /* MissionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionError.swift; sourceTree = "<group>"; };
+		90D1B6042B09E0BC002A6891 /* RemoteMissionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMissionDataSource.swift; sourceTree = "<group>"; };
+		90D1B6062B09E0FA002A6891 /* FetchMissionListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMissionListResponseDTO.swift; sourceTree = "<group>"; };
+		90D1B6082B09E179002A6891 /* MissionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionType.swift; sourceTree = "<group>"; };
+		90D1B60A2B09E20B002A6891 /* MissionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEntity.swift; sourceTree = "<group>"; };
+		90D1B60C2B09E359002A6891 /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
+		90D1B60E2B09E373002A6891 /* MissionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepositoryImpl.swift; sourceTree = "<group>"; };
+		90D1B6112B09E3A4002A6891 /* CompleteMissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionUseCase.swift; sourceTree = "<group>"; };
+		90D1B6132B09E3D9002A6891 /* FetchMissionListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMissionListUseCase.swift; sourceTree = "<group>"; };
+		90D1B6162B09E8BA002A6891 /* Rice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rice.swift; sourceTree = "<group>"; };
+		90D1B6192B09F3ED002A6891 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		90D1B61B2B09F3F2002A6891 /* MissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewModel.swift; sourceTree = "<group>"; };
 		90D3AC632AF1D7B300D77CE5 /* TimelineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineAPI.swift; sourceTree = "<group>"; };
 		90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekType.swift; sourceTree = "<group>"; };
 		90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineError.swift; sourceTree = "<group>"; };
@@ -360,10 +439,12 @@
 				90E975DB2AD3D3F2008F8448 /* CombineMoya in Frameworks */,
 				902212C32AFBD73F0054326E /* GoogleSignInSwift in Frameworks */,
 				907549AB2AED21FB009F5BBF /* SwiftUIFlowLayout in Frameworks */,
-				90D3AC812AF1FBAD00D77CE5 /* Swinject-Dynamic in Frameworks */,
-				90D3AC7F2AF1FBAD00D77CE5 /* Swinject in Frameworks */,
+				90ED272A2B0CEF5C003D2780 /* FirebaseMessaging in Frameworks */,
 				902212C12AFBD73F0054326E /* GoogleSignIn in Frameworks */,
+				90ED27222B0CEF5C003D2780 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				902212CB2AFC67F60054326E /* SwiftKeychainWrapper in Frameworks */,
+				90ED26C62B0CDEE1003D2780 /* Swinject in Frameworks */,
+				90ED27242B0CEF5C003D2780 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +677,7 @@
 				90ECEFF02AF0E66200FD0147 /* Core */,
 				906361252AD7AD750046D2B7 /* Shared */,
 				90E976022AD40E1D008F8448 /* Info.plist */,
+				90C7E9B52B0C413D004E10AC /* GoogleService-Info.plist */,
 				90E975DE2AD3D426008F8448 /* DesignSystem */,
 				90BCC00E2AA038BF0067A284 /* Presentation */,
 				90BCC00D2AA038B80067A284 /* Data */,
@@ -610,6 +692,7 @@
 				90BCBFF72AA02E160067A284 /* ONUI_iOSApp.swift */,
 				90D3AC902AF20AAA00D77CE5 /* DI.swift */,
 				90125A8F2B04B29600A61CC3 /* AppState.swift */,
+				90C7E97A2B0C28FE004E10AC /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -625,6 +708,9 @@
 		90BCC0072AA030270067A284 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				90C7E9592B09F982004E10AC /* MoonStore */,
+				90D1B6182B09F3E8002A6891 /* Mission */,
+				90D1B5FB2B099C06002A6891 /* Chart */,
 				9007DE232B079ADE0098FAD6 /* ChangeTheme */,
 				90125AB52B0648D700A61CC3 /* Root */,
 				90125AA82B05B1FB00A61CC3 /* SunStore */,
@@ -684,6 +770,58 @@
 			path = Signin;
 			sourceTree = "<group>";
 		};
+		90C7E9592B09F982004E10AC /* MoonStore */ = {
+			isa = PBXGroup;
+			children = (
+				90C7E95A2B09F98B004E10AC /* MoonStoreView.swift */,
+			);
+			path = MoonStore;
+			sourceTree = "<group>";
+		};
+		90C7E9732B0B4585004E10AC /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				90C7E9742B0B4594004E10AC /* FetchMoodAnalysisUseCase.swift */,
+				90C7E9762B0B45C8004E10AC /* FetchMonthlyAnalysisUseCase.swift */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		90D1B5FB2B099C06002A6891 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				90D1B5FC2B099C11002A6891 /* ChartView.swift */,
+				90D1B5FE2B099C16002A6891 /* ChartViewModel.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		90D1B6102B09E39A002A6891 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				90D1B6112B09E3A4002A6891 /* CompleteMissionUseCase.swift */,
+				90D1B6132B09E3D9002A6891 /* FetchMissionListUseCase.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		90D1B6152B09E8AF002A6891 /* Rice */ = {
+			isa = PBXGroup;
+			children = (
+				90D1B6162B09E8BA002A6891 /* Rice.swift */,
+			);
+			path = Rice;
+			sourceTree = "<group>";
+		};
+		90D1B6182B09F3E8002A6891 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				90D1B6192B09F3ED002A6891 /* MissionView.swift */,
+				90D1B61B2B09F3F2002A6891 /* MissionViewModel.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
 		90D3AC732AF1ED5600D77CE5 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,6 +871,7 @@
 		90E975E02AD3D43D008F8448 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				90D1B6152B09E8AF002A6891 /* Rice */,
 				9007DE1E2B077D780098FAD6 /* Alert */,
 				90125A8A2B0485E000A61CC3 /* Switch */,
 				907549AE2AED3AF2009F5BBF /* Picker */,
@@ -857,6 +996,8 @@
 				90ECF0512AF1CA8800FD0147 /* DiaryAPI.swift */,
 				9067F4032B0364A8003D1E62 /* CommentAPI.swift */,
 				9007DE092B075A5E0098FAD6 /* ShopAPI.swift */,
+				90D1B6002B09DE8C002A6891 /* MissionAPI.swift */,
+				90C7E9612B0B3D8A004E10AC /* AnalysisAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -871,6 +1012,8 @@
 				90D3AC672AF1E5A900D77CE5 /* TimelineError.swift */,
 				9067F4052B0364D6003D1E62 /* CommentError.swift */,
 				9007DE0B2B075A9B0098FAD6 /* ShopError.swift */,
+				90D1B6022B09DEB3002A6891 /* MissionError.swift */,
+				90C7E9632B0B3DAF004E10AC /* AnalysisError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -896,6 +1039,8 @@
 				90D3AC692AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift */,
 				9067F4072B03657F003D1E62 /* RemoteCommentDataSource.swift */,
 				9007DE0D2B075C550098FAD6 /* RemoteShopDataSource.swift */,
+				90D1B6042B09E0BC002A6891 /* RemoteMissionDataSource.swift */,
+				90C7E9652B0B40A7004E10AC /* RemoteAnalysisDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -913,6 +1058,10 @@
 				9007DE012B0753E70098FAD6 /* FetchMyThemeResponseDTO.swift */,
 				9007DE032B0753F30098FAD6 /* FetchMyRiceResponseDTO.swift */,
 				9007DE112B0773BF0098FAD6 /* FetchThemeListResponseDTO.swift */,
+				90D1B6062B09E0FA002A6891 /* FetchMissionListResponseDTO.swift */,
+				90C7E95C2B0ADE16004E10AC /* ChatResponseDTO.swift */,
+				90C7E9672B0B4105004E10AC /* FetchMoodAnalysisResponseDTO.swift */,
+				90C7E96B2B0B41CF004E10AC /* FetchMonthlyAnalysisResponseDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -927,6 +1076,9 @@
 				9067F40E2B0367BB003D1E62 /* CommentEntity.swift */,
 				90125A992B04D75100A61CC3 /* ProfileEntity.swift */,
 				9007DE132B07742A0098FAD6 /* ThemeEntity.swift */,
+				90D1B60A2B09E20B002A6891 /* MissionEntity.swift */,
+				90C7E9692B0B4175004E10AC /* MoodAnalysisEntity.swift */,
+				90C7E96D2B0B4238004E10AC /* MonthlyAnalysisEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -941,6 +1093,8 @@
 				90ECF06D2AF1D4EA00FD0147 /* DiaryRepositoryImpl.swift */,
 				90D3AC712AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift */,
 				9067F4122B037A58003D1E62 /* CommentRepositoryImpl.swift */,
+				90D1B60E2B09E373002A6891 /* MissionRepositoryImpl.swift */,
+				90C7E9712B0B4549004E10AC /* AnalysisRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -950,11 +1104,13 @@
 			children = (
 				90ECF0212AF1185600FD0147 /* AuthRepository.swift */,
 				90ECF03D2AF1C3C800FD0147 /* UserRepository.swift */,
+				90C7E96F2B0B44F7004E10AC /* AnalysisRepository.swift */,
 				90ECF04A2AF1C96A00FD0147 /* ImageRepository.swift */,
 				90ECF06B2AF1D4D800FD0147 /* DiaryRepository.swift */,
 				90D3AC6F2AF1ED0700D77CE5 /* TimelineRepository.swift */,
 				9067F4102B037A3A003D1E62 /* CommentRepository.swift */,
 				9007DE152B0775610098FAD6 /* ShopRepository.swift */,
+				90D1B60C2B09E359002A6891 /* MissionRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -970,6 +1126,8 @@
 		90ECF0262AF119B300FD0147 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				90C7E9732B0B4585004E10AC /* Analysis */,
+				90D1B6102B09E39A002A6891 /* Mission */,
 				9007DE192B0775C40098FAD6 /* Shop */,
 				9067F4142B037A95003D1E62 /* Comment */,
 				90D3AC732AF1ED5600D77CE5 /* Timeline */,
@@ -989,6 +1147,7 @@
 				90ECF02C2AF11A5200FD0147 /* RefreshTokenUseCase.swift */,
 				90ECF02E2AF11A8000FD0147 /* LogoutUseCase.swift */,
 				90125A8D2B04AF9D00A61CC3 /* WithdrawUseCase.swift */,
+				90C7E9782B0C28A9004E10AC /* SendDeviceTokenUseCase.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1029,6 +1188,7 @@
 				90ECF0542AF1CB2100FD0147 /* MoodType.swift */,
 				90D3AC652AF1E4C200D77CE5 /* DayOfWeekType.swift */,
 				90125AAD2B05E18100A61CC3 /* ThemeType.swift */,
+				90D1B6082B09E179002A6891 /* MissionType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -1050,6 +1210,7 @@
 				90ECF0722AF1D59000FD0147 /* FetchMoodOfMonthUseCase.swift */,
 				90ECF0762AF1D5A200FD0147 /* PutDiaryUseCase.swift */,
 				90FA835A2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift */,
+				90C7E95F2B0ADEA9004E10AC /* ChatUseCase.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -1072,6 +1233,7 @@
 				90BCBFF02AA02E160067A284 /* Sources */,
 				90BCBFF12AA02E160067A284 /* Frameworks */,
 				90BCBFF22AA02E160067A284 /* Resources */,
+				901B8B5F2B0C5BA200D914C2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1082,12 +1244,14 @@
 				90E975DA2AD3D3F2008F8448 /* CombineMoya */,
 				90E975DC2AD3D3F2008F8448 /* Moya */,
 				907549AA2AED21FB009F5BBF /* SwiftUIFlowLayout */,
-				90D3AC7E2AF1FBAD00D77CE5 /* Swinject */,
-				90D3AC802AF1FBAD00D77CE5 /* Swinject-Dynamic */,
 				902212B62AFB37D00054326E /* Kingfisher */,
 				902212C02AFBD73F0054326E /* GoogleSignIn */,
 				902212C22AFBD73F0054326E /* GoogleSignInSwift */,
 				902212CA2AFC67F60054326E /* SwiftKeychainWrapper */,
+				90ED26C52B0CDEE1003D2780 /* Swinject */,
+				90ED27212B0CEF5C003D2780 /* FirebaseInAppMessaging-Beta */,
+				90ED27232B0CEF5C003D2780 /* FirebaseInAppMessagingSwift-Beta */,
+				90ED27292B0CEF5C003D2780 /* FirebaseMessaging */,
 			);
 			productName = "ONUI-iOS";
 			productReference = 90BCBFF42AA02E160067A284 /* ONUI-iOS.app */;
@@ -1120,10 +1284,11 @@
 			packageReferences = (
 				90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */,
 				907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
-				90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */,
 				902212B52AFB37D00054326E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				902212BF2AFBD73F0054326E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				902212C92AFC67F60054326E /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				90ED26C42B0CDEE1003D2780 /* XCRemoteSwiftPackageReference "Swinject" */,
+				90ED26FE2B0CEF5C003D2780 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 90BCBFF52AA02E160067A284 /* Products */;
 			projectDirPath = "";
@@ -1146,6 +1311,7 @@
 				90E975FD2AD40CE8008F8448 /* Roboto-Medium.ttf in Resources */,
 				90E975FC2AD40CE8008F8448 /* Roboto-Bold.ttf in Resources */,
 				907803662ADEA0BA00B4A95D /* Image.xcassets in Resources */,
+				90C7E9B62B0C413D004E10AC /* GoogleService-Info.plist in Resources */,
 				90E975E22AD3D4AF008F8448 /* Primary.xcassets in Resources */,
 				90E975E72AD3D95C008F8448 /* GrayScale.xcassets in Resources */,
 			);
@@ -1163,12 +1329,15 @@
 				90D3AC6C2AF1E73100D77CE5 /* FetchTimelineResponseDTO.swift in Sources */,
 				90E975F02AD3DD51008F8448 /* PrimaryColor.swift in Sources */,
 				90ECEFE72AF0D07B00FD0147 /* CalendarView.swift in Sources */,
+				90D1B6142B09E3D9002A6891 /* FetchMissionListUseCase.swift in Sources */,
 				90ECF0222AF1185600FD0147 /* AuthRepository.swift in Sources */,
+				90C7E9752B0B4594004E10AC /* FetchMoodAnalysisUseCase.swift in Sources */,
 				90D3AC772AF1EDBD00D77CE5 /* PostTimelineUseCase.swift in Sources */,
 				902212B42AFB33920054326E /* DiaryView.swift in Sources */,
 				90ECF05C2AF1CC9200FD0147 /* FetchMoodOfMonthRequestQuery.swift in Sources */,
 				9098ED502AFB017F000CE966 /* PagingBanner.swift in Sources */,
 				90125AB42B0605EB00A61CC3 /* ChangeUserColorUseCase.swift in Sources */,
+				90C7E97B2B0C28FE004E10AC /* AppDelegate.swift in Sources */,
 				90ECF0472AF1C81400FD0147 /* RemoteImageDataSource.swift in Sources */,
 				90ECEFF32AF0E66E00FD0147 /* JwtImpl.swift in Sources */,
 				90ECF05A2AF1CC3900FD0147 /* WriteDiaryRequestQuery.swift in Sources */,
@@ -1178,6 +1347,7 @@
 				90ECF0642AF1D08900FD0147 /* ShortDiaryEntity.swift in Sources */,
 				90ECF0572AF1CB6800FD0147 /* DiaryError.swift in Sources */,
 				90ECEFFD2AF0E6F200FD0147 /* TokenDTO.swift in Sources */,
+				90C7E96C2B0B41CF004E10AC /* FetchMonthlyAnalysisResponseDTO.swift in Sources */,
 				90ECEFF72AF0E6C200FD0147 /* MoyaLoggingPlugin.swift in Sources */,
 				90D3AC912AF20AAA00D77CE5 /* DI.swift in Sources */,
 				9007DE0E2B075C550098FAD6 /* RemoteShopDataSource.swift in Sources */,
@@ -1188,10 +1358,14 @@
 				90F367122AC3C56200BE5A5F /* SigninViewModel.swift in Sources */,
 				90ECF02F2AF11A8000FD0147 /* LogoutUseCase.swift in Sources */,
 				907549972AE8B932009F5BBF /* CarouselCanvas.swift in Sources */,
+				90D1B60F2B09E373002A6891 /* MissionRepositoryImpl.swift in Sources */,
 				90125A942B04B79A00A61CC3 /* RootViewModel.swift in Sources */,
 				9007DE162B0775610098FAD6 /* ShopRepository.swift in Sources */,
 				90125A8E2B04AF9D00A61CC3 /* WithdrawUseCase.swift in Sources */,
+				90D1B60B2B09E20B002A6891 /* MissionEntity.swift in Sources */,
+				90D1B6032B09DEB3002A6891 /* MissionError.swift in Sources */,
 				90125AAE2B05E18100A61CC3 /* ThemeType.swift in Sources */,
+				90D1B6122B09E3A4002A6891 /* CompleteMissionUseCase.swift in Sources */,
 				9007DE252B079AEB0098FAD6 /* ChangeThemeView.swift in Sources */,
 				90125A9A2B04D75100A61CC3 /* ProfileEntity.swift in Sources */,
 				90125AB02B05FEB100A61CC3 /* Onui.swift in Sources */,
@@ -1201,8 +1375,10 @@
 				9007DE272B079AF10098FAD6 /* ChangeThemeViewModel.swift in Sources */,
 				907803692ADEA0DC00B4A95D /* OnuiImage.swift in Sources */,
 				9007DE182B07758D0098FAD6 /* ShopRepositoryImpl.swift in Sources */,
+				90D1B6092B09E179002A6891 /* MissionType.swift in Sources */,
 				90125A922B04B79600A61CC3 /* RootView.swift in Sources */,
 				9007DE082B0758250098FAD6 /* FetchMyRiceUseCase.swift in Sources */,
+				90D1B6072B09E0FA002A6891 /* FetchMissionListResponseDTO.swift in Sources */,
 				90125AB22B05FEEB00A61CC3 /* Color+Hex.swift in Sources */,
 				90ECF0452AF1C4FF00FD0147 /* ImageError.swift in Sources */,
 				90D3AC832AF1FBF100D77CE5 /* JwtDI.swift in Sources */,
@@ -1215,14 +1391,17 @@
 				90D3AC722AF1ED2800D77CE5 /* TimelineRepositoryImpl.swift in Sources */,
 				90ECEFFB2AF0E6E700FD0147 /* JwtPlugin.swift in Sources */,
 				902212BE2AFBCEDA0054326E /* TimelineViewModel.swift in Sources */,
+				90C7E9682B0B4105004E10AC /* FetchMoodAnalysisResponseDTO.swift in Sources */,
 				90ECF0682AF1D28D00FD0147 /* DiaryDetailEntity.swift in Sources */,
 				90ECF0522AF1CA8800FD0147 /* DiaryAPI.swift in Sources */,
+				90C7E95D2B0ADE16004E10AC /* ChatResponseDTO.swift in Sources */,
 				90D3AC642AF1D7B300D77CE5 /* TimelineAPI.swift in Sources */,
 				9067F4062B0364D6003D1E62 /* CommentError.swift in Sources */,
 				90ECEFEC2AF0D47000FD0147 /* CalendarSheetModel.swift in Sources */,
 				9067F4162B037A9D003D1E62 /* PostCommentUseCase.swift in Sources */,
 				90D3AC752AF1ED6500D77CE5 /* FetchTimelinesUseCase.swift in Sources */,
 				90D3AC8A2AF1FD9100D77CE5 /* UseCaseDI.swift in Sources */,
+				90C7E9722B0B4549004E10AC /* AnalysisRepositoryImpl.swift in Sources */,
 				90ECF03C2AF1C3C100FD0147 /* UserRepositoryImpl.swift in Sources */,
 				90ECF06C2AF1D4D800FD0147 /* DiaryRepository.swift in Sources */,
 				90D3AC6A2AF1E6B300D77CE5 /* RemoteTimelineDataSource.swift in Sources */,
@@ -1234,6 +1413,7 @@
 				90D3AC6E2AF1E74400D77CE5 /* TimelineListEntity.swift in Sources */,
 				9075499B2AE8B957009F5BBF /* CarouselView.swift in Sources */,
 				90ECF01C2AF114FB00FD0147 /* RemoteBaseDataSource.swift in Sources */,
+				90D1B6052B09E0BC002A6891 /* RemoteMissionDataSource.swift in Sources */,
 				902212C62AFBE2AD0054326E /* TimelineCellView.swift in Sources */,
 				90FA835B2AFDB45800B16BBA /* FetchMoodOfWeekUseCase.swift in Sources */,
 				90ECF00D2AF1112500FD0147 /* AuthError.swift in Sources */,
@@ -1242,6 +1422,7 @@
 				90E976062AD40EAE008F8448 /* OnuiFontStyle.swift in Sources */,
 				90F367152AC3C57F00BE5A5F /* BaseViewModel.swift in Sources */,
 				90ECF06A2AF1D35700FD0147 /* RemoteDiaryDataSource.swift in Sources */,
+				90D1B61C2B09F3F2002A6891 /* MissionViewModel.swift in Sources */,
 				90E976012AD40D25008F8448 /* Roboto.swift in Sources */,
 				9067F40F2B0367BB003D1E62 /* CommentEntity.swift in Sources */,
 				90E975EE2AD3DB99008F8448 /* Color+init.swift in Sources */,
@@ -1255,9 +1436,11 @@
 				907549A82AED0787009F5BBF /* View+frame.swift in Sources */,
 				9007DE0C2B075A9B0098FAD6 /* ShopError.swift in Sources */,
 				9007DE122B0773BF0098FAD6 /* FetchThemeListResponseDTO.swift in Sources */,
+				90C7E9622B0B3D8A004E10AC /* AnalysisAPI.swift in Sources */,
 				90ECF0412AF1C43F00FD0147 /* RenameUseCase.swift in Sources */,
 				90D3AC862AF1FC3000D77CE5 /* DataSourceDI.swift in Sources */,
 				902212C82AFBE5C60054326E /* TimelineDetailView.swift in Sources */,
+				90C7E9792B0C28A9004E10AC /* SendDeviceTokenUseCase.swift in Sources */,
 				90ECF0732AF1D59000FD0147 /* FetchMoodOfMonthUseCase.swift in Sources */,
 				9075499D2AE8B989009F5BBF /* Carousel.swift in Sources */,
 				90ECF02D2AF11A5200FD0147 /* RefreshTokenUseCase.swift in Sources */,
@@ -1265,6 +1448,8 @@
 				90ECF0552AF1CB2100FD0147 /* MoodType.swift in Sources */,
 				9007DE062B0758190098FAD6 /* FetchMyThemeUseCase.swift in Sources */,
 				90E976042AD40EA7008F8448 /* OnuiFont.swift in Sources */,
+				90C7E96E2B0B4238004E10AC /* MonthlyAnalysisEntity.swift in Sources */,
+				90C7E9602B0ADEA9004E10AC /* ChatUseCase.swift in Sources */,
 				907549A62AED06DA009F5BBF /* RecordView.swift in Sources */,
 				9067F4042B0364A8003D1E62 /* CommentAPI.swift in Sources */,
 				90ECF0312AF11BED00FD0147 /* UserAPI.swift in Sources */,
@@ -1272,6 +1457,10 @@
 				90ECF0772AF1D5A200FD0147 /* PutDiaryUseCase.swift in Sources */,
 				9098ED522AFB300E000CE966 /* View+setBackButton.swift in Sources */,
 				90E975F42AD3E1B9008F8448 /* ErrorVariantColor.swift in Sources */,
+				90C7E9772B0B45C8004E10AC /* FetchMonthlyAnalysisUseCase.swift in Sources */,
+				90C7E96A2B0B4175004E10AC /* MoodAnalysisEntity.swift in Sources */,
+				90C7E9662B0B40A7004E10AC /* RemoteAnalysisDataSource.swift in Sources */,
+				90C7E95B2B09F98B004E10AC /* MoonStoreView.swift in Sources */,
 				9007DE0A2B075A5E0098FAD6 /* ShopAPI.swift in Sources */,
 				9067F4182B037AE8003D1E62 /* FetchCommentUseCase.swift in Sources */,
 				90125A9C2B04D87600A61CC3 /* FetchProfileUseCase.swift in Sources */,
@@ -1287,25 +1476,33 @@
 				90D3AC662AF1E4C200D77CE5 /* DayOfWeekType.swift in Sources */,
 				9007DE222B077D900098FAD6 /* OnuiAlert.swift in Sources */,
 				90125AA02B04D8B200A61CC3 /* ChangeThemeUseCase.swift in Sources */,
+				90D1B5FF2B099C16002A6891 /* ChartViewModel.swift in Sources */,
 				90ECF0362AF11C9B00FD0147 /* UserError.swift in Sources */,
 				90125A9E2B04D88900A61CC3 /* ChangeFilteringUseCase.swift in Sources */,
 				90F367112AC3C56200BE5A5F /* SigninView.swift in Sources */,
 				90ECF0292AF119CF00FD0147 /* AppleSigninUseCase.swift in Sources */,
+				90D1B5FD2B099C11002A6891 /* ChartView.swift in Sources */,
 				90E975F22AD3E157008F8448 /* GrayColor.swift in Sources */,
 				90ECF06E2AF1D4EA00FD0147 /* DiaryRepositoryImpl.swift in Sources */,
 				902212B22AFB31CC0054326E /* View+NavigationBarColor.swift in Sources */,
 				90D3AC682AF1E5A900D77CE5 /* TimelineError.swift in Sources */,
+				90C7E9642B0B3DAF004E10AC /* AnalysisError.swift in Sources */,
 				90BCB9AC2AD79D800076459C /* MainView.swift in Sources */,
+				90D1B60D2B09E359002A6891 /* MissionRepository.swift in Sources */,
 				90D3AC882AF1FCC100D77CE5 /* RepositoryDI.swift in Sources */,
 				90D3AC702AF1ED0700D77CE5 /* TimelineRepository.swift in Sources */,
 				90125A902B04B29600A61CC3 /* AppState.swift in Sources */,
+				90C7E9702B0B44F7004E10AC /* AnalysisRepository.swift in Sources */,
 				9007DE022B0753E70098FAD6 /* FetchMyThemeResponseDTO.swift in Sources */,
 				90BCBFF82AA02E160067A284 /* ONUI_iOSApp.swift in Sources */,
 				90125A962B04CF7700A61CC3 /* View+shadow.swift in Sources */,
 				90ECF0712AF1D58100FD0147 /* WriteDiaryUseCase.swift in Sources */,
+				90D1B6012B09DE8C002A6891 /* MissionAPI.swift in Sources */,
 				90ECF01F2AF1184100FD0147 /* AuthRepositoryImpl.swift in Sources */,
 				90125A982B04D71400A61CC3 /* ProfileResponseDTO.swift in Sources */,
+				90D1B6172B09E8BA002A6891 /* Rice.swift in Sources */,
 				9007DE202B077D7F0098FAD6 /* AlertBackground.swift in Sources */,
+				90D1B61A2B09F3ED002A6891 /* MissionView.swift in Sources */,
 				9007DE1D2B0775E40098FAD6 /* BuyThemeUseCase.swift in Sources */,
 				90ECEFF52AF0E67E00FD0147 /* JwtStore.swift in Sources */,
 				90ECF0622AF1D02E00FD0147 /* DiaryEntity.swift in Sources */,
@@ -1442,6 +1639,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ONUI-iOS/ONUI-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ONUI-iOS/Info.plist";
@@ -1471,6 +1669,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ONUI-iOS/ONUI-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ONUI-iOS/Info.plist";
@@ -1548,7 +1747,15 @@
 				minimumVersion = 1.0.5;
 			};
 		};
-		90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+		90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		90ED26C42B0CDEE1003D2780 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject";
 			requirement = {
@@ -1556,12 +1763,12 @@
 				minimumVersion = 2.8.4;
 			};
 		};
-		90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		90ED26FE2B0CEF5C003D2780 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.3;
+				minimumVersion = 10.18.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1592,16 +1799,6 @@
 			package = 907549A92AED21FB009F5BBF /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
 			productName = SwiftUIFlowLayout;
 		};
-		90D3AC7E2AF1FBAD00D77CE5 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		90D3AC802AF1FBAD00D77CE5 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 90D3AC7D2AF1FBAD00D77CE5 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
-		};
 		90E975DA2AD3D3F2008F8448 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */;
@@ -1611,6 +1808,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90E975D92AD3D3F2008F8448 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		90ED26C52B0CDEE1003D2780 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90ED26C42B0CDEE1003D2780 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		90ED27212B0CEF5C003D2780 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90ED26FE2B0CEF5C003D2780 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		90ED27232B0CEF5C003D2780 /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90ED26FE2B0CEF5C003D2780 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		90ED27292B0CEF5C003D2780 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90ED26FE2B0CEF5C003D2780 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

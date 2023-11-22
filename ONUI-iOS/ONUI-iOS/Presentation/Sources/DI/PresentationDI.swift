@@ -8,7 +8,8 @@ public final class PresentationDI: Assembly {
         container.register(RootViewModel.self) { resolver in
             RootViewModel(
                 refreshTokenUseCase: resolver.resolve(RefreshTokenUseCase.self)!,
-                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!
+                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!, 
+                sendDeviceTokenUseCase: resolver.resolve(SendDeviceTokenUseCase.self)!
             )
         }
         container.register(RootView.self) { resolver in
@@ -19,7 +20,8 @@ public final class PresentationDI: Assembly {
             SigninViewModel(
                 googleSigninUseCase: resolver.resolve(GoogleSigninUseCase.self)!,
                 appleSigninUseCase: resolver.resolve(AppleSigninUseCase.self)!,
-                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!
+                fetchProfileUseCase: resolver.resolve(FetchProfileUseCase.self)!,
+                sendDeviceTokenUseCase: resolver.resolve(SendDeviceTokenUseCase.self)!
             )
         }
         container.register(SigninView.self) { resolver in
@@ -51,7 +53,8 @@ public final class PresentationDI: Assembly {
             RecordViewModel(
                 writeDiaryUseCase: resolver.resolve(WriteDiaryUseCase.self)!,
                 uploadImageUseCase: resolver.resolve(UploadImageUseCase.self)!, 
-                postTimelineUseCase: resolver.resolve(PostTimelineUseCase.self)!
+                postTimelineUseCase: resolver.resolve(PostTimelineUseCase.self)!, 
+                chatUseCase: resolver.resolve(ChatUseCase.self)!
             )
         }
         container.register(RecordView.self) { resolver in
@@ -117,10 +120,12 @@ public final class PresentationDI: Assembly {
         }
         container.register(ChartViewModel.self) { resolver in
             ChartViewModel(
+                fetchMoodAnalysisUseCase: resolver.resolve(FetchMoodAnalysisUseCase.self)!,
+                fetchMonthlyAnalysisUseCase: resolver.resolve(FetchMonthlyAnalysisUseCase.self)!
             )
         }
         container.register(ChartView.self) { resolver in
-            ChartView()
+            ChartView(viewModel: resolver.resolve(ChartViewModel.self)!)
         }
         container.register(MissionViewModel.self) { resolver in
             MissionViewModel(

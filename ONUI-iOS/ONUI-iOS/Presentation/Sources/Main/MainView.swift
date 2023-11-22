@@ -14,6 +14,7 @@ struct MainView: View {
     private let settingView = DI.container.resolve(SettingView.self)!
     private let sunStoreView = DI.container.resolve(SunStoreView.self)!
     private let missionView = DI.container.resolve(MissionView.self)!
+    private let chartView = DI.container.resolve(ChartView.self)!
 
     init(viewModel: MainViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -100,7 +101,9 @@ struct MainView: View {
                             
                             VStack(spacing: spacing) {
                                 HStack(spacing: spacing) {
-                                    functionButton(image: ImageResource.chartDonut)
+                                    NavigationLink(destination: chartView) {
+                                        functionButton(image: ImageResource.chartDonut)
+                                    }
                                     
                                     NavigationLink(destination: settingView,label: {
                                         functionButton(image: ImageResource.setting)
@@ -139,8 +142,8 @@ struct MainView: View {
                                     
                                     HStack(spacing: 0) {
                                         Spacer()
-                                        
-                                        ForEach(0..<viewModel.shiftCount(), id: \.self) { _ in
+
+                                        ForEach(0..<7 - viewModel.moodOfWeekList.count - viewModel.shiftCount(), id: \.self) { _ in
                                             emptyView
                                                 .frame(40)
                                             
@@ -152,15 +155,15 @@ struct MainView: View {
                                                 let moodType = mood.mood
                                                 var mood: MoodImage.Image.Mood {
                                                     switch moodType {
-                                                    case .worst:
+                                                    case .veryBad:
                                                         return .veryBad
                                                     case .bad:
                                                         return .bad
-                                                    case .notBad:
+                                                    case .normal:
                                                         return .normal
-                                                    case .fine:
-                                                        return .good
                                                     case .good:
+                                                        return .good
+                                                    case .veryGood:
                                                         return .veryGood
                                                     }
                                                 }
@@ -184,8 +187,8 @@ struct MainView: View {
                                             
                                             Spacer()
                                         }
-                                        
-                                        ForEach(0..<7 - viewModel.moodOfWeekList.count - viewModel.shiftCount(), id: \.self) { _ in
+
+                                        ForEach(0..<viewModel.shiftCount(), id: \.self) { _ in
                                             emptyView
                                                 .frame(40)
                                             
@@ -247,17 +250,18 @@ struct MainView: View {
                     } label: {
                         Image(systemName: "plus")
                             .resizable()
-                            .frame(width: 16, height: 16)
+                            .frame(width: 14, height: 14)
                             .foregroundColor(.Primary.onPrimaryContainer)
                             .padding(20)
                             .background(Color.Primary.primaryContainer)
                             .cornerRadius(16)
                     }
                 }
-                .padding(.vertical, 12)
+                .padding(.vertical, 8)
                 .padding(.horizontal, 16)
                 .background(Color.GrayScale.Surface.surface)
             }
+            .padding(.horizontal, 16)
             .navigate(to: calendarView, when: $viewModel.isNavigatedToCalendar)
             .onAppear(perform: viewModel.onAppear)
         }

@@ -6,5 +6,6 @@ protocol AuthRepository {
     func refreshToken() -> AnyPublisher<Void, Error>
     func withdraw() -> AnyPublisher<Void, Error>
     func logout()
+    func sendDeviceToken(token: String) -> AnyPublisher<Void, Error>
 }
 

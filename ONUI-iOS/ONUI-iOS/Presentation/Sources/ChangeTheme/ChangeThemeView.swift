@@ -22,7 +22,7 @@ struct ChangeThemeView: View {
         }
         .onAppear(perform: viewModel.onAppear)
         .background(Color.GrayScale.Background.background)
-        .setBackButton(title: "햇님 방앗간") {
+        .setBackButton(title: "씨앗 저장소") {
             dismiss()
         }
     }

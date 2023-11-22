@@ -49,7 +49,7 @@ final class MainViewModel: BaseViewModel {
         let autoUpdatingSystemCalendar = Calendar.autoupdatingCurrent
         var selectedDateComponents = DateComponents()
 
-        guard let firstDate = moodOfWeekList.first?.createdAt else { return 0 }
+        guard let firstDate = moodOfWeekList.last?.createdAt else { return 0 }
         selectedDateComponents.year = firstDate.year
         selectedDateComponents.month = firstDate.month
         selectedDateComponents.day = firstDate.day

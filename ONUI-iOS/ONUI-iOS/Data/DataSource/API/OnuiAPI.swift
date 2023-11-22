@@ -37,6 +37,7 @@ enum JobisDomain: String {
     case comment
     case shop
     case mission
+    case analysis
 }
 
 extension JobisDomain {

@@ -31,6 +31,11 @@ public final class UseCaseDI: Assembly {
                 authRepository: resolver.resolve(AuthRepository.self)!
             )
         }
+        container.register(SendDeviceTokenUseCase.self) { resolver in
+            SendDeviceTokenUseCase(
+                authRepository: resolver.resolve(AuthRepository.self)!
+            )
+        }
 
         // User
         container.register(ChangeFilteringUseCase.self) { resolver in
@@ -102,6 +107,11 @@ public final class UseCaseDI: Assembly {
                 diaryRepository: resolver.resolve(DiaryRepository.self)!
             )
         }
+        container.register(ChatUseCase.self) { resolver in
+            ChatUseCase(
+                diaryRepository: resolver.resolve(DiaryRepository.self)!
+            )
+        }
 
         // Timeline
         container.register(FetchTimelinesUseCase.self) { resolver in
@@ -148,6 +158,18 @@ public final class UseCaseDI: Assembly {
         container.register(FetchMissionListUseCase.self) { resolver in
             FetchMissionListUseCase(
                 missionRepository: resolver.resolve(MissionRepository.self)!
+            )
+        }
+
+        // Analysis
+        container.register(FetchMonthlyAnalysisUseCase.self) { resolver in
+            FetchMonthlyAnalysisUseCase(
+                analysisRepository: resolver.resolve(AnalysisRepository.self)!
+            )
+        }
+        container.register(FetchMoodAnalysisUseCase.self) { resolver in
+            FetchMoodAnalysisUseCase(
+                analysisRepository: resolver.resolve(AnalysisRepository.self)!
             )
         }
     }
