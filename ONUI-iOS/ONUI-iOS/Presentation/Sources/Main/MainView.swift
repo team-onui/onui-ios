@@ -261,7 +261,7 @@ struct MainView: View {
                 .padding(.horizontal, 16)
                 .background(Color.GrayScale.Surface.surface)
             }
-            .padding(.horizontal, 16)
+//            .padding(.horizontal, 16)
             .navigate(to: calendarView, when: $viewModel.isNavigatedToCalendar)
             .onAppear(perform: viewModel.onAppear)
         }

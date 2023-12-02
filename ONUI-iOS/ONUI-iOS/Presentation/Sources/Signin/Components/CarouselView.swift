@@ -18,6 +18,7 @@ struct CarouselView: View {
                 spacing: spacing,
                 widthOfHiddenCards: widthOfHiddenCards
             ) {
+                
                 HStack(alignment: .bottom, spacing: spacing) {
                     cardView(cardType: .첫번째)
                     cardView(cardType: .두번째)
@@ -33,19 +34,31 @@ struct CarouselView: View {
     func cardView(cardType: CardType) -> some View {
         VStack(spacing: 8) {
             VStack {
-                Text("asdf")
+                Group {
+                    switch cardType {
+                    case .첫번째:
+                        Image(.랜딩페이저상점)
+                            .resizable()
+                    case .두번째:
+                        Image(.랜딩페이저전체)
+                            .resizable()
+                    case .세번째:
+                        Image(.랜딩페이저달력)
+                            .resizable()
+                    case .네번째:
+                        Image(.랜딩페이저기록)
+                            .resizable()
+                    }
+                }
             }
-            .padding(.vertical, 12)
             .frame(maxHeight: .infinity)
         }
         .frame(
-            width: 320,
-            height: uiState.activeCard == cardType.rawValue ? 400: 300
+            width: UIScreen.main.bounds.width - (widthOfHiddenCards*2) - (spacing*2),
+            height: uiState.activeCard == cardType.rawValue ?
+            UIScreen.main.bounds.height * 0.4546 :
+                UIScreen.main.bounds.height * 0.4103
         )
-        .background {
-            Color.gray
-                .cornerRadius(32)
-        }
         .transition(.slide)
         .animation(.spring(), value: uiState.screenDrag)
     }
