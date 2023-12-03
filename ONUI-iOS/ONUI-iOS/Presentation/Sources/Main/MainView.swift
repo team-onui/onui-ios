@@ -141,58 +141,52 @@ struct MainView: View {
                                     .padding(.horizontal, 16)
                                     
                                     HStack(spacing: 0) {
+                                        var index = 0
                                         Spacer()
 
-                                        ForEach(0..<7 - viewModel.moodOfWeekList.count - viewModel.shiftCount(), id: \.self) { _ in
-                                            emptyView
-                                                .frame(40)
-                                            
-                                            Spacer()
-                                        }
-                                        
-                                        ForEach(viewModel.moodOfWeekList, id: \.id) { mood in
-                                            var moodImage: MoodImage.Image {
-                                                let moodType = mood.mood
-                                                var mood: MoodImage.Image.Mood {
-                                                    switch moodType {
-                                                    case .veryBad:
-                                                        return .veryBad
-                                                    case .bad:
-                                                        return .bad
-                                                    case .normal:
-                                                        return .normal
-                                                    case .good:
-                                                        return .good
-                                                    case .veryGood:
-                                                        return .veryGood
+                                        ForEach(viewModel.sevenDaysAgoDay(), id: \.day) { date in
+                                            if !viewModel.moodOfWeekList.isEmpty &&
+                                                viewModel.moodOfWeekList.count > index &&
+                                                viewModel.moodOfWeekList[index].createdAt.isSameDay(date) {
+                                                var moodImage: MoodImage.Image {
+                                                    var mood: MoodImage.Image.Mood {
+                                                        index += 1
+                                                        switch viewModel.moodOfWeekList[index - 1].mood {
+                                                        case .veryBad:
+                                                            return .veryBad
+                                                        case .bad:
+                                                            return .bad
+                                                        case .normal:
+                                                            return .normal
+                                                        case .good:
+                                                            return .good
+                                                        case .veryGood:
+                                                            return .veryGood
+                                                        }
+                                                    }
+                                                    
+                                                    switch appState.theme {
+                                                    case .standard:
+                                                        return .standard(mood)
+                                                    case .hong:
+                                                        return .hong(mood)
+                                                    case .ssac:
+                                                        return .ssac(mood)
+                                                    case .nya:
+                                                        return .nya(mood)
                                                     }
                                                 }
-                                                
-                                                switch appState.theme {
-                                                case .standard:
-                                                    return .standard(mood)
-                                                case .hong:
-                                                    return .hong(mood)
-                                                case .ssac:
-                                                    return .ssac(mood)
-                                                case .nya:
-                                                    return .nya(mood)
-                                                }
-                                            }
-                                            MoodImage(
-                                                moodImage,
-                                                isOn: true
-                                            )
-                                            .frame(width: 40, height: 40)
-                                            
-                                            Spacer()
-                                        }
 
-                                        ForEach(0..<viewModel.shiftCount(), id: \.self) { _ in
-                                            emptyView
-                                                .frame(40)
-                                            
-                                            Spacer()
+                                                MoodImage(moodImage, isOn: true)
+                                                    .frame(40)
+
+                                                Spacer()
+                                            } else {
+                                                emptyView
+                                                    .frame(40)
+                                                
+                                                Spacer()
+                                            }
                                         }
                                     }
                                     .padding(.vertical, 12)

@@ -44,18 +44,10 @@ final class MainViewModel: BaseViewModel {
         }
     }
 
-    func shiftCount() -> Int {
-        let now = Date()
-        let autoUpdatingSystemCalendar = Calendar.autoupdatingCurrent
-        var selectedDateComponents = DateComponents()
-
-        guard let firstDate = moodOfWeekList.last?.createdAt else { return 0 }
-        selectedDateComponents.year = firstDate.year
-        selectedDateComponents.month = firstDate.month
-        selectedDateComponents.day = firstDate.day
-        let selectedDate = autoUpdatingSystemCalendar.date(from: selectedDateComponents)
-        let days = autoUpdatingSystemCalendar.dateComponents([.day], from: selectedDate!, to: now).day
-
-        return days!
+    func sevenDaysAgoDay() -> [Date] {
+        let range = Array(0..<7)
+        return range.map {
+            Date(timeIntervalSinceNow: TimeInterval((-86400) * $0))
+        }.reversed()
     }
 }
